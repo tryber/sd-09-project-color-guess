@@ -1,0 +1,32 @@
+{
+    "requirements": [
+        {
+            "description": "O seu site deve possuir um título com o nome do seu jogo",
+            "bonus": false
+        },
+        {
+            "description": "A página deve possuir o texto com o código RGB a ser adivinhado",
+            "bonus": false
+        },
+        {
+            "description": "A página deve conter opções de cores para serem adivinhadas",
+            "bonus": false
+        },
+        {
+            "description": "As cores das bolas devem ser geradas dinâmicamente",
+            "bonus": false
+        },
+        {
+            "description": "Ao clicar em um circulo colorido, deve ser mostrado um texto indicando se está correto",
+            "bonus": false
+        },
+        {
+            "description": "Crie um botão para iniciar/reiniciar o jogo",
+            "bonus": false
+        },
+        {
+            "description": "Crie um placar que incremente 3 pontos para cada acerto no jogo",
+            "bonus": true
+        }
+    ]
+}
