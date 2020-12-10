@@ -1,1 +1,1 @@
-console.log('teste PR');
+document.querySelector('h1');
