@@ -50,7 +50,7 @@ function resetReloadPage() {
 
 function resetSavedScore() {
   btnResetScore.addEventListener('click', function () {
-    let initialScore = 0;
+    const initialScore = 0;
     localStorage.setItem('Pontuação jogo descubra a cor JAF', initialScore);
     window.location.reload();
   });
