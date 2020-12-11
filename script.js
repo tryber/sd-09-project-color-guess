@@ -9,7 +9,6 @@ let totalScore = 0;
 if (localStorage.getItem('Pontuação jogo descubra a cor JAF') === null) {
   score.innerHTML = 0;
 } else {
-  let totalScore = 0;
   totalScore = parseFloat(localStorage.getItem('Pontuação jogo descubra a cor JAF'));
   score.innerHTML = totalScore;
 }
