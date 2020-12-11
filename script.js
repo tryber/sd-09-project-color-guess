@@ -4,7 +4,8 @@ const answer = document.getElementById('answer');
 const ballsList = document.getElementById('balls-list');
 const btnReset = document.getElementById('reset-game');
 const score = document.getElementById('score');
-let totalScore = parseFloat(localStorage.getItem('Pontuação jogo descubra a cor JAF'));
+let totalScore = 0
+totalScore = parseFloat(localStorage.getItem('Pontuação jogo descubra a cor JAF'));
 score.innerHTML = totalScore;
 
 function ramdomRGB() {
