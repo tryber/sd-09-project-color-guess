@@ -5,6 +5,7 @@ const ballsList = document.getElementById('balls-list');
 const btnReset = document.getElementById('reset-game');
 const btnResetScore = document.getElementById('reset-score');
 const score = document.getElementById('score');
+let totalScore = 0;
 if (localStorage.getItem('Pontuação jogo descubra a cor JAF') === null) {
   score.innerHTML = 0;
 } else {
