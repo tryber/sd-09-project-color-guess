@@ -1,0 +1,11 @@
+body {
+  text-align: center;
+}
+
+.ball {
+  border: 1px solid black;
+  border-radius: 50px;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+}
