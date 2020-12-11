@@ -5,10 +5,13 @@ const ballsList = document.getElementById('balls-list');
 const btnReset = document.getElementById('reset-game');
 const btnResetScore = document.getElementById('reset-score');
 const score = document.getElementById('score');
-score.innerHTML = 0;
-let totalScore = 0
-totalScore = parseFloat(localStorage.getItem('Pontuação jogo descubra a cor JAF'));
-score.innerHTML = totalScore;
+if (localStorage.getItem('Pontuação jogo descubra a cor JAF') === null) {
+  score.innerHTML = 0;
+} else {
+  let totalScore = 0;
+  totalScore = parseFloat(localStorage.getItem('Pontuação jogo descubra a cor JAF'));
+  score.innerHTML = totalScore;
+}
 
 function ramdomRGB() {
   const ramdomColor = Math.floor(Math.random() * 256);
