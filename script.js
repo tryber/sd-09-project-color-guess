@@ -1,7 +1,8 @@
 const rgbColorText = document.getElementById('rgb-color');
 const balls = document.getElementsByClassName('ball');
 const answer = document.getElementById('answer');
-const ballsList = document.getElementById('balls-list')
+const ballsList = document.getElementById('balls-list');
+const btnReset = document.getElementById('reset-game')
 
 function ramdomRGB() {
   const ramdomColor = Math.floor(Math.random() * 256);
@@ -29,16 +30,15 @@ function checkAnswer() {
   });
 }
 
-// function compareAnswer() {
-//   if (target.style.background === colorSelected.style.background) {
-//     answer.innerHTML = 'Acertou!';
-//   } else {
-//     answer.innerHTML = 'Errou! Tente novamente!';
-//   }
-// }
-
+function resetReloadPage() {
+  btnReset.addEventListener('click', function () {
+    window.location.reload()
+  });
+}
 
 //chamadas
-generateRandomColor();
-colorToGuess();
-checkAnswer();
+  generateRandomColor();
+  colorToGuess();
+  checkAnswer();
+  resetReloadPage();
+
