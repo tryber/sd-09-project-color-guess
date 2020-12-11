@@ -3,7 +3,9 @@ const balls = document.getElementsByClassName('ball');
 const answer = document.getElementById('answer');
 const ballsList = document.getElementById('balls-list');
 const btnReset = document.getElementById('reset-game');
+const btnResetScore = document.getElementById('reset-score');
 const score = document.getElementById('score');
+score.innerHTML = 0;
 let totalScore = 0
 totalScore = parseFloat(localStorage.getItem('Pontuação jogo descubra a cor JAF'));
 score.innerHTML = totalScore;
@@ -43,8 +45,17 @@ function resetReloadPage() {
   });
 }
 
+function resetSavedScore() {
+  btnResetScore.addEventListener('click', function () {
+    let initialScore = 0;
+    localStorage.setItem('Pontuação jogo descubra a cor JAF', initialScore);
+    window.location.reload();
+  });
+}
+
 // chamadas
 generateRandomColor();
 colorToGuess();
 checkAnswer();
 resetReloadPage();
+resetSavedScore();
