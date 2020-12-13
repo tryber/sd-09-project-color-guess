@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    animation: colorful 60s infinite linear;
+    background-image: radial-gradient(circle at 90% 80%, transparent, #1d1e22);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1000px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.ball {
+    border: solid 1px black;
+    border-radius: 50%;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+}
+
+#rgb-color {
+    padding: 20px;
+    letter-spacing: 1px;
+}
+
+
+@keyframes colorful {
+    0% {
+      background-color: #1e272e;
+    }
+    20% {
+      background-color: #3820a5;
+    }
+    40% {
+      background-color: #ff4757;
+    }
+    60% {
+      background-color: #5f27cd;
+    }
+    80% {
+        background-color: #2ed573;
+      }
+    100% {
+        background-color: #1e272e;
+      }
+
+  }
