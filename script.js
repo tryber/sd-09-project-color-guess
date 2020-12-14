@@ -6,21 +6,21 @@ let score = document.querySelector('#score');
 
 
 function aleatoryNumber() {
-    const number = Math.floor(Math.random() * 256);
-        return number;
+    let number = Math.floor(Math.random() * 256);
+    return number;
 }
 aleatoryNumber();
 
 function colorGenerator() {
-    const color = `rgb(${aleatoryNumber()}, ${aleatoryNumber()}, ${aleatoryNumber()})`;
-        return color;
+    let color = `rgb(${aleatoryNumber()}, ${aleatoryNumber()}, ${aleatoryNumber()})`;
+    return color;
 }
 colorGenerator();
 
 function addColor() {
-    for(let i = 0; i < ballContainer.length; i++) {
-        let insertColor = colorGenerator()
-        ballContainer[i].style.backgroundColor = insertColor;
+    for(let i = 0; i < ballContainer.length; i += 1) {
+      let insertColor = colorGenerator()
+      ballContainer[i].style.backgroundColor = insertColor;
     }
 }
 addColor();
@@ -28,13 +28,13 @@ addColor();
 
 function rbgTitle() {
     let aleatorySelect = Math.floor(Math.random() * 5);
-    title.innerText = ballContainer[aleatorySelect].style.backgroundColor;  
+     title.innerText = ballContainer[aleatorySelect].style.backgroundColor;  
 }
 rbgTitle();
 
 function guessColor() {
     let counter = 0;
-    for (let i = 0; i < ballContainer.length; i++) {
+    for (let i = 0; i < ballContainer.length; i += 1) {
         ballContainer[i].addEventListener('click', () => {
             let colorContainer = ballContainer[i].style.backgroundColor;
             let titleContent = title.innerText;
@@ -51,7 +51,7 @@ function guessColor() {
                     break;
      
             }
-            
+            launcher();
         })
     }
 }
