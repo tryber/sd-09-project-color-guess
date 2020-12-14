@@ -48,6 +48,7 @@ function resetGame(){
             listOfColors[index].style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
         }
         randomColor();
+        document.querySelector('#answer').innerText = 'Escolha uma cor';
     });
 };
 
