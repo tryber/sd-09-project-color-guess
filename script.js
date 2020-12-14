@@ -1,3 +1,7 @@
+const title = document.querySelector('#rgb-color');
+const ballContainer = document.querySelectorAll('.ball');
+const guesser = document.querySelector('#answer');
+const resetBtn = document.querySelector('#reset-game');
 
 
 function aleatoryNumber() {
@@ -13,22 +17,53 @@ function colorGenerator() {
 colorGenerator();
 
 function addColor() {
-    let ball = document.querySelectorAll('.ball');
-
-    for(let i = 0; i < ball.length; i++) {
+    for(let i = 0; i < ballContainer.length; i++) {
         let insertColor = colorGenerator()
-        ball[i].style.backgroundColor = insertColor;
+        ballContainer[i].style.backgroundColor = insertColor;
     }
 }
 addColor();
 
-function rbgTitle() {
-    let title = document.querySelector('#rgb-color');
-    let colorContainer = document.querySelectorAll('.ball');
-    let aleatorySelect = Math.floor(Math.random()* 5);
 
-    title.innerText = colorContainer[aleatorySelect].style.backgroundColor;
-    
+function rbgTitle() {
+    let aleatorySelect = Math.floor(Math.random()* 5);
+    title.innerText = ballContainer[aleatorySelect].style.backgroundColor;  
 }
 rbgTitle();
+
+function guessColor() {
+    for(let i = 0; i < ballContainer.length; i++) {
+        ballContainer[i].addEventListener('click', () => {
+            let colorContainer = ballContainer[i].style.backgroundColor;
+            let titleContent = title.innerText;
+
+            switch(true) {
+                case (titleContent === colorContainer):
+                    guesser.innerText = 'Acertou!';
+                    break;
+
+                case (titleContent != colorContainer):
+                    guesser.innerText = 'Errou! Tente novamente!';
+                    break;
+     
+            }
+            launcher();
+        })
+    }
+}
+guessColor();
+
+function resetGame() {
+    resetBtn.addEventListener('click', ()=> {
+        guesser.innerText = 'Escolha uma cor';
+        launcher();
+    })
+}
+resetGame();
+
+
+function launcher() {
+    addColor();
+    rbgTitle();   
+}
 

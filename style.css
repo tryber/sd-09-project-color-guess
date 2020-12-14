@@ -8,21 +8,25 @@
 }
 
 body{
-    animation: colorful 60s infinite linear;
+    animation: colorful 30s infinite linear;
     background-image: radial-gradient(circle at 90% 80%, transparent, #1d1e22);
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: auto;
     margin-top: 100px;
+    height: 1000px;
 }
 
 .ball {
     border: solid 1px black;
     border-radius: 50%;
+    cursor: pointer;
     display: inline-block;
     height: 50px;
     width: 50px;
+    transition: 0.6s ease;
+    margin: 5px;
 }
 
 #rgb-color {
@@ -30,6 +34,27 @@ body{
     letter-spacing: 1px;
 }
 
+.btn-game {
+    background-color: #3820a5;
+    border: none;
+    border-radius: 4px;
+    color:white;
+    cursor: pointer;
+    outline: none;
+    font-size: 17px;
+    margin-top: 20px;
+    padding: 8px 20px; 
+    transition: 0.2s ease-in;
+}
+
+
+.btn-game:hover {
+    background-color: #ff4757;
+}
+.btn-game:active {
+    background-color: #3820a5;
+    transform: scale(1.1);
+}
 
 @keyframes colorful {
     0% {
@@ -51,4 +76,10 @@ body{
         background-color: #1e272e;
       }
 
+  }
+
+
+  .ball:hover{
+      border: none;
+      transform: scale(1.1);
   }
