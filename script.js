@@ -28,11 +28,11 @@ function play(){
         let eventRgb = event.target.style.backgroundColor;
         let answer = document.querySelector('#rgb-color').innerText;
         if (eventRgb === answer){
-            document.querySelector('#right-wrong').innerText = 'Acertou!';
+            document.querySelector('#answer').innerText = 'Acertou!';
             points += 3;
             document.querySelector('#score').innerText = `Pontos: ${points}`;
         } else {
-            document.querySelector('#right-wrong').innerText = 'Errou! Tente novamente!';
+            document.querySelector('#answer').innerText = 'Errou! Tente novamente!';
         }
     });
 };
@@ -41,7 +41,7 @@ play();
 
 // Função resetar jogo
 function resetGame(){
-    let resetBtn = document.getElementById('reset');
+    let resetBtn = document.getElementById('reset-game');
     resetBtn.addEventListener('click', function(){
         let listOfColors = document.querySelectorAll('.ball');
         for(let index = 0; index < 6; index += 1){
