@@ -1,21 +1,21 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    user-select: none;
     color: white;
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    user-select: none;
 }
 
 body{
+    align-items: center;
     animation: colorful 30s infinite linear;
     background-image: radial-gradient(circle at 90% 80%, transparent, #1d1e22);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    height: 1000px;
     margin: auto;
     margin-top: 100px;
-    height: 1000px;
 }
 
 .ball {
@@ -24,14 +24,14 @@ body{
     cursor: pointer;
     display: inline-block;
     height: 50px;
-    width: 50px;
-    transition: 0.6s ease;
     margin: 5px;
+    transition: 0.6s ease;
+    width: 50px;
 }
 
-#rgb-color {
-    padding: 20px;
+.rgb-color {
     letter-spacing: 1px;
+    padding: 20px;
 }
 
 .btn-game {
@@ -40,13 +40,12 @@ body{
     border-radius: 4px;
     color:white;
     cursor: pointer;
-    outline: none;
     font-size: 17px;
     margin-top: 20px;
     padding: 8px 20px; 
     transition: 0.2s ease-in;
+    outline: none;
 }
-
 
 .btn-game:hover {
     background-color: #ff4757;
@@ -67,19 +66,19 @@ body{
       background-color: #ff4757;
     }
     60% {
-      background-color: #5f27cd;
+        background-color: #5f27cd;
     }
     80% {
         background-color: #2ed573;
-      }
+    }
     100% {
         background-color: #1e272e;
-      }
+    }
+    
+}
 
-  }
 
-
-  .ball:hover{
+.ball:hover{
       border: none;
       transform: scale(1.1);
   }
