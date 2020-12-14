@@ -2,18 +2,21 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <title>Adivinhe a cor</title>
     </head>
     <body>
-        <h1 id="title">Adivinhe a cor!!</h1>
-        <p id="rgb-color"></p>
-        <p id="score">Pontos: 0</p>
-        <div id="colors" class="colors-container">
-            <!--Div colors injected here-->
+        <div class="box">
+            <h1 id="title">RGB Challange</h1>
+            <p id="rgb-color"></p>
+            <p id="score">Pontos: 0</p>
+            <div id="colors" class="colors-container">
+                <!--Div colors injected here-->
+            </div>
+            <p id="answer">Escolha uma cor</p>
+            <button id="reset-game">Resetar o jogo/cores</button>
         </div>
-        <p id="answer">Escolha uma cor</p>
-        <button id="reset-game">Resetar o jogo/cores</button>
     </body>
     <script src="script.js"></script>
 </html>
