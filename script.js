@@ -1,3 +1,10 @@
+// função Injetando rgb aleatório no parágrafo
+function randomColor() {
+    const colorsList = document.querySelectorAll('.ball');
+    const rgbColor = document.getElementById('rgb-color');
+    rgbColor.innerText = colorsList[Math.floor(Math.random() * 6)].style.backgroundColor;
+  }
+
 window.onload = function () {
   //  Gerando divs com cores aleatórias
   const colorsDiv = document.getElementById('colors');
@@ -11,16 +18,7 @@ window.onload = function () {
   randomColor();
 };
 
-// Injetando rgb aleatório no parágrafo
-function randomColor() {
-  const colorsList = document.querySelectorAll('.ball');
-  const rgbColor = document.getElementById('rgb-color');
-  rgbColor.innerText = colorsList[Math.floor(Math.random() * 6)].style.backgroundColor;
-}
-
-
 let points = 0;
-
 // Função jogar
 function play() {
   const ballClick = document.querySelector('#colors');
@@ -28,11 +26,11 @@ function play() {
     const eventRgb = event.target.style.backgroundColor;
     const answer = document.querySelector('#rgb-color').innerText;
     if (eventRgb === answer) {
-        document.querySelector('#answer').innerText = 'Acertou!';
-        points += 3;
-        document.querySelector('#score').innerText = `Pontos: ${points}`;
+      document.querySelector('#answer').innerText = 'Acertou!';
+      points += 3;
+      document.querySelector('#score').innerText = `Pontos: ${points}`;
     } else {
-        document.querySelector('#answer').innerText = 'Errou! Tente novamente!';
+      document.querySelector('#answer').innerText = 'Errou! Tente novamente!';
     }
   });
 }
