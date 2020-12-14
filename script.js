@@ -51,7 +51,7 @@ function guessColor() {
                     break;
      
             }
-            launcher();
+            
         })
     }
 }
@@ -64,7 +64,6 @@ function resetGame() {
     })
 }
 resetGame();
-
 
 
 function launcher() {
