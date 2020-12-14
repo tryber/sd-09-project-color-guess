@@ -1,0 +1,24 @@
+body {
+    text-align: center;
+    background-color: darkblue;
+}
+
+#colors {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 500px;
+    padding: 20px;
+    background-color: black;
+    border: yellow 5px solid;
+    border-radius: 30%;
+}
+
+.ball {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 8px;
+}
