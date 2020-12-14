@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     color: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: Roboto, sans-serif;
     margin: 0;
     padding: 0;
     user-select: none;
@@ -38,7 +38,7 @@ body{
     background-color: #3820a5;
     border: none;
     border-radius: 4px;
-    color:white;
+    color: white;
     cursor: pointer;
     font-size: 17px;
     margin-top: 20px;
@@ -50,6 +50,7 @@ body{
 .btn-game:hover {
     background-color: #ff4757;
 }
+
 .btn-game:active {
     background-color: #3820a5;
     transform: scale(1.1);
@@ -59,24 +60,29 @@ body{
     0% {
       background-color: #1e272e;
     }
+
     20% {
       background-color: #3820a5;
     }
+
     40% {
       background-color: #ff4757;
     }
+
     60% {
         background-color: #5f27cd;
     }
+
     80% {
         background-color: #2ed573;
     }
+
     100% {
         background-color: #1e272e;
     }
 }
 
-.ball:hover{
+.ball:hover {
       border: none;
       transform: scale(1.1);
-  }
+}
