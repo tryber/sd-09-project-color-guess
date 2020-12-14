@@ -2,6 +2,7 @@ const title = document.querySelector('#rgb-color');
 const ballContainer = document.querySelectorAll('.ball');
 const guesser = document.querySelector('#answer');
 const resetBtn = document.querySelector('#reset-game');
+let score = document.querySelector('#score')
 
 
 function aleatoryNumber() {
@@ -37,12 +38,12 @@ function guessColor() {
             let colorContainer = ballContainer[i].style.backgroundColor;
             let titleContent = title.innerText;
 
-            switch(true) {
-                case (titleContent === colorContainer):
+            switch(titleContent) {
+                case colorContainer:
                     guesser.innerText = 'Acertou!';
                     break;
 
-                case (titleContent != colorContainer):
+                case colorContainer:
                     guesser.innerText = 'Errou! Tente novamente!';
                     break;
      
@@ -56,10 +57,30 @@ guessColor();
 function resetGame() {
     resetBtn.addEventListener('click', ()=> {
         guesser.innerText = 'Escolha uma cor';
+        score.innerHTML = 0
         launcher();
     })
 }
 resetGame();
+
+function scoreCounter() {
+    let counter = 0
+    for(let i = 0; i < ballContainer.length; i++) {
+        ballContainer[i].addEventListener('click', () => {
+            let colorContainer = ballContainer[i].style.backgroundColor;
+            let titleContent = title.innerText;
+            switch(titleContent) {
+                case colorContainer:
+                    console.log(counter)
+                    counter++;
+                    score.innerHTML = counter;
+                    break;
+            }
+        })
+    }
+
+}
+scoreCounter();
 
 
 function launcher() {
