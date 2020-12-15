@@ -4,14 +4,14 @@
 */
 
 function randomNumber() {
-  let randomNumber = parseInt(Math.random() * 1000, 10);
-  while (randomNumber > 255) {
-    randomNumber = parseInt(Math.random() * 1000, 10);
-    if (randomNumber <= 255) {
+  let magicNumber = parseInt(Math.random() * 1000, 10);
+  while (magicNumber > 255) {
+    magicNumber = parseInt(Math.random() * 1000, 10);
+    if (magicNumber <= 255) {
       break;
     }
   }
-  return randomNumber;
+  return magicNumber;
 }
 
 function setRandomRgb() {
