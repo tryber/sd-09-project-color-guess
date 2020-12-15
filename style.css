@@ -1,23 +1,44 @@
+.answerText {
+  text-align: center;
+}
+
 body {
   background-color: rgb(69, 123, 157);
+  background-image: url('./imgs/background2.jpg');
+  background-size:100%;
+  background-repeat: no-repeat;
   color: white;
+}
+
+.color-palette-buttons {
+  background-color:rgb(20, 33, 61);
+  border:3px solid black;
+  border-radius: 50px; 
+  margin: auto;
+  padding: 15px;
+  text-align: center;
+  width: 800px;
+}
+
+.color-palette-buttons div {
+  border: 2px solid black;
+  border-radius: 50px;
+  box-shadow: -3px 10px black;
+  display: inline-block;
+  height: 100px;
+  margin: 10px;
+  width: 100px;
+}
+
+.extra-buttons {
+  text-align: center;
+}
+
+.extra-buttons button {
+  font-size: 30px ;
+  border-radius: 50px;
 }
 
 header {
   text-align: center;
-}
-
-.color-palette-buttons {
-  margin: auto;
-  text-align: center;
-}
-
-.color-palette-buttons div{
-  border-radius: 50px;
-  border: 2px solid black;
-  box-shadow: -3px 10px black;
-  display: inline-block;
-  margin: 10px;
-  height: 100px;
-  width: 100px;
 }

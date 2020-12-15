@@ -1,6 +1,6 @@
 // Só para ajudar a mexer com as cores
 function calculateColor(hex1, hex2) {
-  hex1 = hex1*16
+  hex1 *= 16;
   return (hex1 + hex2);
 }
 
@@ -23,7 +23,8 @@ function hexToRbg(hexcode) {
     D: 13,
     E: 14,
     F: 15,
-  }
+  };
+
   const rComponent = calculateColor(correspondence[hexcode[0]], correspondence[hexcode[1]]);
   const gComponent = calculateColor(correspondence[hexcode[2]], correspondence[hexcode[3]]);
   const bComponent = calculateColor(correspondence[hexcode[4]], correspondence[hexcode[5]]);
@@ -31,16 +32,18 @@ function hexToRbg(hexcode) {
   return `rgb(${rComponent}, ${gComponent}, ${bComponent})`;
 }
 
-const myColorExchange = '457b9d';
+const myColorExchange = '14213d';
 
 document.querySelector('#hexToRGB').innerText = `#${myColorExchange} é ${hexToRbg(myColorExchange)}`;
 
 // O javascript vem aqui
+var gameOver = false;
+
 function generateRandomColor() {
   const rPart = Math.floor(Math.random() * 256);
   const gPart = Math.floor(Math.random() * 256);
   const bPart = Math.floor(Math.random() * 256);
-  return (`(${rPart} , ${gPart} , ${bPart})`)
+  return (`(${rPart}, ${gPart}, ${bPart})`);
 }
 
 function pickRandom(array) {
@@ -48,8 +51,28 @@ function pickRandom(array) {
   return randElement;
 }
 
+function chooseBall(self) {
+  if (!gameOver) {
+    const choosenRGB = `rgb${document.querySelector('#rgb-color').innerText}`;
+    const choosenBall = self.target.style.backgroundColor;
+    if (choosenRGB === choosenBall) {
+      document.querySelector('#answer').innerText = 'Acertou!';
+      document.querySelector('.color-palette-buttons').style.boxShadow = '-5px 5px green';
+      document.querySelector('.color-palette-buttons').style.border = '5px dashed green';
+    } else {
+      document.querySelector('#answer').innerText = 'Errou! Tente novamente!';
+      document.querySelector('.color-palette-buttons').style.boxShadow = '-5px 5px red';
+      document.querySelector('.color-palette-buttons').style.border = '5px dotted red';
+    }
+  } else {
+    alert ('Esse round já acabou');
+  }
+gameOver = true;
+}
+
 function generateBalls() {
   const colorArray = [];
+  document.querySelector('.color-palette-buttons').innerHTML = '';
   for (let index = 0; index < 6; index += 1) {
     const myColor = generateRandomColor();
     colorArray.push(myColor);
@@ -57,9 +80,29 @@ function generateBalls() {
     const myColorBall = document.createElement('div');
     myColorBall.className = 'ball';
     myColorBall.style.backgroundColor = `rgb${myColor}`;
+    myColorBall.addEventListener('click', chooseBall);
     document.querySelector('.color-palette-buttons').appendChild(myColorBall);
   }
   document.querySelector('#rgb-color').innerText = colorArray[pickRandom(colorArray)];
 }
 
 generateBalls();
+
+function resetGame() {
+  document.querySelector('#answer').innerText = 'Escolha uma cor';
+  document.querySelector('.color-palette-buttons').removeAttribute('style');
+  generateBalls();
+  gameOver = false;
+  // pontuacao
+}
+
+function generateResetButton() {
+  const resetBtn = document.createElement('button');
+  resetBtn.id = 'reset-game';
+  resetBtn.innerText = 'Iniciar Nova Rodada';
+  resetBtn.addEventListener('click', resetGame);
+  document.querySelector('.extra-buttons').appendChild(resetBtn);
+}
+
+generateResetButton();
+
