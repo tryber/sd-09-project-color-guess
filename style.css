@@ -1,0 +1,23 @@
+body {
+  background-color: rgb(69 , 123 , 157);
+  color: white;
+}
+
+header {
+  text-align: center;
+}
+
+.color-palette-buttons {
+  text-align: center;
+  margin: auto;
+}
+
+.color-palette-buttons div{
+  border-radius: 50px;
+  border: 2px solid black;
+  box-shadow: -3px 10px black;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
