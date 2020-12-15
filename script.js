@@ -1,3 +1,7 @@
+if (localStorage.length > 0) {
+  document.querySelector('span').innerText = localStorage.getItem('score');
+}
+
 /* Requisito 2 - mostrar o texto rgb a ser adivinhado;
    id = rgb-color;
    formato (168, 34, 1) => exemplo;
@@ -55,11 +59,27 @@ function isCorrect(eventTargetBackground) {
   return false;
 }
 
+/* Requisito 7
+- crie um placar que incremente 3 pontos em cada acerto;
+- id = score;
+- ao reiniciar a página o score nao deve ser resetado.
+*/
+
+function scoreBoard(resultValue) {
+  let myPoints = Number(document.querySelector('span').innerText);
+  if (resultValue === true) {
+    myPoints += 3;
+    document.querySelector('span').innerText = myPoints;
+  }
+  localStorage.setItem('score', myPoints);
+}
+
 function gameResult(resultValue) {
   const resultMessage = document.querySelector('#answer');
   if (resultValue === false) {
     return (resultMessage.innerText = 'Errou! Tente novamente!');
   }
+  scoreBoard(resultValue);
   return (resultMessage.innerText = 'Acertou!');
 }
 

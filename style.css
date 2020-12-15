@@ -30,6 +30,10 @@ h3 {
   text-align: center;
 }
 
+p {
+  text-align: center;
+}
+
 .selected {
   border: 4px solid darkblue;
 }
