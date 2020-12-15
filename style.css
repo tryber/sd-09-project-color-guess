@@ -11,6 +11,11 @@ body {
   width: 1366px;
 }
 
+.reset-button {
+  margin-top: 35px;
+  text-align: center;
+}
+
 .container {
   margin: 15px;
   padding: 25px;

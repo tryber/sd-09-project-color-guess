@@ -74,3 +74,18 @@ function selectedColor() {
 }
 
 selectedColor();
+
+/* Requisito 6
+- criar um botao pra resetar o jogo (as cores);
+- id = reset-game;
+- elemento answer volta ao estado inicial;
+*/ 
+
+function resetColors() {
+  const resetButton = document.querySelector('#reset-game');
+  resetButton.addEventListener('click', () => {
+    window.location.reload();
+  })
+}
+
+resetColors();
