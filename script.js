@@ -18,12 +18,13 @@ function randomNumber() {
   return magicNumber;
 }
 
-function setRandomRgb() {
-  const randomRgb = document.querySelector('#rgb-color');
-  randomRgb.innerText = `(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`;
+function drawRgb() {
+  const ballColorsList = document.querySelectorAll('.ball');
+  const drawRgb = document.querySelector('#rgb-color');
+  const index = Math.floor(Math.random() * 6);
+  const randomRgb = ballColorsList[index];
+  drawRgb.innerText = randomRgb.style.background.slice(3);
 }
-
-setRandomRgb();
 
 /* Requisito 3 & 4 - Deve conter 6 circulos de cores como opçoes, todos com a classe ball;
 As cores devem ser geradas dinamicamente ao carregar a pagina */
@@ -36,6 +37,8 @@ function setBallColor() {
 }
 
 setBallColor();
+
+drawRgb();
 
 /* Requisito 5: quando clicar em um circulo, exibir se esta correto ou nao
 - id = answer;
