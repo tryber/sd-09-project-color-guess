@@ -16,7 +16,7 @@ function randomNumber() {
 
 function setRandomRgb() {
   const randomRgb = document.querySelector('#rgb-color');
-  randomRgb.innerText = `(${randomNumber()} ,${randomNumber()} ,${randomNumber()})`;
+  randomRgb.innerText = `(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`;
 }
 
 setRandomRgb();
@@ -32,3 +32,45 @@ function setBallColor() {
 }
 
 setBallColor();
+
+/* Requisito 5: quando clicar em um circulo, exibir se esta correto ou nao
+- id = answer;
+- texto = Escolha uma cor
+- se correto, texto = Acertou!
+- se errado, texto = Errou! Tente novamente!
+*/
+
+function resetClassBalls() {
+  const myBallsList = document.querySelectorAll('.ball');
+  myBallsList.forEach((ball) => {
+    ball.className = 'ball';
+  });
+}
+
+function isCorrect(eventTargetBackground) {
+  const randomColor = `rgb${document.querySelector('#rgb-color').innerText}`;
+  if (eventTargetBackground === randomColor) {
+    return true;
+  }
+  return false;
+}
+
+function gameResult(resultValue) {
+  const resultMessage = document.querySelector('#answer');
+  if (resultValue === false) {
+    return resultMessage.innerText = 'Errou! Tente novamente!';
+  }
+  return resultMessage.innerText = 'Acertou!'
+}
+
+function selectedColor() {
+  const ballsContainer = document.querySelector('.container');
+  ballsContainer.addEventListener('click', (event) => {
+    resetClassBalls();
+    event.target.className = 'selected ball';
+    const resultValue = isCorrect(event.target.style.background);
+    gameResult(resultValue);
+  });
+}
+
+selectedColor();

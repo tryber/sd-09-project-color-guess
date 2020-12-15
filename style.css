@@ -22,6 +22,9 @@ h1 {
 }
 
 h3 {
-  padding-top: 25px;
   text-align: center;
+}
+
+.selected {
+  border: 4px solid darkblue;
 }
