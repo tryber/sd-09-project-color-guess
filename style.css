@@ -1,0 +1,62 @@
+body {
+  background: url('pixel_art1.jpg');
+  text-align: center;
+  font-family: 'Lobster', cursive;
+}
+
+.box {
+  background-color: rgba(3, 136, 252, 0.8);
+  margin-top: 50px;
+  border: black 5px solid;
+  border-radius: 10%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 0 40px;
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+
+.colors-container {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 500px;
+}
+
+.ball {
+  border: black 2px solid;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: 60px;
+  margin-left: 8px;
+  width: 60px;
+}
+
+#answer {
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: 45px;
+}
+
+p {
+  font-size: 25px;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  border: black 2px solid;
+  border-radius: 5%;
+  background-color: rgba(163, 33, 150, 0.8);
+  cursor: pointer;
+  font-family: 'Lobster', cursive;
+  font-size: 15px;
+}
+
+footer  {
+    margin-top: 30px;
+}
