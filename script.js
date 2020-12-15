@@ -20,10 +20,10 @@ function randomNumber() {
 
 function drawRgb() {
   const ballColorsList = document.querySelectorAll('.ball');
-  const drawRgb = document.querySelector('#rgb-color');
+  const drawContainerColor = document.querySelector('#rgb-color');
   const index = Math.floor(Math.random() * 6);
   const randomRgb = ballColorsList[index];
-  drawRgb.innerText = randomRgb.style.background.slice(3);
+  drawContainerColor.innerText = randomRgb.style.background.slice(3);
 }
 
 /* Requisito 3 & 4 - Deve conter 6 circulos de cores como opçoes, todos com a classe ball;
