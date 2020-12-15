@@ -28,7 +28,7 @@ function setBallColor() {
   const myBallsList = document.querySelectorAll('.ball');
   myBallsList.forEach((ball) => {
     ball.style.background = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`;
-  })
+  });
 }
 
 setBallColor();
