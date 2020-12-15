@@ -20,3 +20,15 @@ function setRandomRgb() {
 }
 
 setRandomRgb();
+
+/* Requisito 3 & 4 - Deve conter 6 circulos de cores como opçoes, todos com a classe ball; 
+As cores devem ser geradas dinamicamente ao carregar a pagina */
+
+function setBallColor() {
+  const myBallsList = document.querySelectorAll('.ball');
+  for (const ball of myBallsList) {
+    ball.style.background = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`;
+  }
+}
+
+setBallColor();
