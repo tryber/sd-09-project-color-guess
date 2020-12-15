@@ -58,9 +58,9 @@ function isCorrect(eventTargetBackground) {
 function gameResult(resultValue) {
   const resultMessage = document.querySelector('#answer');
   if (resultValue === false) {
-    return resultMessage.innerText = 'Errou! Tente novamente!';
+    return (resultMessage.innerText = 'Errou! Tente novamente!');
   }
-  return resultMessage.innerText = 'Acertou!'
+  return (resultMessage.innerText = 'Acertou!');
 }
 
 function selectedColor() {
