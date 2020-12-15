@@ -4,11 +4,11 @@
 */
 
 function randomNumber() {
-  let randomNumber = parseInt(Math.random() * 1000);
+  let randomNumber = parseInt(Math.random() * 1000, 10);
   while (randomNumber > 255) {
-    randomNumber = parseInt(Math.random() * 1000);
+    randomNumber = parseInt(Math.random() * 1000, 10);
     if (randomNumber <= 255) {
-      break
+      break;
     }
   }
   return randomNumber;
@@ -16,7 +16,7 @@ function randomNumber() {
 
 function setRandomRgb() {
   const randomRgb = document.querySelector('#rgb-color');
-  randomRgb.innerText = `(${randomNumber()} ,${randomNumber()} ,${randomNumber()})`
+  randomRgb.innerText = `(${randomNumber()} ,${randomNumber()} ,${randomNumber()})`;
 }
 
 setRandomRgb();
