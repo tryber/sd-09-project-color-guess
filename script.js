@@ -7,8 +7,12 @@ function calculateColor(hex1, hex2) {
 function hexToRbg(hexcode) {
   hexcode = hexcode.toUpperCase();
   const correspondence = {
-    0: 0, 1: 1, 2: 2, 3: 3,
-    4: 4, 5: 5,
+    0: 0,
+    1: 1, 
+    2: 2, 
+    3: 3,
+    4: 4, 
+    5: 5,
     6: 6,
     7: 7,
     8: 8,
@@ -33,7 +37,7 @@ const myColorExchange = '14213d';
 document.querySelector('#hexToRGB').innerText = `#${myColorExchange} é ${hexToRbg(myColorExchange)}`;
 
 // O javascript vem aqui
-var gameOver = false;
+let gameOver = false;
 
 function generateRandomColor() {
   const rPart = Math.floor(Math.random() * 256);
@@ -61,9 +65,9 @@ function chooseBall(self) {
       document.querySelector('.color-palette-buttons').style.border = '5px dotted red';
     }
   } else {
-    alert ('Esse round já acabou');
+    alert('Esse round já acabou');
   }
-gameOver = true;
+  gameOver = true;
 }
 
 function generateBalls() {
