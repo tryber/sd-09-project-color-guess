@@ -28,14 +28,18 @@ function createBallWithColor() {
   colorSection.appendChild(ballColor);
 }
 
-function ballSection() {
+function createBallsSection() {
   for (let index = 0; index < 6; index += 1) {
     createBallWithColor();
   }
 }
 
 function colorSelection(event) {
-
+  const answer = document.querySelector('#answer');
+  const rgbColor = document.querySelector('#rgb-color').innerText;
+  const colorSelected = event.target.style.backgroundColor.replace(/rgb/i, '');
+  if (rgbColor === colorSelected) answer.innerText = 'Acertou!';
+  else answer.innerText = 'Errou! Tente novamente!';
 }
 
 function listners() {
@@ -44,6 +48,7 @@ function listners() {
 }
 
 window.onload = function () {
-  ballSection();
+  createBallsSection();
   addTextColor();
+  listners();
 };
