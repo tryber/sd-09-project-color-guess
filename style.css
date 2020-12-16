@@ -1,0 +1,43 @@
+.answerText {
+  text-align: center;
+}
+
+body {
+  background-color: rgb(69, 123, 157);
+  background-image: url('./imgs/background2.jpg');
+  background-size: 100%;
+  color: white;
+}
+
+.color-palette-buttons {
+  background-color: rgb(20, 33, 61);
+  border: 3px solid black;
+  border-radius: 50px;
+  margin: auto;
+  padding: 15px;
+  text-align: center;
+  width: 800px;
+}
+
+.color-palette-buttons div {
+  border: 2px solid black;
+  border-radius: 50px;
+  box-shadow: -3px 10px black;
+  display: inline-block;
+  height: 100px;
+  margin: 10px;
+  width: 100px;
+}
+
+.extra-buttons {
+  text-align: center;
+}
+
+.extra-buttons button {
+  border-radius: 50px;
+  font-size: 30px;
+}
+
+header {
+  text-align: center;
+}

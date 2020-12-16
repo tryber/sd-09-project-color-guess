@@ -33,7 +33,7 @@ exclude_patterns:
   - "**/libs/*.css"
   - "**/libs/*.js"
   - "**/*.{gif,png.jpeg}"
-  - "node_modules/"
+  - "**/node_modules/"
   - "cypress/"
 plugins:
   csslint:
