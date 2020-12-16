@@ -1,7 +1,7 @@
 const rgbColor = document.querySelector('#rgb-color');
 const balls = document.querySelectorAll('.ball');
 const answer = document.querySelector('#answer');
-const answerOptions = document.querySelector('#answer-options');
+// const answerOptions = document.querySelector('#answer-options');
 
 function randomRGB() {
   const red = Math.floor(Math.random() * 255);
@@ -36,8 +36,6 @@ function addEventListeners() {
   }
 }
 
-{
-  setCircleColors();
-  setCorrectAnswer();
-  addEventListeners();
-}
+setCircleColors();
+setCorrectAnswer();
+addEventListeners();
