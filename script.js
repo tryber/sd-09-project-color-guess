@@ -9,20 +9,22 @@ function gerenateRandonColor() {
     if (index === 0) colorArray[index] = generateRandonNumber();
     else colorArray[index] = ` ${generateRandonNumber()}`;
   }
-  const color = `(${colorArray})`;
+  const color = `rgb(${colorArray})`;
   return color;
 }
 
-function addColorText() {
+function addTextColor() {
   const rgbColor = document.querySelector('#rgb-color');
-  rgbColor.innerText = gerenateRandonColor();
+  const ballColors = document.querySelectorAll('.ball');
+  const index = Math.floor(Math.random() * ballColors.length);
+  rgbColor.innerText = ballColors[index].style.backgroundColor.replace(/rgb/i, '');
 }
 
 function createBallWithColor() {
   const colorSection  = document.querySelector('#color-section');
   const ballColor = document.createElement('div');
   ballColor.classList.add('ball');
-  ballColor.style.backgroundColor = `rgb${gerenateRandonColor()}`;
+  ballColor.style.backgroundColor = gerenateRandonColor();
   colorSection.appendChild(ballColor);
 }
 
@@ -32,8 +34,16 @@ function ballSection() {
   }
 }
 
+function colorSelection(event) {
+
+}
+
+function listners() {
+  const colorSection  = document.querySelector('#color-section');
+  colorSection.addEventListener('click', colorSelection);
+}
+
 window.onload = function () {
-  addColorText();
-  gerenateRandonColor();
   ballSection();
+  addTextColor();
 };

@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+body {
+  text-align: center;
+}
+
 .ball {
   border-radius: 50%;
   display: inline-block;
