@@ -21,7 +21,7 @@ function addTextColor() {
 }
 
 function createBallWithColor() {
-  const colorSection  = document.querySelector('#color-section');
+  const colorSection = document.querySelector('#color-section');
   const ballColor = document.createElement('div');
   ballColor.classList.add('ball');
   ballColor.style.backgroundColor = gerenateRandonColor();
@@ -53,7 +53,7 @@ function resetGame() {
 }
 
 function listners() {
-  const colorSection  = document.querySelector('#color-section');
+  const colorSection = document.querySelector('#color-section');
   colorSection.addEventListener('click', colorSelection);
   const buttonReset = document.querySelector('#reset-game');
   buttonReset.addEventListener('click', resetGame);
