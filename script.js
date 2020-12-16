@@ -32,7 +32,7 @@ function hexToRbg(hexcode) {
   return `rgb(${rComponent}, ${gComponent}, ${bComponent})`;
 }
 
-const myColorExchange = '14213d';
+const myColorExchange = '2d6a4f';
 
 document.querySelector('#hexToRGB').innerText = `#${myColorExchange} é ${hexToRbg(myColorExchange)}`;
 
@@ -59,7 +59,8 @@ function chooseBall(self) {
       document.querySelector('#answer').innerText = 'Acertou!';
       document.querySelector('.color-palette-buttons').style.boxShadow = '-5px 5px green';
       document.querySelector('.color-palette-buttons').style.border = '5px dashed green';
-    } else {
+      document.querySelector('#score').innerText = Number(document.querySelector('#score').innerText) + 3;
+      } else {
       document.querySelector('#answer').innerText = 'Errou! Tente novamente!';
       document.querySelector('.color-palette-buttons').style.boxShadow = '-5px 5px red';
       document.querySelector('.color-palette-buttons').style.border = '5px dotted red';

@@ -3,16 +3,25 @@
 }
 
 body {
-  background-image: url('./background.jpg');
-  background-size: 100%;
-
   background-color: rgb(69, 123, 157);
+  background-image: url('https://github.com/tiago-yoneda/tiago-yoneda.github.io/blob/main/imagens/background.jpg?raw=true');
+  background-repeat: no-repeat;
+  background-size: 100%;
   color: white;
+}
+
+.score table{
+  background-color: rgb(45, 106, 79);
+  border: 5px solid black;
+  border-radius: 10px;
+  margin: 100px auto;
+  text-align: center;
+  width: 80px;
 }
 
 .color-palette-buttons {
   background-color: rgb(20, 33, 61);
-  border: 3px solid black;
+  border: 5px solid black;
   border-radius: 50px;
   margin: auto;
   padding: 15px;
