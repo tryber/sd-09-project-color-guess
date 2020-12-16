@@ -42,9 +42,21 @@ function colorSelection(event) {
   else answer.innerText = 'Errou! Tente novamente!';
 }
 
+function resetGame() {
+  const ballColors = document.querySelectorAll('.ball');
+  const answer = document.querySelector('#answer');
+  for (let index = 0; index < ballColors.length; index += 1) {
+    ballColors[index].style.backgroundColor = gerenateRandonColor();
+  }
+  answer.innerText = 'Escolha uma cor';
+  addTextColor();
+}
+
 function listners() {
   const colorSection  = document.querySelector('#color-section');
   colorSection.addEventListener('click', colorSelection);
+  const buttonReset = document.querySelector('#reset-game');
+  buttonReset.addEventListener('click', resetGame);
 }
 
 window.onload = function () {
