@@ -60,7 +60,7 @@ function chooseBall(self) {
       document.querySelector('.color-palette-buttons').style.boxShadow = '-5px 5px green';
       document.querySelector('.color-palette-buttons').style.border = '5px dashed green';
       document.querySelector('#score').innerText = Number(document.querySelector('#score').innerText) + 3;
-      } else {
+    } else {
       document.querySelector('#answer').innerText = 'Errou! Tente novamente!';
       document.querySelector('.color-palette-buttons').style.boxShadow = '-5px 5px red';
       document.querySelector('.color-palette-buttons').style.border = '5px dotted red';
