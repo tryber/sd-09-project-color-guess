@@ -1,6 +1,7 @@
-const rgbColor = document.querySelector('#rgb-color');
-const balls = document.querySelectorAll('.ball');
 const answer = document.querySelector('#answer');
+const balls = document.querySelectorAll('.ball');
+const resetGame = document.querySelector('#reset-game');
+const rgbColor = document.querySelector('#rgb-color');
 // const answerOptions = document.querySelector('#answer-options');
 
 function randomRGB() {
@@ -30,10 +31,17 @@ function colorGuessing(event) {
   answer.innerText = answerText;
 }
 
+function restartGame() {
+  answer.innerText = 'Escolha uma cor';
+  setCircleColors();
+  setCorrectAnswer();
+}
+
 function addEventListeners() {
   for (let index = 0; index < balls.length; index += 1) {
     balls[index].addEventListener('click', colorGuessing);
   }
+  resetGame.addEventListener('click', restartGame);
 }
 
 setCircleColors();
