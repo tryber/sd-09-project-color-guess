@@ -6,12 +6,13 @@ const resetBt = document.querySelector('#reset-game');
 const score = document.querySelector('#score');
 
 window.onload = function () {
+  score.innerText = 0;
   if (sessionStorage.score === undefined) {
     score.innerText = 0;
   } else {
     score.innerText = sessionStorage.score;
   }
-}
+};
 
 function randomColor() {
   const colorR = Math.ceil(Math.random() * 256);
@@ -38,7 +39,7 @@ function pickTheColor() {
     if (event.target.style.backgroundColor === rgbColor.innerText) {
       answer.innerText = 'Acertou!';
       if (sessionStorage.score !== undefined) {
-        let pontuacao = parseInt(sessionStorage.score);
+        let pontuacao = parseInt(sessionStorage.score, 10);
         pontuacao += 3;
         sessionStorage.score = pontuacao;
         score.innerText = pontuacao;
