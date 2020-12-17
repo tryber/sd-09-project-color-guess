@@ -39,7 +39,7 @@ function pickTheColor() {
       answer.innerHTML = 'Acertou!';
       scorePoints += 3;
       score.innerHTML = scorePoints;
-      //sessionStorage.score = scorePoints;
+      // sessionStorage.score = scorePoints;
     } else {
       answer.innerHTML = 'Errou! Tente novamente!';
     }
@@ -49,9 +49,10 @@ pickTheColor();
 
 function resetGame() {
   resetBt.addEventListener('click', function () {
-    //window.location.reload();
+    // window.location.reload();
     coloredBalls();
     colorValue();
+    answer.innerHTML = 'Escolha uma cor'
   });
 }
 resetGame();
