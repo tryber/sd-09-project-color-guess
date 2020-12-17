@@ -37,6 +37,7 @@ window.onload = function () {
   const mainContent = document.querySelector('.main-content');
   const rgbColor = document.createElement('p');
   rgbColor.id = 'rgb-color';
+  rgbColor.className = 'rgb-color-style';
   rgbColor.innerText = randomColor();
   mainContent.prepend(rgbColor);
 
@@ -67,10 +68,25 @@ function checkGuess(event) {
   }
 }
 
+// Evento de highlight hover nas opções
+function highlight(event) {
+  const hoveredBall = event.target;
+  hoveredBall.classList.add('hightlighted-ball');
+}
+
+//Evento de desativa;cão do highlight
+function unhighlight(event) {
+  const unhoveredBall = event.target;
+  unhoveredBall.classList.remove('hightlighted-ball');
+}
+
+
 function ballsEvent() {
   const balls = document.querySelectorAll('.ball');
   for (let index = 0; index < balls.length; index += 1) {
     balls[index].addEventListener('click', checkGuess);
+    balls[index].addEventListener('mouseover', highlight);
+    balls[index].addEventListener('mouseleave', unhighlight);
   }
 }
 
