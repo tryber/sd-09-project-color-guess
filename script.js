@@ -43,3 +43,22 @@ window.onload = function () {
   // Popula opções
   setOptions(rgbColor.innerText);
 };
+
+// Evento de click nas opções
+function ballsEvent() {
+  const balls = document.querySelectorAll('.ball');
+  for (let index = 0; index < balls.length; index += 1) {
+    balls[index].addEventListener('click', function (event) {
+      selectedOption = event.target;
+      const answer = document.querySelector('#answer');
+      const secretColor = document.querySelector('#rgb-color');
+      if (selectedOption.style.backgroundColor === `rgb${secretColor.innerText}`) {
+        answer.innerText = 'Acertou!';
+      } else {
+        answer.innerText = 'Errou! Tente novamente!';
+      }
+    });
+  }
+}
+
+ballsEvent();
