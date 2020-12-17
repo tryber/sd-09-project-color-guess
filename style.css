@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+}
+
+.ball {
+  border-radius: 50%;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
+
+.score {
+  display: inline-block;
+}
