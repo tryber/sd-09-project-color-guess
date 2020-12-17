@@ -1,36 +1,36 @@
 // Só para ajudar a mexer com as cores
-function calculateColor(hex1, hex2) {
-  hex1 *= 16;
-  return (hex1 + hex2);
-}
+// function calculateColor(hex1, hex2) {
+//   hex1 *= 16;
+//   return (hex1 + hex2);
+// }
 
-function hexToRbg(hexcode) {
-  hexcode = hexcode.toUpperCase();
-  const correspondence = {
-    0: 0,
-    1: 1,
-    2: 2,
-    3: 3,
-    4: 4,
-    5: 5,
-    6: 6,
-    7: 7,
-    8: 8,
-    9: 9,
-    A: 10,
-    B: 11,
-    C: 12,
-    D: 13,
-    E: 14,
-    F: 15,
-  };
+// function hexToRbg(hexcode) {
+//   hexcode = hexcode.toUpperCase();
+//   const correspondence = {
+//     0: 0,
+//     1: 1,
+//     2: 2,
+//     3: 3,
+//     4: 4,
+//     5: 5,
+//     6: 6,
+//     7: 7,
+//     8: 8,
+//     9: 9,
+//     A: 10,
+//     B: 11,
+//     C: 12,
+//     D: 13,
+//     E: 14,
+//     F: 15,
+//   };
 
-  const rComponent = calculateColor(correspondence[hexcode[0]], correspondence[hexcode[1]]);
-  const gComponent = calculateColor(correspondence[hexcode[2]], correspondence[hexcode[3]]);
-  const bComponent = calculateColor(correspondence[hexcode[4]], correspondence[hexcode[5]]);
+//   const rComponent = calculateColor(correspondence[hexcode[0]], correspondence[hexcode[1]]);
+//   const gComponent = calculateColor(correspondence[hexcode[2]], correspondence[hexcode[3]]);
+//   const bComponent = calculateColor(correspondence[hexcode[4]], correspondence[hexcode[5]]);
 
-  return `rgb(${rComponent}, ${gComponent}, ${bComponent})`;
-}
+//   return `rgb(${rComponent}, ${gComponent}, ${bComponent})`;
+// }
 
 // const myColorExchange = '2d6a4f';
 
@@ -108,10 +108,10 @@ function generateResetButton() {
 generateResetButton();
 
 function generateResetScoreButton() {
-  let resetBtn = document.createElement('button');
+  const resetBtn = document.createElement('button');
   resetBtn.className = 'resetBtn';
   resetBtn.innerText = 'Reset Score';
-  resetBtn.addEventListener('click', function() {
+  resetBtn.addEventListener('click', function () {
     document.querySelector('#score').innerText = 0;
   });
   document.querySelector('.score').appendChild(resetBtn);

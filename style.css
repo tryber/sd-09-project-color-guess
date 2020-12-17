@@ -4,7 +4,7 @@
 
 body {
   background-color: rgb(69, 123, 157);
-  background-image: url('./imgs/background.png');
+  background-image: url('https://tiago-yoneda.github.io/imagens/background.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   color: white;
@@ -49,20 +49,19 @@ body {
   font-size: 30px;
 }
 
-h1, h2, h4 {
-  text-shadow: -2px 2px black;
-}
-
 h1 {
   font-size: 2em;
+  text-shadow: -2px 2px black;
 }
 
 h3 {
   font-size: 1.8em;
+  text-shadow: -2px 2px black;
 }
 
 h4 {
   font-size: 1.6em;
+  text-shadow: -2px 2px black;
 }
 
 header {
