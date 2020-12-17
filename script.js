@@ -32,9 +32,9 @@ function hexToRbg(hexcode) {
   return `rgb(${rComponent}, ${gComponent}, ${bComponent})`;
 }
 
-const myColorExchange = '2d6a4f';
+// const myColorExchange = '2d6a4f';
 
-document.querySelector('#hexToRGB').innerText = `#${myColorExchange} é ${hexToRbg(myColorExchange)}`;
+// document.querySelector('#hexToRGB').innerText = `#${myColorExchange} é ${hexToRbg(myColorExchange)}`;
 
 // O javascript vem aqui
 let gameOver = false;
@@ -106,3 +106,15 @@ function generateResetButton() {
 }
 
 generateResetButton();
+
+function generateResetScoreButton() {
+  let resetBtn = document.createElement('button');
+  resetBtn.className = 'resetBtn';
+  resetBtn.innerText = 'Reset Score';
+  resetBtn.addEventListener('click', function() {
+    document.querySelector('#score').innerText = 0;
+  });
+  document.querySelector('.score').appendChild(resetBtn);
+}
+
+generateResetScoreButton();
