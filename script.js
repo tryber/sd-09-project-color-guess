@@ -31,3 +31,20 @@ function randomText() {
   text.innerText = textRandom.replace(/rgb/g,'');  
 }
 randomText();
+
+function hitAndMiss() {
+  let textHitAndMiss = document.querySelector('#answer')
+  let ballHits = document.querySelectorAll('.ball')
+  let text = document.querySelector('#rgb-color')
+
+  for(let index = 0; index < ballHits.length; index += 1) {
+  ballHits[index].addEventListener('click', function() {
+      if (text.innerText === ballHits[index].style.backgroundColor.replace(/rgb/g,'')) {
+        textHitAndMiss.innerText = 'Acertou!'
+      } else {
+        textHitAndMiss.innerText = 'Errou! Tente novamente!'
+      }
+    }
+  )}
+}
+hitAndMiss();
