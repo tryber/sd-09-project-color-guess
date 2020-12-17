@@ -52,7 +52,7 @@ function resetGame() {
     // window.location.reload();
     coloredBalls();
     colorValue();
-    answer.innerHTML = 'Escolha uma cor'
+    answer.innerHTML = 'Escolha uma cor';
   });
 }
 resetGame();
