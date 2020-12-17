@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Icons link -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <!-- Font links -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- CSS link -->
+  <link rel="stylesheet" href="style.css">
+  <title>Color Guess</title>
+</head>
+<body>
+  <header>
+    <h1 id="title" class="main-title">Adivinhe a cor!</h1>
+  </header>
+  <div class="content-container">
+    <main class="main-content">
+      <!-- O texto da cor será adicionado via script -->
+      <h2 id="answer" class="no-answer">Escolha uma cor</h2>
+      <nav class="balls-container">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+      </nav>
+    </main>
+    <aside class="aside-content">
+      <em id="reset-game" class="fas fa-redo"></em>
+      <p id="score" class="score-style">Placar: 0</p>
+    </aside>
+  </div>
+  <footer class="footer-content">
+    <em class="fab fa-github"></em></button>
+    <em class="fab fa-linkedin"></em></button>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+/* Tag styles */
+body {
+  align-items: center;
+  background-attachment: fixed;
+  background-image: url('bg-img.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  font-family: Merriweather, serif;
+  justify-content: space-between;
+}
+
+/* Class styles */
+.main-title {
+  color: rgb(61, 212, 212);
+  font-size: 7.5vh;
+  font-weight: 900;
+  text-align: center;
+  -webkit-text-stroke: 1px black;
+}
+
+.content-container {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  box-shadow: inset 0 0 1em grey, 0 0 1em black;
+  display: flex;
+  flex-flow: row-reverse wrap;
+  justify-content: space-around;
+  padding: 2.5%;
+  width: 60vw;
+}
+
+.main-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.rgb-color-style {
+  font-size: 4vh;
+}
+
+.no-answer {
+  color: black;
+  text-shadow: 1px black;
+  transition: all 300ms;
+
+}
+
+.correct {
+  color: rgb(2, 134, 2);
+  text-shadow: 1px black;
+  transition: all 300ms;
+}
+
+.wrong {
+  color: rgb(144, 10, 10);
+  text-shadow: 1px black;
+  transition: all 300ms;
+}
+
+.balls-container {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.ball {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 75px;
+  margin: 10px;
+  transition: all 100ms;
+  width: 75px;
+}
+
+.hightlighted-ball {
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 90px;
+  margin: 10px;
+  width: 90px;
+}
+
+.aside-content {
+  align-items: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  padding: 15px;
+}
+
+.fa-redo {
+  background-color: transparent;
+  font-size: 3rem;
+  margin: 15px;
+  transition: all 300ms;
+}
+
+.fa-redo:hover {
+  color: rgb(61, 212, 212);
+  cursor: pointer;
+  -webkit-text-stroke: 1px black;
+}
+
+.score-style {
+  font-size: 3vh;
+}
+
+.footer-content {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.fab {
+  font-size: 5rem;
+  margin: 2.5rem;
+  transition: all 300ms;
+}
+
+.fab:hover {
+  color: rgb(61, 212, 212);
+  cursor: pointer;
+  -webkit-text-stroke: 1px black;
+}
