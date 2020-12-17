@@ -45,12 +45,10 @@ window.onload = function () {
 };
 
 // Atualização do placar
-function updateScore(answer) {
+function updateScore() {
   const scoreScreen = document.querySelector('#score');
   const scoreNumber = scoreScreen.innerText.match(/\d+/g);
-  if (answer.className = 'correct') {
-    newScore = Number(scoreNumber.join('')) + 3;
-  }
+  const newScore = Number(scoreNumber.join('')) + 3;
   scoreScreen.innerText = scoreScreen.innerText.replace(scoreNumber, newScore);
 }
 
@@ -62,7 +60,7 @@ function checkGuess(event) {
   if (selectedOption.style.backgroundColor === `rgb${secretColor.innerText}`) {
     answer.innerText = 'Acertou!';
     answer.className = 'correct';
-    updateScore(answer);
+    updateScore();
   } else {
     answer.innerText = 'Errou! Tente novamente!';
     answer.className = 'wrong';
