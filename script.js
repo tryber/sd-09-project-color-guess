@@ -44,6 +44,16 @@ window.onload = function () {
   setOptions(rgbColor.innerText);
 };
 
+// Atualização do placar
+function updateScore(answer) {
+  const scoreScreen = document.querySelector('#score');
+  const scoreNumber = scoreScreen.innerText.match(/\d+/g);
+  if (answer.className = 'correct') {
+    newScore = Number(scoreNumber.join('')) + 3;
+  }
+  scoreScreen.innerText = scoreScreen.innerText.replace(scoreNumber, newScore);
+}
+
 // Evento de click nas opções
 function checkGuess(event) {
   const selectedOption = event.target;
@@ -51,8 +61,11 @@ function checkGuess(event) {
   const secretColor = document.querySelector('#rgb-color');
   if (selectedOption.style.backgroundColor === `rgb${secretColor.innerText}`) {
     answer.innerText = 'Acertou!';
+    answer.className = 'correct';
+    updateScore(answer);
   } else {
     answer.innerText = 'Errou! Tente novamente!';
+    answer.className = 'wrong';
   }
 }
 
@@ -65,7 +78,7 @@ function ballsEvent() {
 
 ballsEvent();
 
-//Refresh das cores
+// Refresh das cores
 function resetGameEvent() {
   const refreshBtn = document.querySelector('#reset-game');
   refreshBtn.addEventListener('click', function () {
@@ -74,6 +87,7 @@ function resetGameEvent() {
     setOptions(rgbColor.innerText);
     const answer = document.querySelector('#answer');
     answer.innerText = 'Escolha uma cor';
+    answer.classList.remove(answer.classList[0]);
   });
 }
 
