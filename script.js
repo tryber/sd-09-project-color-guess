@@ -64,3 +64,17 @@ function ballsEvent() {
 }
 
 ballsEvent();
+
+//Refresh das cores
+function resetGameEvent() {
+  const refreshBtn = document.querySelector('#reset-game');
+  refreshBtn.addEventListener('click', function () {
+    const rgbColor = document.querySelector('#rgb-color');
+    rgbColor.innerText = randomColor();
+    setOptions(rgbColor.innerText);
+    const answer = document.querySelector('#answer');
+    answer.innerText = 'Escolha uma cor';
+  });
+}
+
+resetGameEvent();
