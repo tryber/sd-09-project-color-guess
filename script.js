@@ -74,7 +74,7 @@ function highlight(event) {
   hoveredBall.classList.add('hightlighted-ball');
 }
 
-//Evento de desativa;cão do highlight
+// Evento de desativa;cão do highlight
 function unhighlight(event) {
   const unhoveredBall = event.target;
   unhoveredBall.classList.remove('hightlighted-ball');
@@ -101,8 +101,22 @@ function resetGameEvent() {
     setOptions(rgbColor.innerText);
     const answer = document.querySelector('#answer');
     answer.innerText = 'Escolha uma cor';
-    answer.classList.remove(answer.classList[0]);
+    answer.classList = 'no-answer';
   });
 }
 
 resetGameEvent();
+
+// Links do Github e do LinkedIn
+function socialMediaLink() {
+  const githubIcon = document.querySelector('.fa-github');
+  githubIcon.addEventListener('click', function () {
+    window.open('https://github.com/rach-vp', '_blank');
+  });
+  const linkedinIcon = document.querySelector('.fa-linkedin');
+  linkedinIcon.addEventListener('click', function () {
+    window.open('https://www.linkedin.com/in/raquel-pican%C3%A7o-384736107/', '_blank');
+  });
+}
+
+socialMediaLink();
