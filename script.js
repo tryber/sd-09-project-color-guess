@@ -6,14 +6,12 @@ const resetBt = document.querySelector('#reset-game');
 const score = document.querySelector('#score');
 let pontuacao = 0;
 
-window.onload = function () {
-  if (sessionStorage.score === undefined) {
-    score.innerHTML = 0;
-  } else {
-    pontuacao = parseInt(sessionStorage.score, 10);
-    score.innerHTML = pontuacao;
-  }
-};
+if (sessionStorage.score === undefined) {
+  score.innerHTML = 0;
+} else {
+  pontuacao = parseInt(sessionStorage.score, 10);
+  score.innerHTML = pontuacao;
+}
 
 function randomColor() {
   const colorR = Math.ceil(Math.random() * 256);
