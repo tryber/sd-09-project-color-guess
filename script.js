@@ -3,6 +3,15 @@ const rgbColor = document.querySelector('#rgb-color');
 const answer = document.querySelector('#answer');
 const ballContainer = document.querySelector('#ball-container');
 const resetBt = document.querySelector('#reset-game');
+const score = document.querySelector('#score');
+
+window.onload = function () {
+  if (sessionStorage.score === undefined) {
+    score.innerText = 0;
+  } else {
+    score.innerText = sessionStorage.score;
+  }
+}
 
 function randomColor() {
   const colorR = Math.ceil(Math.random() * 256);
@@ -28,6 +37,15 @@ function pickTheColor() {
   ballContainer.addEventListener('click', function (event) {
     if (event.target.style.backgroundColor === rgbColor.innerText) {
       answer.innerText = 'Acertou!';
+      if (sessionStorage.score !== undefined) {
+        let pontuacao = parseInt(sessionStorage.score);
+        pontuacao += 3;
+        sessionStorage.score = pontuacao;
+        score.innerText = pontuacao;
+      } else {
+        sessionStorage.score = 3;
+        score.innerText = sessionStorage.score;
+      }
     } else {
       answer.innerText = 'Errou! Tente novamente!';
     }
