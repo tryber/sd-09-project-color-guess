@@ -2,6 +2,7 @@ const balls = document.querySelectorAll('.ball');
 const rgbColor = document.querySelector('#rgb-color');
 const answer = document.querySelector('#answer');
 const ballContainer = document.querySelector('#ball-container');
+const resetBt = document.querySelector('#reset-game');
 
 function randomColor() {
   const colorR = Math.ceil(Math.random() * 256);
@@ -11,7 +12,7 @@ function randomColor() {
 }
 
 function coloredBalls() {
-  for (let index = 0; index < balls.length; index += 1){
+  for (let index = 0; index < balls.length; index += 1) {
     balls[index].style.backgroundColor = randomColor();
   }
 }
@@ -33,3 +34,10 @@ function pickTheColor() {
   });
 }
 pickTheColor();
+
+function resetGame() {
+  resetBt.addEventListener('click', function () {
+    window.location.reload();
+  });
+}
+resetGame();
