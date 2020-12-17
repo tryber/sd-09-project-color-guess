@@ -32,10 +32,6 @@
 //   return `rgb(${rComponent}, ${gComponent}, ${bComponent})`;
 // }
 
-// const myColorExchange = '2d6a4f';
-
-// document.querySelector('#hexToRGB').innerText = `#${myColorExchange} é ${hexToRbg(myColorExchange)}`;
-
 // O javascript vem aqui
 let gameOver = false;
 
