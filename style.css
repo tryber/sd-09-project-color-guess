@@ -1,0 +1,17 @@
+body {
+  font-size: 54px;
+  line-height: 54px;
+  text-align: center;
+}
+
+#r {
+  color: red;
+}
+
+#g {
+  color: green;
+}
+
+#b {
+  color: blue;
+}
