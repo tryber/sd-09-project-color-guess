@@ -4,14 +4,14 @@ const answer = document.querySelector('#answer');
 const ballContainer = document.querySelector('#ball-container');
 const resetBt = document.querySelector('#reset-game');
 const score = document.querySelector('#score');
-let pontuacao = 0;
+let scorePoints = 0;
 
-if (sessionStorage.score === undefined) {
-  score.innerHTML = 0;
-} else {
-  pontuacao = parseInt(sessionStorage.score, 10);
-  score.innerHTML = pontuacao;
-}
+// if (sessionStorage.score === undefined) {
+//   score.innerHTML = scorePoints;
+// } else {
+//   scorePoints = parseInt(sessionStorage.score, 10);
+//   score.innerHTML = scorePoints;
+// }
 
 function randomColor() {
   const colorR = Math.ceil(Math.random() * 256);
@@ -37,9 +37,9 @@ function pickTheColor() {
   ballContainer.addEventListener('click', function (event) {
     if (event.target.style.backgroundColor === rgbColor.innerHTML) {
       answer.innerHTML = 'Acertou!';
-      pontuacao += 3;
-      sessionStorage.score = pontuacao;
-      score.innerHTML = pontuacao;
+      scorePoints += 3;
+      score.innerHTML = scorePoints;
+      //sessionStorage.score = scorePoints;
     } else {
       answer.innerHTML = 'Errou! Tente novamente!';
     }
@@ -49,7 +49,9 @@ pickTheColor();
 
 function resetGame() {
   resetBt.addEventListener('click', function () {
-    window.location.reload();
+    //window.location.reload();
+    coloredBalls();
+    colorValue();
   });
 }
 resetGame();
