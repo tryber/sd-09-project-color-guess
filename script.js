@@ -2,6 +2,7 @@ const answer = document.querySelector('#answer');
 const balls = document.querySelectorAll('.ball');
 const resetGame = document.querySelector('#reset-game');
 const rgbColor = document.querySelector('#rgb-color');
+const score = document.querySelector('#score');
 // const answerOptions = document.querySelector('#answer-options');
 
 function randomRGB() {
@@ -27,6 +28,7 @@ function colorGuessing(event) {
   let answerText = 'Errou! Tente novamente!';
   if (playerAnswer === rgbColor.innerText) {
     answerText = 'Acertou!';
+    score.innerText = parseInt(score.innerText, 10) + 3;
   }
   answer.innerText = answerText;
 }
