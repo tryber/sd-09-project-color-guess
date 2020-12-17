@@ -38,8 +38,8 @@ function colorSelection(event) {
   const answer = document.querySelector('#answer');
   const rgbColor = document.querySelector('#rgb-color').innerText;
   const colorSelected = event.target.style.backgroundColor.replace(/rgb/i, '');
-  if (rgbColor === colorSelected) answer.innerText = 'Acertou!';
-  else answer.innerText = 'Errou! Tente novamente!';
+  if (rgbColor === colorSelected) increaseScore();
+  else decreaseScore();
 }
 
 function resetGame() {
@@ -50,6 +50,21 @@ function resetGame() {
   }
   answer.innerText = 'Escolha uma cor';
   addTextColor();
+}
+
+function increaseScore() {
+  const answer = document.querySelector('#answer');
+  const score = document.querySelector('#score');
+  answer.innerText = 'Acertou!';
+  score.innerText = parseInt(score.innerText, 10) + 3;
+}
+
+function decreaseScore() {
+  const answer = document.querySelector('#answer');
+  const score = document.querySelector('#score');
+  const scoreValue = parseInt(score.innerText, 10);
+  answer.innerText = 'Errou! Tente novamente!';
+  if (scoreValue > 0) score.innerText = scoreValue - 1;
 }
 
 function listners() {
