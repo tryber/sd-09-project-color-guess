@@ -4,12 +4,16 @@ function getRandomRGB(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
 }
+const randomNumbers = `(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`;
+const randomRGB = `rgb(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`;
+const selectedNumbers = '(168, 34, 1)';
+const selectedRGB = 'rgb(168, 34, 1)';
 
 function createRgbInPage() {
   const p = document.createElement('p');
-  // h2.innerText = `(${getRandomRGB(0, 255)}), (${getRandomRGB(0, 255)}), (${getRandomRGB(0, 255)})`;
-  p.innerText = '(168, 34, 1)';
-  p.style.marginTop = '20px'
+  p.innerText = selectedNumbers;
+  p.style.marginTop = '20px';
+  p.id = 'correct';
   const paiH2 = document.querySelector('#rgb-color');
   paiH2.appendChild(p);
 }
@@ -24,23 +28,16 @@ function createPalleteColors(color) {
   divColorPai.appendChild(divColor);
 }
 
-/* function generateColorsCircles() {
+function generateColorsCircles() {
   const balls = document.querySelectorAll('.ball');
   for (let i = 0; i <= 4; i += 1) {
     balls[i] = createPalleteColors(`rgb(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`);
   }
-  balls == createPalleteColors('rgb(168, 34, 1)');
 }
-generateColorsCircles(); */
+generateColorsCircles();
+createPalleteColors(selectedRGB);
 
-createPalleteColors(`rgb(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`);
-createPalleteColors(`rgb(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`);
-createPalleteColors(`rgb(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`);
-createPalleteColors('rgb(168, 34, 1)');
-createPalleteColors(`rgb(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`);
-createPalleteColors(`rgb(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`);
-
-function createAnswer() {
+function createAnswer(rightColor) {
   const divAnswer = document.querySelector('#answer');
   const colors = document.querySelector('#colors');
   const crazyText = document.createElement('p');
@@ -49,7 +46,7 @@ function createAnswer() {
   divAnswer.appendChild(crazyText);
 
   colors.addEventListener('click', function (e) {
-    if (e.target.style.backgroundColor === 'rgb(168, 34, 1)') {
+    if (e.target.style.backgroundColor === rightColor) {
       crazyText.innerText = 'Acertou!';
       crazyText.style.color = 'green';
     } else {
@@ -58,7 +55,7 @@ function createAnswer() {
     }
   });
 }
-createAnswer();
+createAnswer(selectedRGB);
 
 function createBtnReload() {
   const btn = document.createElement('button');
@@ -69,7 +66,22 @@ function createBtnReload() {
   btnPai.appendChild(btn);
 
   btn.addEventListener('click', function () {
-    document.location.reload();
+    const p = document.querySelector('#correct');
+    const paiP = document.querySelector('#rgb-color');
+    const balls = document.querySelectorAll('.ball');
+
+    p.innerText = `(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`;
+    paiP.appendChild(p);
+    balls.forEach((e) => e.parentNode.removeChild(e));
+    generateColorsCircles();
+    const rightColor = `rgb(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`
+    createPalleteColors(rightColor);
+    
+    const divAnswer = document.querySelector('#answer');
+    const text = document.querySelector('#text');
+    divAnswer.removeChild(text);
+
+    createAnswer(rightColor);
   });
 }
 createBtnReload();
