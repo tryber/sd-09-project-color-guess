@@ -5,15 +5,15 @@ body {
   text-align: center;
 }
 
-#r {
+.red {
   color: red;
 }
 
-#g {
+.green {
   color: green;
 }
 
-#b {
+.blue {
   color: blue;
 }
 
@@ -26,13 +26,13 @@ body {
   width: 90px;
 }
 
-#answer {
+p {
   font-size: 34px;
   line-height: 34px;
   margin-bottom: 30px;
 }
 
-#buttons {
+.buttons-end {
   margin-top: 20px;
   line-height: 10px;
 }

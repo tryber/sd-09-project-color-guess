@@ -4,8 +4,6 @@ function getRandomRGB(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
 }
-const randomNumbers = `(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`;
-const randomRGB = `rgb(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`;
 const selectedNumbers = '(168, 34, 1)';
 const selectedRGB = 'rgb(168, 34, 1)';
 
@@ -74,14 +72,31 @@ function createBtnReload() {
     paiP.appendChild(p);
     balls.forEach((e) => e.parentNode.removeChild(e));
     generateColorsCircles();
-    const rightColor = `rgb(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`
+    const rightColor = `rgb(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`;
     createPalleteColors(rightColor);
-    
     const divAnswer = document.querySelector('#answer');
     const text = document.querySelector('#text');
+
+
+
     divAnswer.removeChild(text);
 
     createAnswer(rightColor);
+
   });
 }
 createBtnReload();
+
+function sortBalls() {
+  /*
+  const colorBalls = document.querySelectorAll('.ball'); // node list
+  const arrayColorBalls = [].slice.call(colorBalls); // array de nodes 
+  */
+
+  // https://stackoverflow.com/questions/25175798/how-to-shuffle-a-nodelist
+  let list = document.querySelector('#colors'), i;
+  for (i = list.children.length; i >= 0; i--) {
+    list.appendChild(list.children[Math.random() * i | 0]);
+  }
+}
+sortBalls();
