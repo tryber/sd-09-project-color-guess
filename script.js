@@ -1,4 +1,4 @@
-function createBalls(n) {
+function createDivsBall(n) {
   for (let i = 0; i < n; i += 1) {
     const divContainerBall = document.querySelector('#conteiner-ball');
     const divBall = document.createElement('div');
@@ -7,7 +7,6 @@ function createBalls(n) {
   }
 }
 
-createBalls(6)
 
 function colorRandom(n) {
   const rgbColorlist = [];
@@ -21,16 +20,28 @@ function colorRandom(n) {
   return rgbColorlist;
 }
 
-colorRandom(6);
 
 function colorBalls() {
   const arrayBalls = document.querySelectorAll('.ball');
   const rgbColorlist = colorRandom(arrayBalls.length);
   for (let i = 0; i < arrayBalls.length; i += 1) {
-
-
-
+    arrayBalls[i].style.backgroundColor = `rgb(${rgbColorlist[i]})`;
   }
 }
 
-colorBalls();
+function reset() {
+  colorBalls();
+}
+
+function createBalls(amount) {
+  createDivsBall(amount)
+  colorRandom(amount);
+  colorBalls();
+}
+
+createBalls(6);
+
+const btnReset = document.querySelector('#reset-game');
+btnReset.addEventListener('click', reset);
+
+
