@@ -9,9 +9,7 @@ function createRgbInPage() {
   const p = document.createElement('p');
   // h2.innerText = `(${getRandomRGB(0, 255)}), (${getRandomRGB(0, 255)}), (${getRandomRGB(0, 255)})`;
   p.innerText = '(168, 34, 1)';
-  p.style.background = 'black';
-  p.style.color = 'white';
-  p.style.padding = '5px';
+  p.style.marginTop = '20px'
   const paiH2 = document.querySelector('#rgb-color');
   paiH2.appendChild(p);
 }
@@ -47,6 +45,7 @@ function createAnswer() {
   const colors = document.querySelector('#colors');
   const crazyText = document.createElement('p');
   crazyText.innerText = 'Escolha uma cor';
+  crazyText.id = 'text';
   divAnswer.appendChild(crazyText);
 
   colors.addEventListener('click', function (e) {
@@ -60,3 +59,17 @@ function createAnswer() {
   });
 }
 createAnswer();
+
+function createBtnReload() {
+  const btn = document.createElement('button');
+  btn.style.padding = '5px';
+  btn.id = 'reset-game';
+  btn.innerText = 'Reset game';
+  const btnPai = document.querySelector('#buttons');
+  btnPai.appendChild(btn);
+
+  btn.addEventListener('click', function () {
+    document.location.reload();
+  });
+}
+createBtnReload();
