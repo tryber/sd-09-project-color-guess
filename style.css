@@ -24,3 +24,8 @@ body {
   margin-left: 10px;
   width: 90px;
 }
+
+#answer {
+  font-size: 44px;
+  line-height: 44px;
+}
