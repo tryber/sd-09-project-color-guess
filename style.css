@@ -1,0 +1,79 @@
+.answerText {
+  text-align: center;
+}
+
+body {
+  background-color: rgb(69, 123, 157);
+  background-image: url('https://tiago-yoneda.github.io/imagens/background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: white;
+}
+
+.score table {
+  background-color: rgb(45, 106, 79);
+  border: 5px solid black;
+  border-radius: 10px;
+  margin: 50px auto 25px;
+  text-align: center;
+  width: 80px;
+}
+
+.color-palette-buttons {
+  background-color: rgb(20, 33, 61);
+  border: 5px solid black;
+  border-radius: 50px;
+  margin: auto;
+  padding: 15px;
+  text-align: center;
+  width: 800px;
+}
+
+.color-palette-buttons div {
+  border: 2px solid black;
+  border-radius: 50px;
+  box-shadow: -3px 10px black;
+  display: inline-block;
+  height: 100px;
+  margin: 10px;
+  width: 100px;
+}
+
+.extra-buttons {
+  text-align: center;
+}
+
+.extra-buttons button {
+  border-radius: 50px;
+  box-shadow: -2px 2px black;
+  font-size: 30px;
+}
+
+h1 {
+  font-size: 2em;
+  text-shadow: -2px 2px black;
+}
+
+h3 {
+  font-size: 1.8em;
+  text-shadow: -2px 2px black;
+}
+
+h4 {
+  font-size: 1.6em;
+  text-shadow: -2px 2px black;
+}
+
+header {
+  text-align: center;
+}
+
+.score {
+  text-align: center;
+}
+
+.score button {
+  border-radius: 30px;
+  box-shadow: -2px 2px black;
+  font-size: 1.2em;
+}
