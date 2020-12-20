@@ -35,6 +35,7 @@
 // O javascript vem aqui
 let gameOver = false;
 
+// Gera uma cor aleatoria no formato rgb ( ###, ###, ###)
 function generateRandomColor() {
   const rPart = Math.floor(Math.random() * 256);
   const gPart = Math.floor(Math.random() * 256);
@@ -42,10 +43,12 @@ function generateRandomColor() {
   return (`(${rPart}, ${gPart}, ${bPart})`);
 }
 
+// Função para escolha de um elemento aleatório em um array
 function pickRandom(array) {
   const randElement = Math.floor(Math.random() * array.length);
   return randElement;
 }
+
 
 function chooseBall(self) {
   if (!gameOver) {
