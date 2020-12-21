@@ -1,0 +1,20 @@
+#title, #score, #answer {
+  text-align-last: center;
+}
+
+#score {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.ball {
+  border: 1px solid black;
+  border-radius: 50%;
+  float: left;
+  height: 30px;
+  width: 30px;
+}
+
+#answer {
+  display: block;
+}
