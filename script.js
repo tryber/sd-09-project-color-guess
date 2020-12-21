@@ -1,5 +1,6 @@
 const colorToBeGuessedSpan = document.getElementById('rgb-color');
 const ballsContainerDiv = document.getElementById('balls-container');
+const colors = [];
 
 function setPropertiesToNewElement(element, propertiesObject) {
   const propertiesKeys = Object.keys(propertiesObject);
@@ -20,6 +21,9 @@ function createBallElements() {
     const ballElement = createNewElement('div', {
       className: 'ball',
     });
+    const ballColor = getRandomRGB();
+    colors.push(ballColor);
+    ballElement.style.backgroundColor = `rgb${ballColor}`;
     ballsContainerDiv.appendChild(ballElement);
   }
 }
@@ -39,4 +43,5 @@ window.onload = function () {
   const colorToBeGuessedCode = getRandomRGB();
   colorToBeGuessedSpan.innerText = colorToBeGuessedCode;
   createBallElements();
+  console.log(colors);
 }
