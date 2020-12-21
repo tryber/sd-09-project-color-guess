@@ -1,7 +1,8 @@
 const colorToBeGuessedSpan = document.getElementById('rgb-color');
 const ballsContainerDiv = document.getElementById('balls-container');
 const answerParagraph = document.getElementById('answer');
-const colors = [];
+const resetGameButton = document.getElementById('reset-game');
+let colors = [];
 let colorToBeGuessedIndex;
 let colorToBeGuessedCode;
 
@@ -60,14 +61,37 @@ function guessColor(event) {
   }
 }
 
-function setBallsContainerEvent() {
-  ballsContainerDiv.addEventListener('click', guessColor);
+function callAllBySelector(calledFunction, selector) {
+  const nodeList = document.querySelectorAll(selector);
+  for (let index = 0; index < nodeList.length; index += 1) {
+    calledFunction(nodeList[index]);
+  }
 }
 
-window.onload = function () {
+function deleteBall(element) {
+  element.remove();
+}
+
+function loadGame() {
+  colors = [];
+  callAllBySelector(deleteBall, '.ball');
+  answerParagraph.innerText = 'Escolha uma cor';
   createBallElements();
   colorToBeGuessedIndex = drawColorsIndex();
   colorToBeGuessedCode = colors[colorToBeGuessedIndex];
   colorToBeGuessedSpan.innerText = colorToBeGuessedCode;
+}
+
+function setBallsContainerEvent() {
+  ballsContainerDiv.addEventListener('click', guessColor);
+}
+
+function setResetGameEvent() {
+  resetGameButton.addEventListener('click', loadGame);
+}
+
+window.onload = function () {
+  loadGame();
   setBallsContainerEvent();
+  setResetGameEvent();
 };
