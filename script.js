@@ -2,9 +2,11 @@ const colorToBeGuessedSpan = document.getElementById('rgb-color');
 const ballsContainerDiv = document.getElementById('balls-container');
 const answerParagraph = document.getElementById('answer');
 const resetGameButton = document.getElementById('reset-game');
+const scoreSpan = document.getElementById('score');
 let colors = [];
 let colorToBeGuessedIndex;
 let colorToBeGuessedCode;
+let score = 0;
 
 function setPropertiesToNewElement(element, propertiesObject) {
   const propertiesKeys = Object.keys(propertiesObject);
@@ -48,6 +50,10 @@ function createBallElements() {
   }
 }
 
+function updateScore() {
+  scoreSpan.innerText = score;
+}
+
 function guessColor(event) {
   const element = event.target;
   const elementHasBallClass = element.classList.contains('ball');
@@ -55,26 +61,25 @@ function guessColor(event) {
     const isTheRightColor = parseInt(event.target.id, 10) === colorToBeGuessedIndex;
     if (isTheRightColor) {
       answerParagraph.innerText = 'Acertou!';
+      score += 3;
+      updateScore();
     } else {
       answerParagraph.innerText = 'Errou! Tente novamente!';
     }
   }
 }
 
-function callAllBySelector(calledFunction, selector) {
-  const nodeList = document.querySelectorAll(selector);
+function resetColors() {
+  const nodeList = document.querySelectorAll('.ball');
   for (let index = 0; index < nodeList.length; index += 1) {
-    calledFunction(nodeList[index]);
+    nodeList[index].remove();
   }
-}
-
-function deleteBall(element) {
-  element.remove();
 }
 
 function loadGame() {
   colors = [];
-  callAllBySelector(deleteBall, '.ball');
+  resetColors();
+  updateScore();
   answerParagraph.innerText = 'Escolha uma cor';
   createBallElements();
   colorToBeGuessedIndex = drawColorsIndex();
