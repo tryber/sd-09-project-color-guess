@@ -30,7 +30,9 @@ function colorBalls() {
 
 function reset() {
   colorBalls();
-  colorToFind()
+  colorToFind();
+  const message = document.getElementById('answer');
+  message.innerText = 'Escolha uma cor';
 }
 
 function createBalls(amount) {
@@ -58,6 +60,17 @@ function checkChoice (event) {
   if (choice === rgbColor) {
     console.log('Acertou')
     scorePoints();
+  }
+
+  hitOrMissMessage(choice === rgbColor);
+}
+
+const hitOrMissMessage = (hit) => {
+  const message = document.getElementById('answer');
+  if (hit) {
+    message.innerText = 'Acertou!';
+  } else {
+    message.innerText = 'Errou! Tente novamente!'
   }
 }
 
