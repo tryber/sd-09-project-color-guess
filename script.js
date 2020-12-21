@@ -10,6 +10,9 @@ const rgbValue = document.getElementById('rgb-color');
 rgbValue.innerText = chosenColor.slice(3);
 const answer = document.getElementById('answer');
 answer.innerText = 'Escolha uma cor';
+const score = document.getElementById('get-score');
+let result = 0;
+score.innerText = result;
 
 function createColors() {
   const section = document.getElementById('colors');
@@ -27,6 +30,9 @@ function chosenCircle() {
   for (let index = 0; index < circles.length; index += 1) {
     if (index === chosen) {
       circles[index].style.backgroundColor = chosenColor;
+      circles[index].classList.add('chosen');
+    } else {
+      circles[index].classList.remove('chosen');
     }
   }
 }
@@ -36,6 +42,11 @@ function checkAnswer() {
   circles.addEventListener('click', function (event) {
     if (event.target.style.backgroundColor === chosenColor) {
       answer.innerText = 'Acertou!';
+      if (event.target.classList.contains('chosen')) {
+        result += 3;
+        score.innerText = result;
+        event.target.classList.remove('chosen');
+      }
     } else {
       answer.innerText = 'Errou! Tente novamente!';
     }
@@ -50,10 +61,10 @@ function clickResetButton() {
       circles[index].style.backgroundColor = randomRgb();
     }
     chosenColor = randomRgb();
+    rgbValue.innerText = chosenColor.slice(3);
     chosenCircle();
     answer.innerText = 'Escolha uma cor';
   });
-
 }
 
 window.onload = function () {

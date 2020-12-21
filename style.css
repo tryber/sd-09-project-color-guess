@@ -25,8 +25,16 @@ footer {
   text-align: center;
 }
 
+.footer-description {
+  font-size: 10px;
+}
+
 h1 {
   text-align: center;
+}
+
+.links {
+  font-weight: 600;
 }
 
 .reset-game {
