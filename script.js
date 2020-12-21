@@ -10,8 +10,8 @@ function createDivsBall(n) {
 function colorRandom(n) {
   const rgbColorlist = [];
   for (let i = 0; i < n; i += 1) {
-    let rgbColor = [];
-    for ( let j = 0; j < 3; j += 1) {
+    const rgbColor = [];
+    for (let j = 0; j < 3; j += 1) {
       rgbColor.push(Math.floor(Math.random() * 256));
     }
     rgbColorlist.push(rgbColor);
@@ -28,6 +28,12 @@ function colorBalls() {
   return rgbColorlist;
 }
 
+function colorToFind() {
+  const textColorToFind = document.querySelector('#rgb-color');
+  const colorList = colorBalls();
+  textColorToFind.innerHTML = `(${colorList[Math.floor(Math.random() * 6 )].join(', ')})`;
+}
+
 function reset() {
   colorBalls();
   colorToFind();
@@ -40,28 +46,14 @@ function createBalls(amount) {
   colorRandom(amount);
   colorBalls();
   colorToFind()
-
 }
 
-function colorToFind() {
-  const textColorToFind = document.querySelector('#rgb-color');
-  const colorList = colorBalls();
-  textColorToFind.innerHTML = `(${colorList[Math.floor(Math.random() * 6 )].join(', ')})`;
-}
-
-function checkChoice (event) {
-   let choice = event.target.style.backgroundColor;
-
+function checkChoice(event) {
+  const choice = event.target.style.backgroundColor;
   const rgbColor = `rgb${document.getElementById('rgb-color').innerText}`;
-
-  console.log(rgbColor, 'pc');
-  console.log(choice, 'Escolha');
-
   if (choice === rgbColor) {
-    console.log('Acertou')
     scorePoints();
   }
-
   hitOrMissMessage(choice === rgbColor);
 }
 
@@ -83,12 +75,9 @@ const scorePoints = () => {
 }
 
 window.onload = () => {
-
   const btnReset = document.querySelector('#reset-game');
   btnReset.addEventListener('click', reset);
-
   createBalls(6);
-
   const arrayBalls = document.querySelector('#conteiner-ball');
   arrayBalls.addEventListener('click', checkChoice);
 }

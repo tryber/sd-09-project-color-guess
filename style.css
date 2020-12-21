@@ -4,15 +4,15 @@
 
 #score {
   font-size: larger;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .ball {
   border: 1px solid black;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
   float: left;
+  height: 30px;
+  width: 30px;
 }
 
 #answer {
