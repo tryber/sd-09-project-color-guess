@@ -99,3 +99,33 @@ function sortBalls() {
   }
 }
 sortBalls();
+
+function createScore() {
+  const p = document.createElement('p');
+  p.id = 'placar';
+  p.innerText = 'Placar: ';
+  const paiP = document.querySelector('#score');
+  paiP.appendChild(p);
+
+  const scoreSpan = document.createElement('span');
+  const colors = document.querySelector('#colors');
+
+  let score = 0;
+  colors.addEventListener('click', function () {
+    const answer = document.querySelector('#answer');
+    const text = document.querySelector('#text');
+    if (text.innerText == 'Acertou!') {
+      score += 1;
+      scoreSpan.innerText = score;
+      p.appendChild(scoreSpan);
+    }
+    if (score > 2) {
+      answer.removeChild(text);
+      text.innerText = 'Parabéns, você acaba de ganhar uma viagem para Prados city!';
+      text.style.backgroundColor = 'yellow';
+      text.style.color = 'blue';
+      answer.appendChild(text);
+    }
+  });
+}
+createScore();
