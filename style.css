@@ -1,7 +1,28 @@
+.ball {
+  border-radius: 50%;
+  display: inline-block;
+  height: 55px;
+  margin-right: 5px;
+  width: 55px;
+}
+
 body {
-  font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.colors {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
 }
 
 h1 {
+  text-align: center;
+}
+
+.rgb-color {
+  font-size: 20px;
   text-align: center;
 }
