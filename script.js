@@ -67,22 +67,20 @@ function createBtnReload() {
     const p = document.querySelector('#correct');
     const paiP = document.querySelector('#rgb-color');
     const balls = document.querySelectorAll('.ball');
+    const selectedRandomColor = `rgb(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`;
 
-    p.innerText = `(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`;
+    p.innerText = selectedRandomColor;
     paiP.appendChild(p);
     balls.forEach((e) => e.parentNode.removeChild(e));
     generateColorsCircles();
-    const rightColor = `rgb(${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)}, ${getRandomRGB(0, 255)})`;
-    createPalleteColors(rightColor);
+    createPalleteColors(selectedRandomColor);
+    console.log(selectedRandomColor);
     const divAnswer = document.querySelector('#answer');
     const text = document.querySelector('#text');
 
-
-
     divAnswer.removeChild(text);
-
-    createAnswer(rightColor);
-
+    createAnswer(selectedRandomColor);
+    sortBalls();
   });
 }
 createBtnReload();
@@ -94,7 +92,8 @@ function sortBalls() {
   */
 
   // https://stackoverflow.com/questions/25175798/how-to-shuffle-a-nodelist
-  let list = document.querySelector('#colors'), i;
+  let list = document.querySelector('#colors'),
+    i;
   for (i = list.children.length; i >= 0; i--) {
     list.appendChild(list.children[Math.random() * i | 0]);
   }
