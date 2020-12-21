@@ -1,5 +1,10 @@
-#title {
+#title, #score, #answer {
   text-align-last: center;
+}
+
+#score {
+  font-size: larger;
+  font-weight: bold;
 }
 
 .ball {
