@@ -111,7 +111,6 @@ function createScore() {
 
   colors.addEventListener('click', function (e) {
     e.preventDefault();
-    const answer = document.querySelector('#answer');
     const text = document.querySelector('#text');
     if (text.innerText === 'Acertou!') {
       score += 3;
