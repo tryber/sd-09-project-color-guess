@@ -1,0 +1,16 @@
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+}
+
+.ball {
+  border-radius: 50%;
+  display: inline-block;
+  height: 80px;
+  margin-right: 5px;
+  width: 80px;
+}
+
+.circles {
+  text-align: center;
+}

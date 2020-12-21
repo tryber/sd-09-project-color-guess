@@ -1,56 +1,75 @@
-const valoresRGB = randomRGB();
-const rgbDaVez = `rgb${randomRGB()}`;
-function addTitle() {
-  const header = document.querySelector("header");
-  const title = document.createElement("h1");
-  title.id = "title";
-  title.style.color = rgbDaVez;
-  title.innerText = "Color Guess!!";
-  header.appendChild(title);
-}
-
-function addRBG() {
-  const main = document.querySelector("main");  
-  const title = document.createElement("h2");
-  title.id = "rgb-color";
-  title.style.color = rgbDaVez;
-  title.innerText = valoresRGB;
-  main.appendChild(title);
-}
-
 function randomRGB() {
-  let num1 = Math.round(Math.random() * 255);
-  let num2 = Math.round(Math.random() * 255);
-  let num3 = Math.round(Math.random() * 255);
-  return `(${num1}, ${num2}, ${num3})`
+  let red = Math.round(Math.random() * 255);
+  let green = Math.round(Math.random() * 255);
+  let blue = Math.round(Math.random() * 255);
+  return `rgb(${red}, ${green}, ${blue})`;
 }
 
-// function randomMatchColorCircle(){
-let bolaDaVez = Math.round(Math.random() * 6)  
-// }
+let rgbDaVez = randomRGB();
+let rgbValue = document.getElementById('rgb-color');
+rgbValue.innerText = rgbDaVez.slice(3);
+const answer = document.getElementById('answer');
+answer.innerText = 'Escolha uma cor';
+const score = document.getElementById('get-score');
+let result = 0;
+score.innerText = result;
 
-function addCircles() {
-  const div = document.querySelector('div');
-  for (let index = 0; index < 6; index += 1) {   
+function createCircles() {
+  const section = document.getElementById('circles');
+  for (let index = 0; index < 6; index += 1) {
     const circle = document.createElement('div');
     circle.classList.add('ball');
-    circle.style.backgroundColor = 'rgb' + randomRGB();
-    circle.style.display = 'inline-block';
-    circle.style.width = '100px';
-    circle.style.height = '100px';
-    circle.style.borderRadius = '50%';
-    circle.style.border = '1px solid black';
-    circle.style.marginRight = '10px';
-    if (index == bolaDaVez){
-    alert('a resposta é ' + (index+1))
-    circle.style.backgroundColor = rgbDaVez;
-    }
-    div.appendChild(circle);
+    circle.style.backgroundColor = randomRGB();
+    section.appendChild(circle);
   }
 }
 
+function chosenCircle() {
+  const circles = document.getElementsByClassName('ball');
+  const sorteio = Math.round(Math.random() * 5);
+  for (let index = 0; index < circles.length; index += 1) {
+    if (index === sorteio) {
+      circles[index].style.backgroundColor = rgbDaVez;
+      circles[index].classList.add('hit');
+    } else {
+      circles[index].classList.remove('hit');
+    }
+  }
+}
+
+function checkAnswer() {
+  const circles = document.getElementById('circles');
+  circles.addEventListener('click', function (event) {
+    if (event.target.style.backgroundColor === rgbDaVez) {
+      answer.innerText = 'Acertou!';
+      if (event.target.classList.contains('hit')) {
+        result += 3;
+        score.innerText = result;
+        event.target.classList.remove('hit');
+      }
+    } else {
+      answer.innerText = 'Errou, Tente novamente!';
+    }
+  });
+}
+
+function clickResetButton() {
+  const button = document.getElementById('reset-game');
+  const circles = document.getElementsByClassName('ball');
+  button.addEventListener('click', function () {
+    for (let index = 0; index < circles.length; index += 1) {
+      circles[index].style.backgroundColor = randomRGB();
+    }
+    rgbDaVez = randomRGB();
+    chosenCircle();
+    rgbValue.innerText = rgbDaVez.slice(3);
+    answer.innerText = 'Escolha uma cor';
+  });
+}
+
 window.onload = function () {
-  addTitle();
-  addRBG();
-  addCircles();
+  createCircles();
+  chosenCircle();
+  checkAnswer();
+  clickResetButton();
 };
