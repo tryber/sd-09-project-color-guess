@@ -1,0 +1,38 @@
+body {
+  background-color: rgb(255, 228, 187);
+  font-size: 54px;
+  line-height: 54px;
+  text-align: center;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.blue {
+  color: blue;
+}
+
+.ball {
+  border: 1px solid black;
+  border-radius: 45px;
+  display: inline-block;
+  height: 90px;
+  margin-left: 10px;
+  width: 90px;
+}
+
+p {
+  font-size: 34px;
+  line-height: 34px;
+  margin-bottom: 30px;
+}
+
+.buttons-end {
+  line-height: 10px;
+  margin-top: 20px;
+}
