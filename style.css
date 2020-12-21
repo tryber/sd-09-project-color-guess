@@ -1,3 +1,8 @@
+.answer {
+  font-size: 20px;
+  text-align: center;
+}
+
 .ball {
   border-radius: 50%;
   display: inline-block;
