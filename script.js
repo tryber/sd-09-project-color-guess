@@ -1,12 +1,12 @@
 function randomRGB() {
-  let red = Math.round(Math.random() * 255);
-  let green = Math.round(Math.random() * 255);
-  let blue = Math.round(Math.random() * 255);
+  const red = Math.round(Math.random() * 255);
+  const green = Math.round(Math.random() * 255);
+  const blue = Math.round(Math.random() * 255);
   return `rgb(${red}, ${green}, ${blue})`;
 }
 
 let rgbDaVez = randomRGB();
-let rgbValue = document.getElementById('rgb-color');
+const rgbValue = document.getElementById('rgb-color');
 rgbValue.innerText = rgbDaVez.slice(3);
 const answer = document.getElementById('answer');
 answer.innerText = 'Escolha uma cor';
@@ -48,7 +48,7 @@ function checkAnswer() {
         event.target.classList.remove('hit');
       }
     } else {
-      answer.innerText = 'Errou, Tente novamente!';
+      answer.innerText = 'Errou! Tente novamente!';
     }
   });
 }
