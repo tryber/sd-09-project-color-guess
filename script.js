@@ -1,6 +1,9 @@
 const colorToBeGuessedSpan = document.getElementById('rgb-color');
 const ballsContainerDiv = document.getElementById('balls-container');
+const answerParagraph = document.getElementById('answer');
 const colors = [];
+let colorToBeGuessedIndex;
+let colorToBeGuessedCode;
 
 function setPropertiesToNewElement(element, propertiesObject) {
   const propertiesKeys = Object.keys(propertiesObject);
@@ -16,6 +19,21 @@ function createNewElement(tag, propertiesObject) {
   return newElement;
 }
 
+function getRandomValue(max) {
+  return Math.round(Math.random() * max);
+}
+
+function getRandomRGB() {
+  const r = getRandomValue(255);
+  const g = getRandomValue(255);
+  const b = getRandomValue(255);
+  return `(${r}, ${g}, ${b})`;
+}
+
+function drawColorsIndex() {
+  return getRandomValue(colors.length - 1);
+}
+
 function createBallElements() {
   for (let index = 0; index < 6; index += 1) {
     const ballElement = createNewElement('div', {
@@ -24,24 +42,32 @@ function createBallElements() {
     const ballColor = getRandomRGB();
     colors.push(ballColor);
     ballElement.style.backgroundColor = `rgb${ballColor}`;
+    ballElement.id = index;
     ballsContainerDiv.appendChild(ballElement);
   }
 }
 
-function getIntensityValue() {
-  return Math.round(Math.random() * 255);
+function guessColor(event) {
+  const element = event.target;
+  const elementHasBallClass = element.classList.contains('ball');
+  if (elementHasBallClass) {
+    const isTheRightColor = parseInt(event.target.id, 10) === colorToBeGuessedIndex;
+    if (isTheRightColor) {
+      answerParagraph.innerText = 'Acertou!';
+    } else {
+      answerParagraph.innerText = 'Errou! Tente novamente!';
+    }
+  }
 }
 
-function getRandomRGB() {
-  const r = getIntensityValue();
-  const g = getIntensityValue();
-  const b = getIntensityValue();
-  return `(${r}, ${g}, ${b})`;
+function setBallsContainerEvent() {
+  ballsContainerDiv.addEventListener('click', guessColor);
 }
 
 window.onload = function () {
-  const colorToBeGuessedCode = getRandomRGB();
-  colorToBeGuessedSpan.innerText = colorToBeGuessedCode;
   createBallElements();
-  console.log(colors);
-}
+  colorToBeGuessedIndex = drawColorsIndex();
+  colorToBeGuessedCode = colors[colorToBeGuessedIndex];
+  colorToBeGuessedSpan.innerText = colorToBeGuessedCode;
+  setBallsContainerEvent();
+};
