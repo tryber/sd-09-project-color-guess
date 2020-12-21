@@ -58,7 +58,7 @@ function guessColor(event) {
   const element = event.target;
   const elementHasBallClass = element.classList.contains('ball');
   if (elementHasBallClass) {
-    const isTheRightColor = parseInt(event.target.id, 10) === colorToBeGuessedIndex;
+    const isTheRightColor = (parseInt(event.target.id, 10) === colorToBeGuessedIndex);
     if (isTheRightColor) {
       answerParagraph.innerText = 'Acertou!';
       score += 3;
@@ -80,8 +80,8 @@ function loadGame() {
   colors = [];
   resetColors();
   updateScore();
-  answerParagraph.innerText = 'Escolha uma cor';
   createBallElements();
+  answerParagraph.innerText = 'Escolha uma cor';
   colorToBeGuessedIndex = drawColorsIndex();
   colorToBeGuessedCode = colors[colorToBeGuessedIndex];
   colorToBeGuessedSpan.innerText = colorToBeGuessedCode;
