@@ -13,6 +13,7 @@
 
 body {
   font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
 }
 
 .colors {
@@ -20,11 +21,19 @@ body {
 }
 
 footer {
+  margin-top: 20px;
   text-align: center;
 }
 
 h1 {
   text-align: center;
+}
+
+.reset-game {
+  background-color: whitesmoke;
+  border-radius: 4px;
+  height: 30px;
+  width: 100px;
 }
 
 .rgb-color {

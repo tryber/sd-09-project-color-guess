@@ -5,7 +5,7 @@ function randomRgb() {
   return `rgb(${red}, ${green}, ${blue})`;
 }
 
-const chosenColor = randomRgb();
+let chosenColor = randomRgb();
 const rgbValue = document.getElementById('rgb-color');
 rgbValue.innerText = chosenColor.slice(3);
 const answer = document.getElementById('answer');
@@ -33,18 +33,32 @@ function chosenCircle() {
 
 function checkAnswer() {
   const circles = document.getElementById('colors');
-  const answer = document.getElementById('answer');
   circles.addEventListener('click', function (event) {
     if (event.target.style.backgroundColor === chosenColor) {
-      answer.innerText = 'Acertou!'
+      answer.innerText = 'Acertou!';
     } else {
-      answer.innerText = 'Errou! Tente novamente!'
+      answer.innerText = 'Errou! Tente novamente!';
     }
   });
+}
+
+function clickResetButton() {
+  const button = document.getElementById('reset-game');
+  const circles = document.getElementsByClassName('ball');
+  button.addEventListener('click', function () {
+    for (let index = 0; index < 6; index += 1) {
+      circles[index].style.backgroundColor = randomRgb();
+    }
+    chosenColor = randomRgb();
+    chosenCircle();
+    answer.innerText = 'Escolha uma cor';
+  });
+
 }
 
 window.onload = function () {
   createColors();
   chosenCircle();
   checkAnswer();
+  clickResetButton();
 };
