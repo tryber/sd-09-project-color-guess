@@ -67,13 +67,13 @@ function clickResetGame() {
   });
 }
 
-/*function clickResetScore() {
+/* function clickResetScore() {
   const button = document.getElementById('reset-score');
   button.addEventListener('click', function () {
     result = 0;
     score.innerText = result;
   });
-}*/
+} */
 
 window.onload = function () {
   createColors();
