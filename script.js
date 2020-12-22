@@ -63,27 +63,33 @@ function buttonResetGame() {
 }
 buttonResetGame();
 
-function gamePoints(rgbColor) {
+function gamePoints(rgbColor, test) {
   let count = 3;
+  if (localStorage.length > 0) {
+    count = test + 3;
+  }
   colorsGuess.addEventListener('click', function (event) {
     if (event.target.style.backgroundColor === rgbColor) {
       score.innerHTML = count;
       const points = score.innerHTML;
       count += 3;
-      localStorage.setItem('checkPoints', JSON.stringify(points));
+      localStorage.setItem('checkPoints', points);
     }
   });
 }
-gamePoints(paragraphRgb);
+let test = localStorage.checkPoints;
+test = parseInt(test);
+gamePoints(paragraphRgb, test);
 
 function pageLoadPoinst() {
-  const allPoints = JSON.parse(localStorage.getItem('checkPoints'));
-  let counts = allPoints
+  let allPoints = JSON.parse(localStorage.getItem('checkPoints'));
   if (allPoints > 0) {
-  score.innerHTML = counts;
-  counts += 3;
+  score.innerHTML = allPoints;
   } else {
     score.innerHTML = 0;
   }
 }
-pageLoadPoinst();
+
+window.onload = function () {
+  pageLoadPoinst();
+};
