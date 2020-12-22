@@ -1,7 +1,7 @@
 .ball   {
-    border: 4px solid red;
-    border-radius: 100%;
-    display: inline-block;
-    margin: 3px;
-    padding: 3%;
+  border: 2px solid red;
+  border-radius: 100%;
+  display: inline-block;
+  margin: 3px;
+  padding: 3%;
 }

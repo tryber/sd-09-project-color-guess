@@ -13,6 +13,7 @@ function createBall(idName) {
   ballCreate.id = idName;
   ballCreate.className = 'ball';
   father.appendChild(ballCreate);
+  idName = document.querySelector(`#${idName}`);
 }
 
 function numberBall(number) {
@@ -44,3 +45,23 @@ function colorText() {
   color.innerHTML = ball[Math.floor(Math.random() * 6)].style.backgroundColor.slice(3)
 }
 colorText();
+
+function colorCorrect(origin) {
+  const correct = document.querySelector('#rgb-color')
+  const mensagem = document.querySelector('#answer')
+  let correctColor = `rgb${correct.innerHTML}`;
+  let originColor = origin.target.style.backgroundColor;
+  if (correctColor === originColor) {
+    mensagem.innerHTML = 'Acertou'; 
+  } else {
+    mensagem.innerHTML = 'Errou! Tente novamente!';
+  }
+}
+
+function loopBall() {
+  const ballTotal = document.querySelectorAll('.ball');
+  for (index = 0; index < ballTotal.length; index += 1) {
+    ballTotal[index].addEventListener('click', colorCorrect);
+  }
+}
+loopBall();
