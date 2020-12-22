@@ -1,5 +1,5 @@
 function randomColor() {
-  let letters = '0123456789ABCDEF';
+  const letters = '0123456789ABCDEF';
   let color = '#';
   for (let index = 0; index < 6; index += 1) {
     color += letters[Math.floor(Math.random() * 16)];
@@ -17,24 +17,24 @@ function createBall(idName) {
 }
 
 function numberBall(number) {
-  for (index = 1; index <= number; index += 1) {
+  for (let index = 1; index <= number; index += 1) {
     createBall(`ball-${index}`);
   }
 }
 
 function randomColorBall() {
   const ball = document.querySelectorAll('.ball');
-  for (index = 0; index < ball.length; index += 1) {
+  for (let index = 0; index < ball.length; index += 1) {
     ball[index].style.backgroundColor = randomColor();
   }
 }
 
 //Referencia https://convertingcolors.com/blog/article/convert_hex_to_rgb_with_javascript.html
-let aRgbHex = randomColor().match(/.{1,2}/g);
-let aRgb = [
-    parseInt(aRgbHex[0], 16),
-    parseInt(aRgbHex[1], 16),
-    parseInt(aRgbHex[2], 16)
+const aRgbHex = randomColor().match(/.{1,2}/g);
+const aRgb = [
+  parseInt(aRgbHex[0], 16),
+  parseInt(aRgbHex[1], 16),
+  parseInt(aRgbHex[2], 16),
 ];
 
 function colorText() {
@@ -43,13 +43,25 @@ function colorText() {
   color.innerHTML = ball[Math.floor(Math.random() * 6)].style.backgroundColor.slice(3);
 }
 
+function scoreText() {
+  const score = 0;
+  localStorage.setItem('score', JSON.stringify(score));
+  let scoreTotal = document.querySelector('#score');
+  scoreTotal.innerText = `Placar: ${score}`;
+}
+
 function colorCorrect(origin) {
   const correct = document.querySelector('#rgb-color');
   const mensagem = document.querySelector('#answer');
-  let correctColor = `rgb${correct.innerHTML}`;
-  let originColor = origin.target.style.backgroundColor;
+  let scoreTotal = document.querySelector('#score');
+  let score = JSON.parse(localStorage.getItem('score'));
+  const correctColor = `rgb${correct.innerHTML}`;
+  const originColor = origin.target.style.backgroundColor;
   if (correctColor === originColor) {
-    mensagem.innerHTML = 'Acertou'; 
+    mensagem.innerHTML = 'Acertou!';
+    score += 3;
+    scoreTotal.innerText = `Placar: ${score}`;
+  localStorage.setItem('score', JSON.stringify(score));
   } else {
     mensagem.innerHTML = 'Errou! Tente novamente!';
   }
@@ -57,7 +69,7 @@ function colorCorrect(origin) {
 
 function loopBall() {
   const ballTotal = document.querySelectorAll('.ball');
-  for (index = 0; index < ballTotal.length; index += 1) {
+  for (let index = 0; index < ballTotal.length; index += 1) {
     ballTotal[index].addEventListener('click', colorCorrect);
   }
 }
@@ -73,14 +85,14 @@ function createButton(idName, string) {
 function resetGame() {
   const removeBall = document.querySelectorAll('.ball');
   const mensagem = document.querySelector('#answer');
-  for (index = 0; index < removeBall.length; index += 1) {
+  for (let index = 0; index < removeBall.length; index += 1) {
     removeBall[index].remove();
   }
-mensagem.innerText = 'Escolha uma cor';
-numberBall(6);
-randomColorBall();
-colorText();
-loopBall();
+  mensagem.innerText = 'Escolha uma cor';
+  numberBall(6);
+  randomColorBall();
+  colorText();
+  loopBall();
 }
 
 createButton('reset-game', 'Reset Game');
@@ -91,3 +103,4 @@ numberBall(6);
 randomColorBall();
 colorText();
 loopBall();
+scoreText();
