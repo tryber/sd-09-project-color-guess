@@ -7,9 +7,9 @@ function randomColorNumbers() {
 
 let colorOfTheRound = randomColorNumbers();
 const circles = document.getElementsByClassName('ball');
+const rgbNumbers = document.getElementById('rgb-color');
 
 function createColorToBeGuessed() {
-  const rgbNumbers = document.getElementById('rgb-color');
   rgbNumbers.innerText = colorOfTheRound.slice(3);
 }
 
@@ -43,9 +43,23 @@ function checkAnswer() {
   });
 }
 
+function resetButton() {
+  const button = document.getElementById('reset-game');
+  button.addEventListener('click', function() {
+    for (let index = 0; index < circles.length; index += 1) {
+      circles[index].style.backgroundColor = randomColorNumbers();
+    }
+    colorOfTheRound = randomColorNumbers();
+    chosenColor();
+    rgbNumbers.innerText = colorOfTheRound.slice(3);
+    answer.innerText = 'Escolha uma cor';
+  });
+}
+
 window.onload = function () {
   createColorToBeGuessed();
   createBackgroundCircle();
   chosenColor();
-  checkAnswer()
+  checkAnswer();
+  resetButton()
 }
