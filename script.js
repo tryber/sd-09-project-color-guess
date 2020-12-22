@@ -57,12 +57,12 @@ function clickResetGame() {
   const button = document.getElementById('reset-game');
   const circles = document.getElementsByClassName('ball');
   button.addEventListener('click', function () {
-    for (let index = 0; index < 6; index += 1) {
+    for (let index = 0; index < circles.length; index += 1) {
       circles[index].style.backgroundColor = randomRgb();
     }
     chosenColor = randomRgb();
-    rgbValue.innerText = chosenColor.slice(3);
     chosenCircle();
+    rgbValue.innerText = chosenColor.slice(3);
     answer.innerText = 'Escolha uma cor';
   });
 }
