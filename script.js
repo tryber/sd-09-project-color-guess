@@ -2,6 +2,8 @@ const colorsGuess = document.querySelector('#colors-guess');
 const colorParagraph = document.querySelector('#rgb-color');
 const answer = document.querySelector('#answer');
 const buttons = document.querySelector('#buttons');
+const score = document.querySelector('#score');
+score.innerHTML = 0;
 
 function colorRandomPalette() {
   const allColors = [];
@@ -35,7 +37,8 @@ const paragraphColor = getColorsOption(colorsGenerate);
 function paragraphRgbColor(colorSelect) {
   const colorToString = colorSelect.toString();
   const splitString = colorToString.split(',').join(', ');
-  return colorParagraph.innerHTML = splitString;
+  colorParagraph.innerHTML = splitString;
+  return splitString;
 }
 const paragraphRgb = paragraphRgbColor(paragraphColor);
 
@@ -51,7 +54,7 @@ function answers(rgbColor) {
 answers(paragraphRgb);
 
 function buttonResetGame() {
-  let restart = document.createElement('button');
+  const restart = document.createElement('button');
   restart.id = 'reset-game';
   restart.innerHTML = 'Reiniciar Jogo';
   buttons.appendChild(restart);
@@ -60,3 +63,25 @@ function buttonResetGame() {
   });
 }
 buttonResetGame();
+
+function gamePoints(rgbColor) {
+  let count = 3;
+  colorsGuess.addEventListener('click', function (event) {
+    if (event.target.style.backgroundColor === rgbColor) {
+      score.innerHTML = count;
+      let points = score.innerHTML
+      count += 3;
+      localStorage.setItem('checkPoints', JSON.stringify(points));
+    }
+  });
+}
+gamePoints(paragraphRgb);
+
+function pageLoadPoinst() {
+  const allPoinst = JSON.parse(localStorage.getItem('checkPoints'));
+    score.innerHTML = allPoinst;
+}
+
+window.onload = function () {
+  pageLoadPoinst();
+};
