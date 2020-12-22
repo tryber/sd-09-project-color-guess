@@ -1,6 +1,7 @@
 const colorsGuess = document.querySelector('#colors-guess');
 const colorParagraph = document.querySelector('#rgb-color');
 const answer = document.querySelector('#answer');
+const buttons = document.querySelector('#buttons');
 
 function colorRandomPalette() {
   const allColors = [];
@@ -14,7 +15,7 @@ function colorRandomPalette() {
 }
 
 function gerateColorsOptions() {
-  let rgbColors = [];
+  const rgbColors = [];
   for (let index = 0; index < 6; index += 1) {
     const circleOfColors = document.createElement('div');
     circleOfColors.className = 'ball';
@@ -27,25 +28,35 @@ const colorsGenerate = gerateColorsOptions();
 
 function getColorsOption(colorsRGB) {
   const randomColor = Math.floor(Math.random() * colorsRGB.length);
-  return randomColor, colorsRGB[randomColor];
+  return colorsRGB[randomColor];
 }
 const paragraphColor = getColorsOption(colorsGenerate);
 
 function paragraphRgbColor(colorSelect) {
   const colorToString = colorSelect.toString();
-  const selectedColor =  colorParagraph.innerHTML = colorToString;
-  return selectedColor;
+  const splitString = colorToString.split(',').join(', ');
+  return colorParagraph.innerHTML = splitString;
 }
 const paragraphRgb = paragraphRgbColor(paragraphColor);
 
 function answers(rgbColor) {
-  const splitString = rgbColor.split(',').join(', ');
   colorsGuess.addEventListener('click', function (event) {
-    if (event.target.style.backgroundColor === splitString) {
+    if (event.target.style.backgroundColor === rgbColor) {
       answer.innerHTML = 'Acertou!';
     } else {
       answer.innerHTML = 'Errou! Tente novamente!';
-    }  
+    }
   });
 }
 answers(paragraphRgb);
+
+function buttonResetGame() {
+  let restart = document.createElement('button');
+  restart.id = 'reset-game';
+  restart.innerHTML = 'Reiniciar Jogo';
+  buttons.appendChild(restart);
+  restart.addEventListener('click', function () {
+    location.reload();
+  });
+}
+buttonResetGame();
