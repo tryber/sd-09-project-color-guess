@@ -77,11 +77,11 @@ function gamePoints(rgbColor, test) {
     }
   });
 }
-let test = localStorage.checkPoints;
-test = parseInt(test);
-gamePoints(paragraphRgb, test);
+let storage = localStorage.checkPoints;
+storage = parseInt(storage);
+gamePoints(paragraphRgb, storage);
 
-function pageLoadPoinst() {
+function pageLoadPoints() {
   let allPoints = JSON.parse(localStorage.getItem('checkPoints'));
   if (allPoints > 0) {
   score.innerHTML = allPoints;
@@ -91,5 +91,5 @@ function pageLoadPoinst() {
 }
 
 window.onload = function () {
-  pageLoadPoinst();
+  pageLoadPoints();
 };
