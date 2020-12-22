@@ -30,8 +30,22 @@ function chosenColor() {
   }
 }
 
+function checkAnswer() {
+  const allCircles = document.getElementById('allCircles');
+  let answer = document.getElementById('answer');
+  answer.innerText = 'Escolha uma cor';
+  allCircles.addEventListener('click',function (event) {
+    if (event.target.style.backgroundColor === colorOfTheRound) {
+      answer.innerText = 'Acertou!'
+    } else {
+      answer.innerText = 'Errou! Tente novamente!'
+    }
+  });
+}
+
 window.onload = function () {
   createColorToBeGuessed();
   createBackgroundCircle();
   chosenColor();
+  checkAnswer()
 }
