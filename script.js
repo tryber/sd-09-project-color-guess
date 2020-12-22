@@ -78,13 +78,13 @@ function gamePoints(rgbColor, test) {
   });
 }
 let storage = localStorage.checkPoints;
-storage = parseInt(storage);
+storage = parseInt(storage, 10);
 gamePoints(paragraphRgb, storage);
 
 function pageLoadPoints() {
-  let allPoints = JSON.parse(localStorage.getItem('checkPoints'));
+  const allPoints = JSON.parse(localStorage.getItem('checkPoints'));
   if (allPoints > 0) {
-  score.innerHTML = allPoints;
+    score.innerHTML = allPoints;
   } else {
     score.innerHTML = 0;
   }
