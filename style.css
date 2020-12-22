@@ -42,11 +42,11 @@ body {
 }
 
 .buttons:hover {
-  background: linear-gradient(#667eea, #764ba2, #6b8dd6, #8e37d7);
-  background-clip: text;
-  border-color: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background: linear-gradient(#667eea, #764ba2, #6b8dd6, #8e37d7);
+  background-clip: <box>#;
+  border-color: white;
 }
 
 .colors {
