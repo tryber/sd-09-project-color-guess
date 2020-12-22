@@ -1,50 +1,133 @@
 .answer {
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: 600;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .ball {
   border-radius: 50%;
   display: inline-block;
-  height: 55px;
-  margin-right: 5px;
-  width: 55px;
+  height: 70px;
+  margin-right: 6px;
+  width: 70px;
+}
+
+.ball:hover {
+  cursor: pointer;
 }
 
 body {
-  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  font-family: Open Sans, sans-serif;
   text-align: center;
+}
+
+.buttons {
+  background-color: #110e17;
+  border: 3px solid #28242f;
+  border-radius: 2em;
+  color: #7a7a8c;
+  cursor: pointer;
+  font-family: Open Sans, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  height: 40px;
+  text-transform: uppercase;
+  width: 150px;
+}
+
+.buttons:hover {
+  border-color: #fff;
+  background: -webkit-linear-gradient(#667eea, #764ba2, #6b8dd6, #8e37d7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .colors {
+  padding-bottom: 15px;
+  padding-top: 15px;
   text-align: center;
 }
 
+.colors div {
+  transition: all 0.4s ease;
+}
+
+.colors:hover div {
+  opacity: 0.3;
+}
+
+.colors:hover div:hover {
+  opacity: 1.0;
+}
+
+
 footer {
-  margin-top: 20px;
+  align-items: center;
+  background: #1f1c28;
+  border: 1px solid #312d3c;
+  border-radius: 8px;
+  bottom: 1em;
+  color: #a1a1af;
+  justify-content: center;
+  left: 1em;
+  margin: 0 auto;
+  padding: 10px;
+  position: fixed;
+  right: 1em;
   text-align: center;
 }
 
 .footer-description {
   font-size: 10px;
+  padding-top: 3px;
 }
 
 h1 {
+  font-family: Shadows Into Light, cursive;
+  font-size: 70px;
+  margin: 20px auto;
+  padding-bottom: 0;
+  padding-top: 20px;
   text-align: center;
+  text-transform: uppercase;
+}
+
+html {
+  background-color: #110e17;
+}
+
+.link {
+  color: #fff;
+}
+
+.link:visited {
+  color: #fff;
 }
 
 .links {
-  font-weight: 600;
-}
-
-.reset-game {
-  background-color: whitesmoke;
-  border-radius: 4px;
-  height: 30px;
-  width: 100px;
+  font-weight: 700;
+  padding-top: 5px;
 }
 
 .rgb-color {
-  font-size: 20px;
+  background: #1f1c28;
+  border: 1px solid #312d3c;
+  border-radius: 2em;
+  display: inline-block;
+  font-family: Quicksand, sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 10px;
+  padding: 10px 20px;
   text-align: center;
+}
+
+.score {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 20px auto;
+  padding: 5px;
+  text-transform: uppercase;
 }

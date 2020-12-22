@@ -53,7 +53,7 @@ function checkAnswer() {
   });
 }
 
-function clickResetButton() {
+function clickResetGame() {
   const button = document.getElementById('reset-game');
   const circles = document.getElementsByClassName('ball');
   button.addEventListener('click', function () {
@@ -67,9 +67,18 @@ function clickResetButton() {
   });
 }
 
+function clickResetScore() {
+  const button = document.getElementById('reset-score');
+  button.addEventListener('click', function () {
+    result = 0;
+    score.innerText = result;
+  });
+}
+
 window.onload = function () {
   createColors();
   chosenCircle();
   checkAnswer();
-  clickResetButton();
+  clickResetGame();
+  clickResetScore();
 };
