@@ -18,7 +18,7 @@
 }
 
 body {
-  color: #fff;
+  color: white;
   font-family: Open Sans, sans-serif;
   text-align: center;
 }
@@ -37,16 +37,21 @@ body {
   width: 150px;
 }
 
+.buttons:focus {
+  outline: transparent;
+}
+
 .buttons:hover {
-  border-color: #fff;
-  background: -webkit-linear-gradient(#667eea, #764ba2, #6b8dd6, #8e37d7);
+  background: linear-gradient(#667eea, #764ba2, #6b8dd6, #8e37d7);
+  background-clip: text;
+  border-color: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .colors {
-  padding-bottom: 15px;
-  padding-top: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
   text-align: center;
 }
 
@@ -59,7 +64,7 @@ body {
 }
 
 .colors:hover div:hover {
-  opacity: 1.0;
+  opacity: 1;
 }
 
 
@@ -87,7 +92,8 @@ footer {
 h1 {
   font-family: Shadows Into Light, cursive;
   font-size: 70px;
-  margin: 20px auto;
+  margin: auto;
+  margin-top: 18px;
   padding-bottom: 0;
   padding-top: 20px;
   text-align: center;
@@ -99,11 +105,11 @@ html {
 }
 
 .link {
-  color: #fff;
+  color: white;
 }
 
 .link:visited {
-  color: #fff;
+  color: white;
 }
 
 .links {
@@ -119,7 +125,6 @@ html {
   font-family: Quicksand, sans-serif;
   font-size: 25px;
   font-weight: 600;
-  margin-top: 10px;
   padding: 10px 20px;
   text-align: center;
 }
