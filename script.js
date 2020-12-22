@@ -29,14 +29,6 @@ function randomColorBall() {
   }
 }
 
-//Referencia https://convertingcolors.com/blog/article/convert_hex_to_rgb_with_javascript.html
-const aRgbHex = randomColor().match(/.{1,2}/g);
-const aRgb = [
-  parseInt(aRgbHex[0], 16),
-  parseInt(aRgbHex[1], 16),
-  parseInt(aRgbHex[2], 16),
-];
-
 function colorText() {
   const color = document.querySelector('#rgb-color');
   const ball = document.querySelectorAll('.ball');
@@ -46,14 +38,14 @@ function colorText() {
 function scoreText() {
   const score = 0;
   localStorage.setItem('score', JSON.stringify(score));
-  let scoreTotal = document.querySelector('#score');
+  const scoreTotal = document.querySelector('#score');
   scoreTotal.innerText = `Placar: ${score}`;
 }
 
 function colorCorrect(origin) {
   const correct = document.querySelector('#rgb-color');
   const mensagem = document.querySelector('#answer');
-  let scoreTotal = document.querySelector('#score');
+  const scoreTotal = document.querySelector('#score');
   let score = JSON.parse(localStorage.getItem('score'));
   const correctColor = `rgb${correct.innerHTML}`;
   const originColor = origin.target.style.backgroundColor;
@@ -61,7 +53,7 @@ function colorCorrect(origin) {
     mensagem.innerHTML = 'Acertou!';
     score += 3;
     scoreTotal.innerText = `Placar: ${score}`;
-  localStorage.setItem('score', JSON.stringify(score));
+    localStorage.setItem('score', JSON.stringify(score));
   } else {
     mensagem.innerHTML = 'Errou! Tente novamente!';
   }
