@@ -8,8 +8,8 @@ function randomColor() {
 }
 
 function createBall(idName) {
-  const father = document.querySelector('.ball-section')
-  const ballCreate = document.createElement('div')
+  const father = document.querySelector('.ball-section');
+  const ballCreate = document.createElement('div');
   ballCreate.id = idName;
   ballCreate.className = 'ball';
   father.appendChild(ballCreate);
@@ -21,7 +21,6 @@ function numberBall(number) {
     createBall(`ball-${index}`);
   }
 }
-numberBall(6);
 
 function randomColorBall() {
   const ball = document.querySelectorAll('.ball');
@@ -29,7 +28,6 @@ function randomColorBall() {
     ball[index].style.backgroundColor = randomColor();
   }
 }
-randomColorBall();
 
 //Referencia https://convertingcolors.com/blog/article/convert_hex_to_rgb_with_javascript.html
 let aRgbHex = randomColor().match(/.{1,2}/g);
@@ -42,13 +40,12 @@ let aRgb = [
 function colorText() {
   const color = document.querySelector('#rgb-color');
   const ball = document.querySelectorAll('.ball');
-  color.innerHTML = ball[Math.floor(Math.random() * 6)].style.backgroundColor.slice(3)
+  color.innerHTML = ball[Math.floor(Math.random() * 6)].style.backgroundColor.slice(3);
 }
-colorText();
 
 function colorCorrect(origin) {
-  const correct = document.querySelector('#rgb-color')
-  const mensagem = document.querySelector('#answer')
+  const correct = document.querySelector('#rgb-color');
+  const mensagem = document.querySelector('#answer');
   let correctColor = `rgb${correct.innerHTML}`;
   let originColor = origin.target.style.backgroundColor;
   if (correctColor === originColor) {
@@ -64,4 +61,33 @@ function loopBall() {
     ballTotal[index].addEventListener('click', colorCorrect);
   }
 }
+
+function createButton(idName, string) {
+  const father = document.querySelector('.button-section');
+  const button = document.createElement('button');
+  button.id = idName;
+  button.innerText = string;
+  father.appendChild(button);
+}
+
+function resetGame() {
+  const removeBall = document.querySelectorAll('.ball');
+  const mensagem = document.querySelector('#answer');
+  for (index = 0; index < removeBall.length; index += 1) {
+    removeBall[index].remove();
+  }
+mensagem.innerText = 'Escolha uma cor';
+numberBall(6);
+randomColorBall();
+colorText();
+loopBall();
+}
+
+createButton('reset-game', 'Reset Game');
+const buttonReset = document.querySelector('#reset-game');
+buttonReset.addEventListener('click', resetGame);
+
+numberBall(6);
+randomColorBall();
+colorText();
 loopBall();
