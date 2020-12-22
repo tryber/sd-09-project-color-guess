@@ -1,0 +1,12 @@
+.color-guess {
+  display: flex;
+}
+
+.ball {
+  border: 1px solid black;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 5px;
+  padding: 20px;
+}
