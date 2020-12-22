@@ -5,3 +5,27 @@
   margin: 3px;
   padding: 3%;
 }
+
+.title {
+  text-align: center;
+}
+
+.color {
+  text-align: center;
+}
+
+.score {
+  text-align: center;
+}
+
+.ball-section {
+  text-align: center;
+}
+
+.answer {
+  text-align: center;
+}
+
+.button-section {
+  text-align: center;
+}
