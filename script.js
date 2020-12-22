@@ -1,5 +1,6 @@
 const colorsGuess = document.querySelector('#colors-guess');
 const colorParagraph = document.querySelector('#rgb-color');
+const answer = document.querySelector('#answer');
 
 function colorRandomPalette() {
   const allColors = [];
@@ -12,17 +13,39 @@ function colorRandomPalette() {
   return result;
 }
 
-function colorGuess() {
-  colorParagraph.innerHTML = colorRandomPalette();
-}
-colorGuess();
-
 function gerateColorsOptions() {
+  let rgbColors = [];
   for (let index = 0; index < 6; index += 1) {
     const circleOfColors = document.createElement('div');
     circleOfColors.className = 'ball';
-    circleOfColors.style.backgroundColor = colorRandomPalette();
+    rgbColors.push(circleOfColors.style.backgroundColor = colorRandomPalette());
     colorsGuess.appendChild(circleOfColors);
   }
+  return rgbColors;
 }
-gerateColorsOptions();
+const colorsGenerate = gerateColorsOptions();
+
+function getColorsOption(colorsRGB) {
+  const randomColor = Math.floor(Math.random() * colorsRGB.length);
+  return randomColor, colorsRGB[randomColor];
+}
+const paragraphColor = getColorsOption(colorsGenerate);
+
+function paragraphRgbColor(colorSelect) {
+  const colorToString = colorSelect.toString();
+  const selectedColor =  colorParagraph.innerHTML = colorToString;
+  return selectedColor;
+}
+const paragraphRgb = paragraphRgbColor(paragraphColor);
+
+function answers(rgbColor) {
+  const splitString = rgbColor.split(',').join(', ');
+  colorsGuess.addEventListener('click', function (event) {
+    if (event.target.style.backgroundColor === splitString) {
+      answer.innerHTML = 'Acertou!';
+    } else {
+      answer.innerHTML = 'Errou! Tente novamente!';
+    }  
+  });
+}
+answers(paragraphRgb);
