@@ -3,7 +3,6 @@ const colorParagraph = document.querySelector('#rgb-color');
 const answer = document.querySelector('#answer');
 const buttons = document.querySelector('#buttons');
 const score = document.querySelector('#score');
-score.innerHTML = 0;
 
 function colorRandomPalette() {
   const allColors = [];
@@ -69,7 +68,7 @@ function gamePoints(rgbColor) {
   colorsGuess.addEventListener('click', function (event) {
     if (event.target.style.backgroundColor === rgbColor) {
       score.innerHTML = count;
-      let points = score.innerHTML
+      const points = score.innerHTML;
       count += 3;
       localStorage.setItem('checkPoints', JSON.stringify(points));
     }
@@ -78,10 +77,13 @@ function gamePoints(rgbColor) {
 gamePoints(paragraphRgb);
 
 function pageLoadPoinst() {
-  const allPoinst = JSON.parse(localStorage.getItem('checkPoints'));
-    score.innerHTML = allPoinst;
+  const allPoints = JSON.parse(localStorage.getItem('checkPoints'));
+  let counts = allPoints
+  if (allPoints > 0) {
+  score.innerHTML = counts;
+  counts += 3;
+  } else {
+    score.innerHTML = 0;
+  }
 }
-
-window.onload = function () {
-  pageLoadPoinst();
-};
+pageLoadPoinst();
