@@ -61,8 +61,9 @@ resetGame.addEventListener('click', () => {
 });
 
 clearPoints.addEventListener('click', () => {
-
-})
+  scoreboard = 0;
+  score.innerText = 0;
+});
 
 window.onload = function () {
   toColor();
