@@ -4,6 +4,7 @@ const colection = document.querySelector('.colection');
 const answer = document.querySelector('#answer');
 const resetGame = document.querySelector('#reset-game');
 const score = document.querySelector('#score');
+const clearPoints = document.querySelector('#clear-points');
 const colors = [];
 let repeatedClick = true;
 let scoreboard = 0;
@@ -19,6 +20,15 @@ function randomRgb() {
   const B = randomNumber(256);
 
   return `rgb(${R}, ${G}, ${B})`;
+}
+
+function changeScoreboard(event) {
+  const selectedColor = event.target.style.backgroundColor;
+  if (selectedColor === rgbColor.innerText && repeatedClick === true) {
+    scoreboard += 3;
+    repeatedClick = false;
+  }
+  score.innerText = scoreboard;
 }
 
 function toColor() {
@@ -43,21 +53,16 @@ colection.addEventListener('click', (event) => {
   }
 });
 
-function changeScoreboard(event) {
-  let selectedColor = event.target.style.backgroundColor;
-  if (selectedColor === rgbColor.innerText && repeatedClick === true) {
-    scoreboard += 3;
-    repeatedClick = false;
-  }
-  score.innerText = scoreboard;
-}
-
 resetGame.addEventListener('click', () => {
   toColor();
   reference();
   answer.innerText = 'Escolha uma cor';
   repeatedClick = true;
 });
+
+clearPoints.addEventListener('click', () => {
+
+})
 
 window.onload = function () {
   toColor();
