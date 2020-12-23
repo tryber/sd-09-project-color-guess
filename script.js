@@ -9,7 +9,7 @@ let colorOfTheRound = randomColorNumbers();
 const circles = document.getElementsByClassName('ball');
 const rgbNumbers = document.getElementById('rgb-color');
 const answer = document.getElementById('answer');
-let totalScore = document.getElementById('score');
+const totalScore = document.getElementById('score');
 let result = 0;
 totalScore.innerText = result;
 
@@ -53,7 +53,7 @@ function checkAnswer() {
 
 function resetButton() {
   const button = document.getElementById('reset-game');
-  button.addEventListener('click', function() {
+  button.addEventListener('click', function () {
     for (let index = 0; index < circles.length; index += 1) {
       circles[index].style.backgroundColor = randomColorNumbers();
     }
