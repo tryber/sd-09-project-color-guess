@@ -8,6 +8,10 @@ function randomColorNumbers() {
 let colorOfTheRound = randomColorNumbers();
 const circles = document.getElementsByClassName('ball');
 const rgbNumbers = document.getElementById('rgb-color');
+const answer = document.getElementById('answer');
+let totalScore = document.getElementById('score');
+let result = 0;
+totalScore.innerText = result;
 
 function createColorToBeGuessed() {
   rgbNumbers.innerText = colorOfTheRound.slice(3);
@@ -24,21 +28,25 @@ function chosenColor() {
   for (let index = 0; index < circles.length; index += 1) {
     if (index === chosenIndex) {
       circles[index].style.backgroundColor = colorOfTheRound;
+      circles[index].classList.add('right-answer');
     } else {
       circles[index].style.backgroundColor = randomColorNumbers();
+      circles[index].classList.remove('right-answer');
     }
   }
 }
 
 function checkAnswer() {
   const allCircles = document.getElementById('allCircles');
-  let answer = document.getElementById('answer');
   answer.innerText = 'Escolha uma cor';
-  allCircles.addEventListener('click',function (event) {
-    if (event.target.style.backgroundColor === colorOfTheRound) {
-      answer.innerText = 'Acertou!'
+  allCircles.addEventListener('click', function (event) {
+    if (event.target.classList.contains('right-answer')) {
+      answer.innerText = 'Acertou!';
+      result += 3;
+      totalScore.innerText = result;
+      event.target.classList.remove('right-answer');
     } else {
-      answer.innerText = 'Errou! Tente novamente!'
+      answer.innerText = 'Errou! Tente novamente!';
     }
   });
 }
@@ -61,5 +69,5 @@ window.onload = function () {
   createBackgroundCircle();
   chosenColor();
   checkAnswer();
-  resetButton()
+  resetButton();
 }
