@@ -1,5 +1,7 @@
 const rgbColor = document.querySelector('#rgb-color');
 const balls = document.querySelectorAll('.ball');
+const colection = document.querySelector('.colection');
+const answer = document.querySelector('#answer');
 const colors = [];
 
 function randomNumber(multiply) {
@@ -16,9 +18,9 @@ function randomRgb() {
 }
 
 function toColor() {
-  for (ball of balls) {
-    ball.style.backgroundColor = randomRgb();
-    colors.push(ball.style.backgroundColor);
+  for (let index = 0; index < balls.length; index += 1) {
+    balls[index].style.backgroundColor = randomRgb();
+    colors[index] = balls[index].style.backgroundColor;
   }
 }
 
@@ -26,7 +28,17 @@ function reference() {
   rgbColor.innerText = colors[randomNumber(6)];
 }
 
+colection.addEventListener('click', (event) => {
+  const chosenColor = event.target.style.backgroundColor;
+
+  if (chosenColor === rgbColor.innerText) {
+    answer.innerText = 'Acertou!'
+  } else {
+    answer.innerText = 'Errou! Tente novamente!'
+  }
+})
+
 window.onload = function () {
   toColor();
   reference();
-}
+};
