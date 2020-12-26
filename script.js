@@ -3,13 +3,13 @@ function generateRgbColor() {
   let rgbColor = '';
   for (let index = 1; index <= 3; index += 1) {
     number = Math.floor(Math.random() * 256);
-      if (index === 1) {
-        rgbColor = `(${number}`;
-      } else if (index === 2) {
-        rgbColor += `, ${number}`;
-      } else {
-        rgbColor += `, ${number})`;
-      }
+    if (index === 1) {
+      rgbColor = `(${number}`;
+    } else if (index === 2) {
+      rgbColor += `, ${number}`;
+    } else {
+      rgbColor += `, ${number})`;
+    }
   }
   return rgbColor;
 }
