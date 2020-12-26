@@ -16,8 +16,29 @@ function generateRgbColor() {
 
 function colectionColors() {
   const listColors = document.querySelectorAll('.ball');
+  const rgb = document.querySelector('#rgb-color');
+  const number = Math.floor(Math.random() * 7)
   for (let index = 0; index < listColors.length; index += 1) {
-    listColors[index].style.backgroundColor = `rgb${generateRgbColor()}`;
+    if (index === number) {
+      listColors[index].style.backgroundColor = `rgb${rgb.innerText}`;
+    } else {
+        listColors[index].style.backgroundColor = `rgb${generateRgbColor()}`;
+    }
+  }
+}
+
+function creactEventColors() {
+  const listColors = document.querySelectorAll('.ball');
+  const rgb = document.querySelector('#rgb-color');
+  const answer = document.querySelector('#answer');
+  for (let index = 0; index < listColors.length; index += 1) {
+    listColors[index].addEventListener('click', function (event) {
+      if (event.target.style.backgroundColor === `rgb${rgb.innerText}`) {
+        answer.innerText = 'Acertou!';
+      } else {
+          answer.innerText = 'Errou! Tente novamente!'
+      }
+    });
   }
 }
 
@@ -25,4 +46,5 @@ window.onload = function () {
   const rgb = document.querySelector('#rgb-color');
   rgb.innerText = generateRgbColor();
   colectionColors();
+  creactEventColors();
 };

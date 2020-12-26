@@ -1,6 +1,7 @@
 .ball {
   border: solid;
   border-radius: 90%;
+  border-width: 0.5px;
   display: inline-block;
   height: 40px;
   margin-left: 10px;
