@@ -42,9 +42,19 @@ function creactEventColors() {
   }
 }
 
+function reset() {
+  const rgb = document.querySelector('#rgb-color');
+  rgb.innerText = generateRgbColor();
+  colectionColors();
+  const answer = document.querySelector('#answer');
+  answer.innerText = 'Escolha uma cor'
+}
+
 window.onload = function () {
   const rgb = document.querySelector('#rgb-color');
   rgb.innerText = generateRgbColor();
   colectionColors();
   creactEventColors();
+  const btnReset = document.querySelector('#reset-game');
+  btnReset.addEventListener('click', reset);
 };
