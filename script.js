@@ -47,7 +47,7 @@ function reset() {
   rgb.innerText = generateRgbColor();
   colectionColors();
   const answer = document.querySelector('#answer');
-  answer.innerText = 'Escolha uma cor'
+  answer.innerText = 'Escolha uma cor';
 }
 
 window.onload = function () {
