@@ -31,10 +31,12 @@ function creactEventColors() {
   const listColors = document.querySelectorAll('.ball');
   const rgb = document.querySelector('#rgb-color');
   const answer = document.querySelector('#answer');
+  const span = document.querySelector('span');
   for (let index = 0; index < listColors.length; index += 1) {
     listColors[index].addEventListener('click', function (event) {
       if (event.target.style.backgroundColor === `rgb${rgb.innerText}`) {
         answer.innerText = 'Acertou!';
+        span.innerText = Number(span.innerText) + 3;
       } else {
         answer.innerText = 'Errou! Tente novamente!';
       }
