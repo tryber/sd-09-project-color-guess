@@ -1,0 +1,17 @@
+body {
+  text-align: center;
+}
+
+.ball {
+  border: 0.1em solid black;
+  border-radius: 50%;
+  display: inline-block;
+  height: 50px;
+  margin: 0.5em;
+  width: 50px;
+}
+
+.ball:hover {
+  height: 60px;
+  width: 60px;
+}
