@@ -1,13 +1,14 @@
 let score = 0;
 
 function generateRandomColor() {
-  const red = Math.floor(Math.random() * (255 - 0 + 1) + 0);
-  const green = Math.floor(Math.random() * (255 - 0 + 1) + 0);
-  const blue = Math.floor(Math.random() * (255 - 0 + 1) + 0);
-  const rgbString = red + ' , ' + green + ' , ' + blue;
-  const color = 'rgb(' + rgbString + ')';
+  const red = Math.floor(Math.random() * 255);
+  const green = Math.floor(Math.random() * 255);
+  const blue = Math.floor(Math.random() * 255);
+  const rgbArray = [red, green, blue];
+  const color = `rgb(${rgbArray})`;
   return color;
 }
+console.log(generateRandomColor())
 
 function generateColorBalls() {
   const colorsContainer = document.querySelector('#colors-container');
@@ -31,10 +32,10 @@ function resetGame() {
   const rgbColorText = document.querySelector('#rgb-color');
   const scoreText = document.querySelector('#score');
   const answerText = document.querySelector('#answer');
-  removeColorBalls()
+  removeColorBalls();
   generateColorBalls();
   rgbColorText.innerText = generateRandomColor();
-  scoreText.innerText = 'Placar: ' + score;
+  scoreText.innerText = `Placar: ${score}`;
   answerText.innerText = 'Escolha uma cor';
 }
 
