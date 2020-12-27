@@ -1,3 +1,7 @@
+const rgbColor = document.querySelector('#rgb-color');
+const scoreText = document.querySelector('#score');
+const colorsContainer = document.querySelector('#colors-container');
+const answer = document.querySelector('#answer');
 let score = 0;
 
 function generateRandomColor() {
@@ -8,10 +12,8 @@ function generateRandomColor() {
   const color = `rgb(${rgbArray})`;
   return color;
 }
-console.log(generateRandomColor())
 
 function generateColorBalls() {
-  const colorsContainer = document.querySelector('#colors-container');
   for (let index = 0; index < 6; index += 1) {
     const color = document.createElement('div');
     color.className = 'ball';
@@ -20,23 +22,42 @@ function generateColorBalls() {
   }
 }
 
+function generateRGBColor() {
+  const balls = document.querySelectorAll('.ball');
+  const randomBall = balls[Math.floor(Math.random() * 6)].style.backgroundColor
+  rgbColor.innerText = randomBall;
+}
+
 function removeColorBalls() {
-  const ballString = document.querySelectorAll('.ball');
-  for (let index = 0; index < ballString.length; index += 1) {
-    const colorsContainer = document.querySelector('#colors-container');
-    colorsContainer.removeChild(ballString[index]);
+  const balls = document.querySelectorAll('.ball');
+  for (let index = 0; index < balls.length; index += 1) {
+    colorsContainer.removeChild(balls[index]);
+  }
+}
+
+function checkAnswer() {
+  const balls = document.querySelectorAll('.ball');
+  for (let index = 0; index < balls.length; index += 1) {
+    balls[index].addEventListener('click', function () {
+      const ballColor = balls[index].style.backgroundColor;
+      if (ballColor === rgbColor.innerText) {
+        score += 3;
+        scoreText.innerText = `Placar: ${score}`
+        answer.innerText = 'Acertou!';
+      } else {
+        answer.innerText = 'Errou! Tente novamente!';
+      }
+    });
   }
 }
 
 function resetGame() {
-  const rgbColorText = document.querySelector('#rgb-color');
-  const scoreText = document.querySelector('#score');
-  const answerText = document.querySelector('#answer');
   removeColorBalls();
   generateColorBalls();
-  rgbColorText.innerText = generateRandomColor();
+  checkAnswer()
+  generateRGBColor();
   scoreText.innerText = `Placar: ${score}`;
-  answerText.innerText = 'Escolha uma cor';
+  answer.innerText = 'Escolha uma cor';
 }
 
 window.onload = function () {

@@ -12,6 +12,9 @@ body {
 }
 
 .ball:hover {
-  height: 60px;
-  width: 60px;
+  border: 0.2em solid blue;
+}
+
+.container {
+  height: 5em;
 }
