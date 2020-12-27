@@ -3,7 +3,10 @@ const balls = document.querySelectorAll('.ball');
 const text = document.querySelector('#rgb-color');
 const question = document.querySelector('#answer');
 const btnReset = document.querySelector('#reset-game');
+const score = document.querySelector('#score');
+let placar = 0;
 let answer = '';
+
 
 // Functions
 function randomColor() {
@@ -32,13 +35,17 @@ function questionAnswer() {
     ball.addEventListener('click', (event) => {
       if (event.target.style.backgroundColor === text.innerText) {
         question.innerText = 'Acertou!';
+        placar += 3;
       } else {
-        question.innerText = 'Errou! Tente novamente!'
+        question.innerText = 'Errou! Tente novamente!';
       }
+      score.innerText = `Placar: ${placar}`
     });
   });
 }
 questionAnswer();
+
+
 
 // Event listener
 btnReset.addEventListener('click', () => {
