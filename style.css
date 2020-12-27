@@ -1,0 +1,13 @@
+.ball-container {
+  display: flex;
+}
+
+.ball {
+  background-color: aqua;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 70px;
+  margin: 10px;
+  width: 70px;
+}
