@@ -13,12 +13,23 @@ function generateRandomColor() {
   return color;
 }
 
+function checkAnswer(event) {
+  const ballColor = event.style.backgroundColor;
+  if (ballColor === rgbColor.innerText) {
+    score += 3;
+    scoreText.innerText = `Placar: ${score}`;
+    answer.innerText = 'Acertou!';
+  } else {
+    answer.innerText = 'Errou! Tente novamente!';
+  }
+}
+
 function generateColorBalls() {
   for (let index = 0; index < 6; index += 1) {
     const ball = document.createElement('div');
     ball.className = 'ball';
     ball.style.backgroundColor = generateRandomColor();
-    ball.addEventListener('click', function (){
+    ball.addEventListener('click', function () {
       checkAnswer(ball);
     });
     colorsContainer.appendChild(ball);
@@ -35,17 +46,6 @@ function removeColorBalls() {
   const balls = document.querySelectorAll('.ball');
   for (let index = 0; index < balls.length; index += 1) {
     colorsContainer.removeChild(balls[index]);
-  }
-}
-
-function checkAnswer(event) {
-  const ballColor = event.style.backgroundColor;
-  if (ballColor === rgbColor.innerText) {
-    score += 3;
-    scoreText.innerText = `Placar: ${score}`;
-    answer.innerText = 'Acertou!';
-  } else {
-    answer.innerText = 'Errou! Tente novamente!';
   }
 }
 
