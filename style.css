@@ -1,5 +1,19 @@
+body {
+  background-image: url('/imgs/colors.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(22, 21, 21);
+  font-family: 'Aclonica', sans-serif;
+  font-weight: 600;
+  margin: 0;
+  opacity: 0.9;
+  padding: 0;
+  position: relative;
+}
+
 .color-guess {
-  display: flex;
+  margin: auto;
+  max-width: 70%;
 }
 
 .ball {
@@ -9,4 +23,26 @@
   display: inline-block;
   margin: 5px;
   padding: 20px;
+}
+
+.main-section {
+  background-color: aliceblue;
+  box-shadow: 10px 5px 5px black;
+  border-radius: 15px;
+  max-width: 450px;
+  text-align: center;
+  margin: 100px auto;
+  padding: 15px;
+}
+
+.reset-game {
+  background-color: black;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  padding: 8px;
+}
+
+.reset-game:hover {
+  background-color: rgba(0 , 0 , 0 , 0.795);
 }

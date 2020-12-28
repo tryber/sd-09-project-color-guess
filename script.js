@@ -55,6 +55,7 @@ answers(paragraphRgb);
 function buttonResetGame() {
   const restart = document.createElement('button');
   restart.id = 'reset-game';
+  restart.className = 'reset-game'
   restart.innerHTML = 'Reiniciar Jogo';
   buttons.appendChild(restart);
   restart.addEventListener('click', function () {
