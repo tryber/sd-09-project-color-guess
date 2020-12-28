@@ -36,7 +36,7 @@ function questionAnswer() {
       if (event.target.style.backgroundColor === text.innerText) {
         question.innerText = 'Acertou!';
         placar += 3;
-        score.innerText = `Placar: ${placar}`
+        score.innerText = `Placar: ${placar}`;
       } else {
         question.innerText = 'Errou! Tente novamente!';
       }
@@ -45,11 +45,9 @@ function questionAnswer() {
 }
 questionAnswer();
 
-
-
 // Event listener
 btnReset.addEventListener('click', () => {
   coloringBalls();
   correctBall();
   question.innerText = 'Escolha uma cor';
-})
+});
