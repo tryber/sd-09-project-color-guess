@@ -36,19 +36,20 @@ function questionAnswer() {
       if (event.target.style.backgroundColor === text.innerText) {
         question.innerText = 'Acertou!';
         placar += 3;
+        score.innerText = `Placar: ${placar}`
       } else {
         question.innerText = 'Errou! Tente novamente!';
       }
-      score.innerText = `Placar: ${placar}`;
     });
   });
 }
 questionAnswer();
 
+
+
 // Event listener
 btnReset.addEventListener('click', () => {
   coloringBalls();
   correctBall();
-  questionAnswer();
   question.innerText = 'Escolha uma cor';
 })
