@@ -20,7 +20,7 @@ function randomColor() {
 function coloringBalls() {
   balls.forEach((ball) => {
     ball.style.backgroundColor = randomColor();
-  })
+  });
 }
 coloringBalls();
 
@@ -39,13 +39,11 @@ function questionAnswer() {
       } else {
         question.innerText = 'Errou! Tente novamente!';
       }
-      score.innerText = `Placar: ${placar}`
+      score.innerText = `Placar: ${placar}`;
     });
   });
 }
 questionAnswer();
-
-
 
 // Event listener
 btnReset.addEventListener('click', () => {
