@@ -4,7 +4,7 @@ function createcircles(dificultyLevel) {
   const sectionCircles = document.querySelector('#circles-section');
   for (let index = 0; index < dificultyLevel; index += 1) {
     const newCircle = document.createElement('span');
-    newCircle.className = 'balls';
+    newCircle.className = 'ball';
     sectionCircles.appendChild(newCircle);
   }
 }
@@ -81,7 +81,7 @@ function resetGame() {
 
 // funcões de inicialização
 
-createcircles(2);
+createcircles(6);
 paintCircles();
 chooseColor();
 matchColors();

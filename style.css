@@ -3,7 +3,7 @@ body {
   width: 1366px;
 }
 
-.balls {
+.ball {
   border: 1px solid black;
   border-radius: 50%;
   display: inline-block;
