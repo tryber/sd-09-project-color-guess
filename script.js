@@ -32,15 +32,27 @@ function resetGame() {
   chooseColor();
 }
 
-// função que verifica e valida o score
+// função que verifica e valida o score e local storage
+
+function initialScore() {
+  const scoreBoard = document.querySelector('#score');
+  if(localStorage.length === 0) {
+    localStorage.setItem('score', 0);
+    scoreBoard.innerText = 0;
+  } else {
+    scoreBoard.innerText = localStorage.getItem('score');
+  }
+}
 
 function verifiyRgbScore(elementOne, elementTwo) {
-  const score = document.querySelector('#score');
+  const scoreBoard = document.querySelector('#score');
   const answer = document.querySelector('#answer');
   if (elementOne.style.backgroundColor.slice(3) === elementTwo.innerText) {
-    const value = score.innerText;
-    const sum = Number(value) + 3;
-    score.innerText = sum;
+    let actualScore = Number(localStorage.getItem('score'));
+    console.log(actualScore);
+    actualScore += 3;
+    localStorage.setItem('score', actualScore);
+    scoreBoard.innerText = localStorage.getItem('score');
     answer.innerText = 'Acertou!'
     resetGame();
   } else {
@@ -72,6 +84,7 @@ function aplyResetbuttons() {
 
 // funcões de inicialização
 
+initialScore()
 paintCircles();
 chooseColor();
 matchColors();
