@@ -44,48 +44,5 @@ function initialScore() {
   }
 }
 
-function verifiyRgbScore(elementOne, elementTwo) {
-  const scoreBoard = document.querySelector('#score');
-  const answer = document.querySelector('#answer');
-  if (elementOne.style.backgroundColor.slice(3) === elementTwo.innerText) {
-    let actualScore = Number(localStorage.getItem('score'));
-    console.log(actualScore);
-    actualScore += 3;
-    localStorage.setItem('score', actualScore);
-    scoreBoard.innerText = localStorage.getItem('score');
-    answer.innerText = 'Acertou!'
-    resetGame();
-  } else {
-    answer.innerText = 'Errou! Tente novamente!'
-    resetGame();
-  }
-}
-
-function matchColors() {
-  const paragraph = document.querySelector('#rgb-color');
-  const circles = document.querySelectorAll('.ball');
-  for (let index = 0; index < circles.length; index += 1) {
-    circles[index].addEventListener('click', function () {
-      verifiyRgbScore(circles[index], paragraph);
-    });
-  }
-}
-
-// função adiciona reset game ao botão "resetar cores"
-
-function aplyResetbuttons() {
-  const button = document.querySelector('#reset');
-  const paragraph = document.querySelector('#answer');
-  button.addEventListener('click', function () {
-    resetGame();
-    paragraph.innerText = 'Escolha uma cor';
-  });
-}
-
-// funcões de inicialização
-
+resetGame();
 initialScore()
-paintCircles();
-chooseColor();
-matchColors();
-aplyResetbuttons();
