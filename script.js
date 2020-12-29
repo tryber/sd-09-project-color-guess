@@ -36,12 +36,15 @@ function resetGame() {
 
 function verifiyRgbScore(elementOne, elementTwo) {
   const score = document.querySelector('#score');
+  const answer = document.querySelector('#answer');
   if (elementOne.style.backgroundColor.slice(3) === elementTwo.innerText) {
     const value = score.innerText;
     const sum = Number(value) + 3;
     score.innerText = sum;
+    answer.innerText = 'Acertou!'
     resetGame();
   } else {
+    answer.innerText = 'Errou! Tente novamente!'
     resetGame();
   }
 }
@@ -61,7 +64,7 @@ function matchColors() {
 function aplyResetbuttons() {
   const button = document.querySelector('#reset');
   const paragraph = document.querySelector('#answer');
-  button.addEventListener('click', function() {
+  button.addEventListener('click', function () {
     resetGame();
     paragraph.innerText = 'Escolha uma cor';
   });
@@ -69,11 +72,7 @@ function aplyResetbuttons() {
 
 // funcões de inicialização
 
-function startGame() {
 paintCircles();
 chooseColor();
 matchColors();
 aplyResetbuttons();
-}
-
-window.onload = startGame();
