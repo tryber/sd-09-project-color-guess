@@ -1,14 +1,3 @@
-// função que preenche o html com circulos variando pelo nivel "valor" dificuldade
-
-function createcircles(dificultyLevel) {
-  const sectionCircles = document.querySelector('#circles-section');
-  for (let index = 0; index < dificultyLevel; index += 1) {
-    const newCircle = document.createElement('span');
-    newCircle.className = 'ball';
-    sectionCircles.appendChild(newCircle);
-  }
-}
-
 // funcões que criam cores randomicas e preencher os circulos criados
 
 function randomColor() {
@@ -86,7 +75,5 @@ chooseColor();
 matchColors();
 aplyResetbuttons();
 }
-
-createcircles(6);
 
 window.onload = startGame();
