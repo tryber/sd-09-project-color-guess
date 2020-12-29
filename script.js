@@ -1,3 +1,4 @@
+// Sort a rgb code
 function sortRgb() {
   const rgbArray = [];
   for (let index = 0; index < 3; index += 1) {
@@ -10,19 +11,22 @@ function sortRgb() {
   return rgbArray;
 }
 
-function createParagraph(container) {
-  const paragraph = document.createElement('p');
-  container.appendChild(paragraph);
-  return paragraph;
+// Create a element Section in HTML
+function createSection(container) {
+  const section = document.createElement('p');
+  container.appendChild(section);
+  return section;
 }
 
+// Load RGB code in HTML
 function loadRgbCode() {
-  const container = document.querySelector('.rgb-section');
-  const paragraph = createParagraph(container);
-  paragraph.id = 'rgb-color';
-  paragraph.innerText = `(${sortRgb()})`;
+  const container = document.querySelector('.main-page');
+  const section = createSection(container);
+  section.id = 'rgb-color';
+  section.innerText = `(${sortRgb()})`;
 }
 
+// Load functions and event listeners at the window load
 window.onload = function () {
   loadRgbCode();
 }
