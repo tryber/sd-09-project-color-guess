@@ -1,0 +1,14 @@
+body {
+  height: 768px;
+  text-align: center;
+  width: 1366px;
+}
+
+.ball {
+  border: 1px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  height: 70px;
+  margin: 10px;
+  width: 70px;
+}
