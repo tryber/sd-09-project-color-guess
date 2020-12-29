@@ -1,0 +1,13 @@
+body {
+  height: 768px;
+  width: 1366px;
+}
+
+.circle {
+  border: 1px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 10px;
+  height: 70px;
+  width: 70px;
+}
