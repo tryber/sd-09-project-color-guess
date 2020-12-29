@@ -29,7 +29,7 @@ function chooseColor() {
 
 function initialScore() {
   const scoreBoard = document.querySelector('#score');
-  if(localStorage.length === 0) {
+  if (localStorage.length === 0) {
     localStorage.setItem('score', 0);
     scoreBoard.innerText = 0;
   } else {
