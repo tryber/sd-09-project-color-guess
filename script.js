@@ -25,13 +25,6 @@ function chooseColor() {
   paragraph.innerText = circles[raffle].style.backgroundColor.slice(3);
 }
 
-// função reseta as cores e o valor a ser descoberto
-
-function resetGame() {
-  paintCircles();
-  chooseColor();
-}
-
 // função que verifica e valida o score e local storage
 
 function initialScore() {
@@ -44,5 +37,39 @@ function initialScore() {
   }
 }
 
+// função reseta as cores e o valor a ser descoberto
+
+function resetGame() {
+  paintCircles();
+  chooseColor();
+}
+
+function changeScoreBoard(elementOne, elementTwo) {
+  const scoreBoard = document.querySelector('#score');
+  const answer = document.querySelector('#answer');
+  if (elementOne.style.backgroundColor.slice(3) === elementTwo.innerText) {
+    let actualScore = Number(localStorage.getItem('score'));
+    actualScore += 3;
+    localStorage.setItem('score', actualScore);
+    scoreBoard.innerText = localStorage.getItem('score');
+    answer.innerText = 'Acertou!'
+    resetGame();
+  } else {
+    answer.innerText = 'Errou! Tente novamente!'
+    resetGame();
+  }
+}
+
+function matchColors() {
+  const paragraph = document.querySelector('#rgb-color');
+  const circles = document.querySelectorAll('.ball');
+  for (let index = 0; index < circles.length; index += 1) {
+    circles[index].addEventListener('click', function () {
+      changeScoreBoard(circles[index], paragraph);
+    });
+  }
+}
+
 resetGame();
-initialScore()
+initialScore();
+matchColors();
