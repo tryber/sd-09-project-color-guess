@@ -16,12 +16,13 @@ function createParagraph(container) {
   return paragraph;
 }
 
-function loadParagraph() {
+function loadRgbCode() {
   const container = document.querySelector('.rgb-section');
   const paragraph = createParagraph(container);
+  paragraph.id = 'rgb-color';
   paragraph.innerText = `(${sortRgb()})`;
 }
 
 window.onload = function () {
-  loadParagraph();
+  loadRgbCode();
 }
