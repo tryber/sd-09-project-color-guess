@@ -70,6 +70,19 @@ function matchColors() {
   }
 }
 
+// função adiciona reset game ao botão "resetar cores"
+
+function aplyResetbuttons() {
+  const button = document.querySelector('#reset');
+  const paragraph = document.querySelector('#answer');
+  paragraph.innerText = 'Escolha uma cor';
+  button.addEventListener('click', function () {
+    resetGame();
+    paragraph.innerText = 'Escolha uma cor';
+  });
+}
+
 resetGame();
 initialScore();
 matchColors();
+aplyResetbuttons();
