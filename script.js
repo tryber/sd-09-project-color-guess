@@ -8,9 +8,9 @@ function randomColor() {
 }
 
 function paintCircles() {
-  const sectionCircles = document.querySelector('#circles-section');
-  for (let index = 0; index < sectionCircles.childElementCount; index += 1) {
-    sectionCircles.children[index].style.backgroundColor = randomColor();
+  const circles = document.querySelectorAll('.ball');
+  for (let index = 0; index < circles.length; index += 1) {
+    circles[index].style.backgroundColor = randomColor();
   }
 }
 
@@ -18,11 +18,11 @@ function paintCircles() {
 
 function chooseColor() {
   const paragraph = document.querySelector('#rgb-color');
-  const sectionCircles = document.querySelector('#circles-section');
+  const circles = document.querySelectorAll('.ball');
   const min = 0;
-  const max = sectionCircles.childElementCount;
+  const max = circles.length;
   const raffle = Math.floor(Math.random() * (max - min)) + min;
-  paragraph.innerText = sectionCircles.children[raffle].style.backgroundColor.slice(3);
+  paragraph.innerText = circles[raffle].style.backgroundColor.slice(3);
 }
 
 // função reseta as cores e o valor a ser descoberto
@@ -51,10 +51,10 @@ function verifiyRgbScore(elementOne, elementTwo) {
 
 function matchColors() {
   const paragraph = document.querySelector('#rgb-color');
-  const sectionCircles = document.querySelector('#circles-section');
-  for (let index = 0; index < sectionCircles.childElementCount; index += 1) {
-    sectionCircles.children[index].addEventListener('click', function () {
-      verifiyRgbScore(sectionCircles.children[index], paragraph);
+  const circles = document.querySelectorAll('.ball');
+  for (let index = 0; index < circles.length; index += 1) {
+    circles[index].addEventListener('click', function () {
+      verifiyRgbScore(circles[index], paragraph);
     });
   }
 }
