@@ -1,10 +1,10 @@
 // função que preenche o html com circulos variando pelo nivel "valor" dificuldade
 
 function createcircles(dificultyLevel) {
-  const sectionCircles = document.querySelector('#circles');
+  const sectionCircles = document.querySelector('#circles-section');
   for (let index = 0; index < dificultyLevel; index += 1) {
     const newCircle = document.createElement('span');
-    newCircle.className = 'circle';
+    newCircle.className = 'balls';
     sectionCircles.appendChild(newCircle);
   }
 }
@@ -19,7 +19,7 @@ function randomColor() {
 }
 
 function paintCircles() {
-  const sectionCircles = document.querySelector('#circles');
+  const sectionCircles = document.querySelector('#circles-section');
   for (let index = 0; index < sectionCircles.childElementCount; index += 1) {
     sectionCircles.children[index].style.backgroundColor = randomColor();
   }
@@ -29,7 +29,7 @@ function paintCircles() {
 
 function chooseColor() {
   const paragraph = document.querySelector('#rgb-color');
-  const sectionCircles = document.querySelector('#circles');
+  const sectionCircles = document.querySelector('#circles-section');
   const min = 0;
   const max = sectionCircles.childElementCount;
   const raffle = Math.floor(Math.random() * (max - min)) + min;
@@ -41,3 +41,5 @@ function chooseColor() {
 createcircles(6);
 paintCircles();
 chooseColor();
+
+
