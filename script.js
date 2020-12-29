@@ -36,15 +36,20 @@ function chooseColor() {
   paragraph.innerText = sectionCircles.children[raffle].style.backgroundColor.slice(3);
 }
 
+// função reseta as cores e o valor a ser descoberto
+
+function resetGame() {
+  paintCircles();
+  chooseColor();
+}
+
 // função que verifica e valida o score
 
 function verifiyRgbScore(elementOne, elementTwo) {
-  let score = document.querySelector('#score');
-  console.log(elementOne.style.backgroundColor.slice(3));
-  console.log(elementTwo.innerText);
+  const score = document.querySelector('#score');
   if (elementOne.style.backgroundColor.slice(3) === elementTwo.innerText) {
     const value = score.innerText;
-    let sum = Number(value) + 3;
+    const sum = Number(value) + 3;
     score.innerText = sum;
     resetGame();
   } else {
@@ -57,32 +62,31 @@ function matchColors() {
   const sectionCircles = document.querySelector('#circles-section');
   for (let index = 0; index < sectionCircles.childElementCount; index += 1) {
     sectionCircles.children[index].addEventListener('click', function () {
-    verifiyRgbScore(sectionCircles.children[index], paragraph);
+      verifiyRgbScore(sectionCircles.children[index], paragraph);
     });
   }
-  
 }
 
 // função adiciona reset game ao botão "resetar cores"
 
 function aplyResetbuttons() {
   const button = document.querySelector('#reset');
+  const paragraph = document.querySelector('#answer');
   button.addEventListener('click', function() {
     resetGame();
+    paragraph.innerText = 'Escolha uma cor';
   });
-}
-
-// função reseta as cores e o valor a ser descoberto
-
-function resetGame() {
-  paintCircles();
-  chooseColor();
 }
 
 // funcões de inicialização
 
-createcircles(6);
+function startGame() {
 paintCircles();
 chooseColor();
 matchColors();
-aplyResetbuttons()
+aplyResetbuttons();
+}
+
+createcircles(6);
+
+window.onload = startGame();
