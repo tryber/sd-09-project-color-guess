@@ -52,10 +52,10 @@ function changeScoreBoard(elementOne, elementTwo) {
     actualScore += 3;
     localStorage.setItem('score', actualScore);
     scoreBoard.innerText = localStorage.getItem('score');
-    answer.innerText = 'Acertou!'
+    answer.innerText = 'Acertou!';
     resetGame();
   } else {
-    answer.innerText = 'Errou! Tente novamente!'
+    answer.innerText = 'Errou! Tente novamente!';
     resetGame();
   }
 }
@@ -73,7 +73,7 @@ function matchColors() {
 // função adiciona reset game ao botão "resetar cores"
 
 function aplyResetbuttons() {
-  const button = document.querySelector('#reset');
+  const button = document.querySelector('#reset-game');
   const paragraph = document.querySelector('#answer');
   paragraph.innerText = 'Escolha uma cor';
   button.addEventListener('click', function () {
