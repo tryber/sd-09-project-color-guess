@@ -55,9 +55,10 @@ function loadScore() {
   const paragraph = createParagraph(section);
   paragraph.id = 'score';
   if (sessionStorage.getItem('score') === null){
-    paragraph.innerText = `Score: ${sessionStorage.setItem('score', 0)}`;
+    sessionStorage.setItem('score', 0)
+    paragraph.innerText = `Pontuação: ${sessionStorage.getItem('score')}`;
   } else {
-    paragraph.innerText = `Score: ${sessionStorage.getItem('score')}`;
+    paragraph.innerText = `Pontuação: ${sessionStorage.getItem('score')}`;
   }
 }
 
@@ -158,7 +159,7 @@ function loadButtonResetScore() {
 
 // Set item with key 'score' in Session Storage with value 0 and update score at HTML
 function resetScore() {
-  sessionStorage.setItem('score', 0);
+  sessionStorage.removeItem('score');
   removeScore();
   loadScore();
 };
