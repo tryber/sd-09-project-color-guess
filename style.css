@@ -1,12 +1,11 @@
 body {
-  background-image: linear-gradient(
-    to right , red , orange , yellow , green , blue , indigo , violet);
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
   text-align: center;
 }
 
 button {
-  border: none;
   background-color: lightgrey;
+  border: none;
   border-radius: 1em;
   box-shadow: 2px 2px 5px grey;
   color: black;
@@ -27,7 +26,7 @@ button:hover {
 }
 
 main {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 30px;
   color: white;
   font-family: cursive;

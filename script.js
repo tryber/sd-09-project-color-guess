@@ -58,8 +58,6 @@ function resetGame() {
 }
 
 window.onload = function () {
-  const app = document.querySelector('main');
-  app.style.backgroundColor = 'rgb(0, 0, 0, 0.7)';
   const resetButton = document.querySelector('#reset-game');
   resetButton.addEventListener('click', resetGame);
   resetGame();
