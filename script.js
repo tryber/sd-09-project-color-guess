@@ -20,6 +20,8 @@ function checkAnswer(event) {
     scoreText.innerText = `Placar: ${score}`;
     answer.innerText = 'Acertou!';
   } else {
+    score -= 1;
+    scoreText.innerText = `Placar: ${score}`;
     answer.innerText = 'Errou! Tente novamente!';
   }
 }
@@ -31,6 +33,8 @@ function generateColorBalls() {
     ball.style.backgroundColor = randomColor();
     ball.addEventListener('click', function () {
       checkAnswer(ball);
+      ball.style.border = 'none';
+      ball.style.width = '0';
     });
     colorsContainer.appendChild(ball);
   }
@@ -50,6 +54,8 @@ function removeColorBalls() {
 }
 
 function resetGame() {
+  const body = document.querySelector('body');
+  body.style.backgroundImage = `linear-gradient(to right, ${randomColor()}, ${randomColor()})`;
   removeColorBalls();
   generateColorBalls();
   generateRGBColor();
@@ -58,8 +64,6 @@ function resetGame() {
 }
 
 window.onload = function () {
-  const body = document.querySelector('body');
-  body.style.backgroundImage = `linear-gradient(to right, ${randomColor()}, ${randomColor()})`;
   const resetButton = document.querySelector('#reset-game');
   resetButton.addEventListener('click', resetGame);
   resetGame();
