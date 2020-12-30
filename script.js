@@ -4,7 +4,7 @@ const colorsContainer = document.querySelector('#colors-container');
 const answer = document.querySelector('#answer');
 let score = 0;
 
-function generateRandomColor() {
+function randomColor() {
   const red = Math.floor(Math.random() * 255);
   const green = Math.floor(Math.random() * 255);
   const blue = Math.floor(Math.random() * 255);
@@ -28,7 +28,7 @@ function generateColorBalls() {
   for (let index = 0; index < 6; index += 1) {
     const ball = document.createElement('div');
     ball.className = 'ball';
-    ball.style.backgroundColor = generateRandomColor();
+    ball.style.backgroundColor = randomColor();
     ball.addEventListener('click', function () {
       checkAnswer(ball);
     });
@@ -58,8 +58,9 @@ function resetGame() {
 }
 
 window.onload = function () {
-  resetGame();
-
+  const app = document.querySelector('main');
+  app.style.backgroundColor = 'rgb(0, 0, 0, 0.7)';
   const resetButton = document.querySelector('#reset-game');
   resetButton.addEventListener('click', resetGame);
+  resetGame();
 };

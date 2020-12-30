@@ -1,20 +1,56 @@
 body {
+  background-image: linear-gradient(
+    to right , red , orange , yellow , green , blue , indigo , violet);
   text-align: center;
 }
 
+button {
+  border: none;
+  background-color: lightgrey;
+  border-radius: 1em;
+  box-shadow: 2px 2px 5px grey;
+  color: black;
+  font-weight: 600;
+  margin: 0.5em;
+  padding: 0.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  transition: 0.5s;
+}
+
+button:focus {
+  outline: transparent;
+}
+
+button:hover {
+  background-color: white;
+}
+
+main {
+  background-color: black;
+  border-radius: 30px;
+  color: white;
+  font-family: cursive;
+  margin: 50px auto;
+  padding: 30px;
+  text-shadow: 2px 2px 5px grey;
+  width: 500px;
+}
+
 .ball {
-  border: 0.1em solid black;
+  border: 3px solid black;
   border-radius: 50%;
   display: inline-block;
   height: 50px;
-  margin: 0.5em;
+  margin: 10px;
+  transition: 0.3s;
   width: 50px;
 }
 
 .ball:hover {
-  border: 0.2em solid blue;
+  border: 3px solid white;
 }
 
 .container {
-  height: 5em;
+  height: 100px;
 }
