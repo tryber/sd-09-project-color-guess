@@ -32,6 +32,13 @@ function createDiv(container) {
   return div;
 }
 
+// Create element button in HTML
+function createButton(container) {
+  const button = document.createElement('button');
+  container.appendChild(button);
+  return button;
+}
+
 // Load RGB code in HTML
 function loadRgbCode(container) {
   const section = createSection(container);
@@ -86,6 +93,20 @@ function checkAnswer(event) {
   }
 }
 
+// Load button reset game at page 
+function loadButton(container) {
+  const section = createSection(container);
+  section.className = 'sections';
+  const button = createButton(section);
+  button.innerText = 'Reset Game';
+  button.id = 'reset-game';
+}
+
+// Reload page HTML
+function reloadPage() {
+  location.reload();
+}
+
 // Load functions and event listeners at the window load
 window.onload = function () {
   const container = document.querySelector('.main-page');
@@ -93,5 +114,7 @@ window.onload = function () {
   loadRgbCode(container);
   loadBalls(container, amountBalls)
   loadAnswer(container);
+  loadButton(container);
   document.querySelectorAll('.sections')[1].addEventListener('click', checkAnswer);
+  document.querySelector('#reset-game').addEventListener('click', reloadPage);
 }
