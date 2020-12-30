@@ -58,6 +58,8 @@ function resetGame() {
 }
 
 window.onload = function () {
+  const body = document.querySelector('body');
+  body.style.backgroundImage = `linear-gradient(to right, ${randomColor()}, ${randomColor()})`;
   const resetButton = document.querySelector('#reset-game');
   resetButton.addEventListener('click', resetGame);
   resetGame();
