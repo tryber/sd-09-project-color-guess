@@ -1,0 +1,34 @@
+header {
+  text-align: center;
+}
+
+.ballsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.ball {
+  border: 1px solid black;
+  border-radius: 50%;
+  margin: 3px 4px;
+  min-height: 50px;
+  min-width: 50px;
+}
+
+.answerContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+header div {
+  margin-top: 10px;
+}
