@@ -27,7 +27,7 @@ function compareColor(event) {
   if (event.target.style.backgroundColor === `rgb${cor.innerText}`) {
     answer.innerText = 'Acertou!';
     scorePoints += 3;
-    score.innerText = `${scorePoints}`
+    score.innerText = `${scorePoints}`;
   } else {
     answer.innerText = 'Errou! Tente novamente!';
   }
