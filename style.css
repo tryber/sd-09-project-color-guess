@@ -10,9 +10,7 @@ button {
   color: black;
   font-weight: 600;
   margin: 0.5em;
-  padding: 0.5em;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding: 0.5em 1em;
   transition: 0.5s;
 }
 
@@ -22,6 +20,7 @@ button:focus {
 
 button:hover {
   background-color: white;
+  padding: 0.5em 2em;
 }
 
 main {
