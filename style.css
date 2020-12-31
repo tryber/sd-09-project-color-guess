@@ -28,3 +28,7 @@ header {
   justify-content: center;
   margin-top: 15px;
 }
+
+header div {
+  margin-top: 10px;
+}
