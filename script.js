@@ -12,6 +12,11 @@ function createStructure() {
   rgbText.innerHTML = generateRandomRGB();
   rgbText.id = 'rgb-color';
   mainSection.appendChild(rgbText);
+
+  const placar = document.createElement('p')
+  placar.innerHTML = `Placar: ${score()}`
+  placar.id = 'score'
+  mainSection.appendChild(placar)
 }
 
 function generateRandomRGB() {
@@ -20,6 +25,11 @@ function generateRandomRGB() {
   const b = Math.floor(Math.random()*256);  
   return `(${r}, ${g}, ${b})`; 
 }
+
+function score() {
+  return Math.random()*10
+}
+
 
 
 
