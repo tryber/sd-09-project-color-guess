@@ -3,10 +3,10 @@ body {
 }
 
 button {
-  background-color: lightgrey;
+  background-color: lightgray;
   border: none;
   border-radius: 1em;
-  box-shadow: 2px 2px 5px grey;
+  box-shadow: 2px 2px 5px gray;
   color: black;
   font-weight: 600;
   margin: 0.5em;
@@ -30,7 +30,7 @@ main {
   font-family: cursive;
   margin: 50px auto;
   padding: 30px;
-  text-shadow: 2px 2px 5px grey;
+  text-shadow: 2px 2px 5px gray;
   width: 500px;
 }
 
