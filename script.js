@@ -17,6 +17,34 @@ function createStructure() {
   placar.innerHTML = `Placar: ${score()}`
   placar.id = 'score'
   mainSection.appendChild(placar)
+
+  const colorButtons = document.createElement('nav');
+  mainSection.appendChild(colorButtons);
+
+  const buttonColor1 = document.createElement('button');
+  buttonColor1.className = 'ball';
+  buttonColor1.style.backgroundColor = `rgb${generateRandomRGB()}`;  
+  colorButtons.appendChild(buttonColor1)
+  const buttonColor2 = document.createElement('button');
+  buttonColor2.className = 'ball';
+  buttonColor2.style.backgroundColor = `rgb${generateRandomRGB()}`;  
+  colorButtons.appendChild(buttonColor2)
+  const buttonColor3 = document.createElement('button');
+  buttonColor3.className = 'ball';
+  buttonColor3.style.backgroundColor = `rgb${generateRandomRGB()}`;  
+  colorButtons.appendChild(buttonColor3)
+  const buttonColor4 = document.createElement('button');
+  buttonColor4.className = 'ball';
+  buttonColor4.style.backgroundColor = `rgb${generateRandomRGB()}`;  
+  colorButtons.appendChild(buttonColor4)
+  const buttonColor5 = document.createElement('button');
+  buttonColor5.className = 'ball';
+  buttonColor5.style.backgroundColor = `rgb${generateRandomRGB()}`;  
+  colorButtons.appendChild(buttonColor5)
+  const buttonColor6 = document.createElement('button');
+  buttonColor6.className = 'ball';
+  buttonColor6.style.backgroundColor = `rgb${generateRandomRGB()}`;  
+  colorButtons.appendChild(buttonColor6)
 }
 
 function generateRandomRGB() {
