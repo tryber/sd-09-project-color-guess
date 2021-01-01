@@ -4,12 +4,26 @@ function createStructure() {
   bodyChild.appendChild(mainSection);
 
   const mainTitle = document.createElement('h1');
-  mainTitle.innerHTML = 'Can you guess the color?'
-  mainTitle.id = 'title'
+  mainTitle.innerHTML = 'Can you guess the color?';
+  mainTitle.id = 'title';
   mainSection.appendChild(mainTitle);
+
+  const rgbText = document.createElement('h3');
+  rgbText.innerHTML = generateRandomRGB();
+  rgbText.id = 'rgb-color';
+  mainSection.appendChild(rgbText);
 }
 
-window.onload = function() {
-  createStructure()
+function generateRandomRGB() {
+  const r = Math.floor(Math.random()*256);
+  const g = Math.floor(Math.random()*256);
+  const b = Math.floor(Math.random()*256);  
+  return `(${r}, ${g}, ${b})`; 
+}
 
+
+
+window.onload = function() {
+  createStructure();
+  generateRandomRGB();
 }
