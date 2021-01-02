@@ -64,3 +64,9 @@ h1 {
   margin: 20px;
   width: 4em;
 }
+
+h2 {
+  color: rgb(93 , 175 , 94);
+  font-family: Rock Salt, cursive;
+  text-shadow: 2px 2px black;
+}
