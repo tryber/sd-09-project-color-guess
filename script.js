@@ -14,7 +14,7 @@ function createStructure() {
   mainSection.appendChild(rgbText);
 
   const placar = document.createElement('p');
-  placar.innerHTML = `Placar: ${0+score()}`;
+  placar.innerHTML = 'Placar: 0';
   placar.id = 'score';
   mainSection.appendChild(placar);
 
@@ -85,7 +85,8 @@ function resetGame() {
   for(let index = 0; index < resetColors.length; index += 1 ) {
     resetColors[index].style.backgroundColor = `rgb${generateRandomRGB()}`;
   }
-  setRgbTextToGuess()
+  setRgbTextToGuess();
+  document.getElementById('answer').innerHTML = 'Escolha uma cor';
 }
 
 // gera um numero aleatorio entre 0 e 5 e aplica no como indice do botão para retornar um rgb de seleção aleatoria
@@ -114,6 +115,22 @@ function checkAnswer(event) {
   }
 }
 
+function score() {
+  let result = 0
+  let checkResult = document.getElementById('answer');
+  if(checkResult.innerText === 'Acertou!') {
+    result += + 3; }
+  if (checkResult.innerText === 'Errou! Tente novamente!') {
+    result += - 1
+  }
+  return result
+}
+
+function inputScore() {
+  let scoreText = document.getElementById('score')  
+  scoreText.innerHTML = `Placar: ${score()}`
+}
+
 function listeners() {
   const rgbButtons = document.getElementsByClassName('ball')
   rgbButtons[0].addEventListener('click', checkAnswer)
@@ -126,14 +143,12 @@ function listeners() {
   buttonReset.addEventListener('click', resetGame)
 }
 
-function score() {
-  return 0;
-}
+
 
 window.onload = function() {
   createStructure();
   generateRandomRGB();
-  setRgbTextToGuess();
+  setRgbTextToGuess();  
+  listeners();  
   score();
-  listeners();
 }
