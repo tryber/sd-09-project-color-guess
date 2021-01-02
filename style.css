@@ -4,3 +4,14 @@
   height: 50px;
   margin: 5px;
 }
+
+.changeGameButtons {
+  width: 100px;
+  height: 25px;
+}
+
+.changeDificult {
+  height: 19px;
+  position: relative;
+  bottom: 5px;
+}

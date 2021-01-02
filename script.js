@@ -54,15 +54,21 @@ function createStructure() {
   sectionChangeGame.id = 'dificult-reset';
   dinamicText.appendChild(sectionChangeGame);
 
+  const buttonDificult = document.createElement('button');
+  buttonDificult.id = 'buttonDificult';
+  buttonDificult.className = 'changeGameButtons'
+  sectionChangeGame.appendChild(buttonDificult);
+
+  const inputDificult = document.createElement('input');
+  inputDificult.id = 'changeDificult';
+  inputDificult.className = 'changeDificult';
+  inputDificult.setAttribute('type', 'text')  
+  sectionChangeGame.appendChild(inputDificult);
+
   const buttonReset = document.createElement('button');
   buttonReset.id = 'reset-game';
   buttonReset.className = 'changeGameButtons'
   sectionChangeGame.appendChild(buttonReset);
-
-  const buttonDificult = document.createElement('button');
-  buttonDificult.id = 'changeDificult';
-  buttonDificult.className = 'changeGameButtons';
-  sectionChangeGame.appendChild(buttonDificult);
 }
 
 function generateRandomRGB() {
