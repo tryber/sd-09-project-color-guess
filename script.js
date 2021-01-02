@@ -129,7 +129,8 @@ function score() {
 
 function inputScore() {
   let scoreText = document.getElementById('score')  
-  scoreText.innerHTML = `Placar: ${score()}`
+  scoreText.innerHTML = `Placar: ${0 + score()}`
+
 }
 
 function listeners() {
