@@ -5,7 +5,7 @@ function createStructure() {
   bodyChild.appendChild(mainSection);
 
   const mainTitle = document.createElement('h1');
-  mainTitle.innerHTML = 'Can you guess the color?';
+  mainTitle.innerHTML = '🎨 Can you guess the color? 🎨';
   mainTitle.id = 'title';
   mainSection.appendChild(mainTitle);
 
@@ -57,6 +57,7 @@ function createStructure() {
 
   const buttonDificult = document.createElement('button');
   buttonDificult.id = 'buttonDificult';
+  buttonDificult.innerHTML = 'Dificult'
   buttonDificult.className = 'changeGameButtons'
   sectionChangeGame.appendChild(buttonDificult);
 
@@ -148,8 +149,6 @@ function listeners() {
   const buttonReset = document.getElementById('reset-game');
   buttonReset.addEventListener('click', resetGame)
 }
-
-
 
 window.onload = function() {
   createStructure();
