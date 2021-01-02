@@ -49,6 +49,20 @@ function createStructure() {
   dinamicText.innerHTML = 'Escolha uma cor';
   dinamicText.id = 'answer';
   mainSection.appendChild(dinamicText)
+
+  const sectionChangeGame = document.createElement('section');
+  sectionChangeGame.id = 'dificult-reset';
+  dinamicText.appendChild(sectionChangeGame);
+
+  const buttonReset = document.createElement('button');
+  buttonReset.id = 'reset-game';
+  buttonReset.className = 'changeGameButtons'
+  sectionChangeGame.appendChild(buttonReset);
+
+  const buttonDificult = document.createElement('button');
+  buttonDificult.id = 'changeDificult';
+  buttonDificult.className = 'changeGameButtons';
+  sectionChangeGame.appendChild(buttonDificult);
 }
 
 function generateRandomRGB() {
