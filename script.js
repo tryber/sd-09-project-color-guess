@@ -83,7 +83,8 @@ function resetGame() {
   let resetColors = document.getElementsByClassName('ball')
   for(let index = 0; index < resetColors.length; index += 1 ) {
     resetColors[index].style.backgroundColor = `rgb${generateRandomRGB()}`;
-  } 
+  }
+  setRgbTextToGuess()
 }
 
 // gera um numero aleatorio entre 0 e 5 e aplica no como indice do botão para retornar um rgb de seleção aleatoria
