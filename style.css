@@ -55,3 +55,12 @@ h1 {
   position: relative;
   text-shadow: 1.2px 1.2px black;
 }
+
+.ball {
+  border: 1px solid black;
+  border-radius: 100%;
+  display: inline-block;
+  height: 4em;
+  margin: 20px;
+  width: 4em;
+}
