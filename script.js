@@ -1,6 +1,7 @@
 function createStructure() {
   const bodyChild = document.querySelector('body');
   const mainSection = document.createElement('section');
+  mainSection.id = 'mainSection'
   bodyChild.appendChild(mainSection);
 
   const mainTitle = document.createElement('h1');
@@ -52,7 +53,7 @@ function createStructure() {
 
   const sectionChangeGame = document.createElement('section');
   sectionChangeGame.id = 'dificult-reset';
-  dinamicText.appendChild(sectionChangeGame);
+  mainSection.appendChild(sectionChangeGame);
 
   const buttonDificult = document.createElement('button');
   buttonDificult.id = 'buttonDificult';
