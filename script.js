@@ -2,6 +2,7 @@ const rgbColor = document.getElementById('rgb-color');
 const balls = document.getElementsByClassName('ball');
 const colorGuess = document.getElementById('colors');
 const answer = document.getElementById('answer');
+const resetBtn = document.getElementById('reset-game');
 
 function randomColor() {
   let rgb = 'rgb(';
@@ -31,3 +32,10 @@ function checkAnswer(event) {
 }
 
 colorGuess.addEventListener('click', checkAnswer);
+
+function reset() {
+  colorFill();
+  answer.innerText = 'Escolha uma cor';
+}
+
+resetBtn.addEventListener('click', reset);
