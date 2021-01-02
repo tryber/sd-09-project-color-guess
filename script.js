@@ -68,6 +68,7 @@ function createStructure() {
   const buttonReset = document.createElement('button');
   buttonReset.id = 'reset-game';
   buttonReset.className = 'changeGameButtons'
+  buttonReset.innerHTML = 'Reset Game'
   sectionChangeGame.appendChild(buttonReset);
 }
 
@@ -75,7 +76,14 @@ function generateRandomRGB() {
   const r = Math.floor(Math.random()*256);
   const g = Math.floor(Math.random()*256);
   const b = Math.floor(Math.random()*256);
-  return `(${r}, ${g}, ${b})`;
+  return `(${r}, ${g}, ${b})`;  
+}
+
+function resetGame() {
+  let resetColors = document.getElementsByClassName('ball')
+  for(let index = 0; index < resetColors.length; index += 1 ) {
+    resetColors[index].style.backgroundColor = `rgb${generateRandomRGB()}`;
+  } 
 }
 
 // gera um numero aleatorio entre 0 e 5 e aplica no como indice do botão para retornar um rgb de seleção aleatoria
@@ -112,6 +120,8 @@ function listeners() {
   rgbButtons[3].addEventListener('click', checkAnswer)
   rgbButtons[4].addEventListener('click', checkAnswer)
   rgbButtons[5].addEventListener('click', checkAnswer)
+  const buttonReset = document.getElementById('reset-game');
+  buttonReset.addEventListener('click', resetGame)
 }
 
 function score() {
