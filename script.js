@@ -133,12 +133,18 @@ function inputScore() {
 
 function listeners() {
   const rgbButtons = document.getElementsByClassName('ball')
-  rgbButtons[0].addEventListener('click', checkAnswer)
-  rgbButtons[1].addEventListener('click', checkAnswer)
-  rgbButtons[2].addEventListener('click', checkAnswer)
-  rgbButtons[3].addEventListener('click', checkAnswer)
-  rgbButtons[4].addEventListener('click', checkAnswer)
-  rgbButtons[5].addEventListener('click', checkAnswer)
+  rgbButtons[0].addEventListener('click', inputScore);
+  rgbButtons[0].addEventListener('click', checkAnswer);  
+  rgbButtons[1].addEventListener('click', checkAnswer);
+  rgbButtons[1].addEventListener('click', inputScore);
+  rgbButtons[2].addEventListener('click', checkAnswer);
+  rgbButtons[2].addEventListener('click', inputScore);
+  rgbButtons[3].addEventListener('click', checkAnswer);
+  rgbButtons[3].addEventListener('click', inputScore);
+  rgbButtons[4].addEventListener('click', checkAnswer);
+  rgbButtons[4].addEventListener('click', inputScore);
+  rgbButtons[5].addEventListener('click', checkAnswer);
+  rgbButtons[5].addEventListener('click', inputScore);
   const buttonReset = document.getElementById('reset-game');
   buttonReset.addEventListener('click', resetGame)
 }
