@@ -4,9 +4,19 @@ const randomColor = function () {
   const red = Math.floor(Math.random() * 256);
   const green = Math.floor(Math.random() * 256);
   const blue = Math.floor(Math.random() * 256);
-  const color = `(${red} , ${green} , ${blue})`;
+  const color = `(${red}, ${green}, ${blue})`;
   return color;
 };
+
+function handleClickColor(event) {
+  const colorSelected = event.target.style.backgroundColor;
+  const colorGuess = `rgb${document.getElementById('rgb-color').innerText}`;
+  if (colorGuess === colorSelected) {
+    console.log(`acertou, ${colorGuess}, ${colorSelected}`);
+  } else {
+    console.log(`errou, ${colorGuess}, ${colorSelected}`);
+  }
+}
 
 const displayColors = function () {
   const colorsContainer = document.querySelector('.colors-container');
@@ -16,6 +26,7 @@ const displayColors = function () {
     const divElement = document.createElement('div');
     divElement.className = 'ball';
     divElement.style.backgroundColor = `rgb${color}`;
+    divElement.addEventListener('click', handleClickColor);
     colorsContainer.appendChild(divElement);
   }
 };
