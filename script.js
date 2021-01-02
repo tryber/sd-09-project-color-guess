@@ -64,12 +64,34 @@ function random (min, max) {
   min = Math.ceil(0);
   max = Math.floor(6);
   let result = Math.floor(Math.random() * (max - min)) + min;
-  return teste[result].style.backgroundColor;
+  return teste[result].style.backgroundColor.slice(3)
 }
 // aplica resultado da função random retirando 3 primeiros characteres
 function setRgbTextToGuess() {
   const rgbText = document.getElementById('rgb-color');
-  rgbText.innerHTML = random().slice(3);
+  rgbText.innerHTML = random();
+}
+
+// criar função com listeners para cada botão, essa função deve verificar innerHtml de h3 se é = o botão apertado
+function checkAnswer(event) {
+  let pressedButton = event.target.style.backgroundColor.slice(3);
+  let checkResult = document.getElementById('rgb-color');
+  let printResult = document.getElementById('answer');
+  if(pressedButton === checkResult.innerText) {
+    printResult.innerHTML = 'Acertou!';
+  } else {
+    printResult.innerHTML = 'Errou! Tente novamente!';
+  }
+}
+
+function listeners() {
+  const rgbButtons = document.getElementsByClassName('ball')
+  rgbButtons[0].addEventListener('click', checkAnswer)
+  rgbButtons[1].addEventListener('click', checkAnswer)
+  rgbButtons[2].addEventListener('click', checkAnswer)
+  rgbButtons[3].addEventListener('click', checkAnswer)
+  rgbButtons[4].addEventListener('click', checkAnswer)
+  rgbButtons[5].addEventListener('click', checkAnswer)
 }
 
 function score() {
@@ -79,6 +101,7 @@ function score() {
 window.onload = function() {
   createStructure();
   generateRandomRGB();
-  setRgbTextToGuess()
+  setRgbTextToGuess();
   score();
+  listeners();
 }
