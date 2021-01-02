@@ -3,7 +3,7 @@ body {
 }
 
 header {
-  background-color: rgb(82 , 183 , 136);
+  background-color: rgb(82, 183, 136);
   border-bottom: 2px solid black;
   display: inline-block;
   font-family: Texturina, serif;
@@ -19,7 +19,7 @@ header {
 
 .header {
   bottom: 30%;
-  color: rgb(108 , 200 , 202);
+  color: rgb(108, 200, 202);
   display: inline-block;
   font-size: xx-large;
   margin: auto 1%;
@@ -34,7 +34,7 @@ header {
 }
 
 main {
-  background-color: rgb(82 , 183 , 202);
+  background-color: rgb(82, 183, 202);
   border: 1px solid black;
   border-radius: 15px;
   box-shadow: 1px 1px black;
