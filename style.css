@@ -6,7 +6,7 @@
   margin:2px;
   border: 2px solid;
   outline: none;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 .colorSection {
@@ -19,5 +19,11 @@
 }
 
 .changeDificult {
-  height: 19px;  
+  height: 25px;
+}
+
+.mainSection {  
+  position: relative;
+  float: left;
+  transform: 50% 50%;
 }
