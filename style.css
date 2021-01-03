@@ -1,0 +1,51 @@
+button {
+  background-color: white;
+  border: none;
+  border-radius: 1em;
+  box-shadow: 2px 2px 5px black;
+  color: black;
+  font-weight: 600;
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  transition: 0.5s;
+}
+
+button:focus {
+  outline: transparent;
+}
+
+button:hover {
+  box-shadow: 0 2px 5px white;
+  padding: 0.5em 1.5em;
+}
+
+main {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 30px;
+  box-shadow: 3px 3px 5px black;
+  color: white;
+  font-family: cursive;
+  margin: 50px auto;
+  padding: 30px;
+  text-align: center;
+  text-shadow: 2px 2px 5px black;
+  width: 500px;
+}
+
+.ball {
+  border: 3px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  height: 50px;
+  margin: 10px;
+  transition: 0.3s;
+  width: 50px;
+}
+
+.ball:hover {
+  border: 3px solid white;
+}
+
+.container {
+  height: 100px;
+}
