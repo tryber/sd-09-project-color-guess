@@ -1,12 +1,8 @@
-body {
-  text-align: center;
-}
-
 button {
-  background-color: lightgray;
+  background-color: white;
   border: none;
   border-radius: 1em;
-  box-shadow: 2px 2px 5px gray;
+  box-shadow: 2px 2px 5px black;
   color: black;
   font-weight: 600;
   margin: 0.5em;
@@ -19,18 +15,20 @@ button:focus {
 }
 
 button:hover {
-  background-color: white;
-  padding: 0.5em 2em;
+  box-shadow: 0 2px 5px white;
+  padding: 0.5em 1.5em;
 }
 
 main {
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 30px;
+  box-shadow: 3px 3px 5px black;
   color: white;
   font-family: cursive;
   margin: 50px auto;
   padding: 30px;
-  text-shadow: 2px 2px 5px gray;
+  text-align: center;
+  text-shadow: 2px 2px 5px black;
   width: 500px;
 }
 
