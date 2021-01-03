@@ -43,7 +43,30 @@ const displayColorRGB = function () {
   colorRGB.innerText = colors[index];
 };
 
+const resetColors = function () {
+  colors = [];
+  const colorsElement = document.querySelectorAll('.ball');
+  const colorsContainer = colorsElement[0].parentNode;
+  for (let index = 0; index < colorsElement.length; index += 1) {
+    colorsContainer.removeChild(colorsElement[index]);
+  }
+}
+
+function handleClickRestartButton() {
+  resetColors();
+  displayColors();
+  displayColorRGB();
+  const answerElement = document.getElementById('answer');
+  answerElement.innerText = 'Escolha uma cor';
+}
+
+const restartGame = function () {
+  const restartButton = document.getElementById('reset-game');
+  restartButton.addEventListener('click', handleClickRestartButton);
+}
+
 window.onload = function () {
   displayColors();
   displayColorRGB();
+  restartGame();
 };
