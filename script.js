@@ -12,40 +12,16 @@ function createStructure() {
   const rgbText = document.createElement('h3');
   rgbText.id = 'rgb-color';
   mainSection.appendChild(rgbText);
-
   
   const placar = document.createElement('p');  
   placar.innerHTML = 'Placar: 0';  
   placar.id = 'score';
   mainSection.appendChild(placar);
 
-  const colorButtons = document.createElement('nav');
+  const colorButtons = document.createElement('section');
+  colorButtons.id = 'colorsSection';
+  colorButtons.className = 'colorSection'
   mainSection.appendChild(colorButtons);
-
-  const buttonColor1 = document.createElement('button');
-  buttonColor1.className = 'ball';
-  buttonColor1.style.backgroundColor = `rgb${generateRandomRGB()}`;
-  colorButtons.appendChild(buttonColor1);
-  const buttonColor2 = document.createElement('button');
-  buttonColor2.className = 'ball';
-  buttonColor2.style.backgroundColor = `rgb${generateRandomRGB()}`;
-  colorButtons.appendChild(buttonColor2);
-  const buttonColor3 = document.createElement('button');
-  buttonColor3.className = 'ball';
-  buttonColor3.style.backgroundColor = `rgb${generateRandomRGB()}`;
-  colorButtons.appendChild(buttonColor3);
-  const buttonColor4 = document.createElement('button');
-  buttonColor4.className = 'ball';
-  buttonColor4.style.backgroundColor = `rgb${generateRandomRGB()}`;
-  colorButtons.appendChild(buttonColor4);
-  const buttonColor5 = document.createElement('button');
-  buttonColor5.className = 'ball';
-  buttonColor5.style.backgroundColor = `rgb${generateRandomRGB()}`;
-  colorButtons.appendChild(buttonColor5);
-  const buttonColor6 = document.createElement('button');
-  buttonColor6.className = 'ball';
-  buttonColor6.style.backgroundColor = `rgb${generateRandomRGB()}`;
-  colorButtons.appendChild(buttonColor6);
 
   const dinamicText = document.createElement('p');
   dinamicText.innerHTML = 'Escolha uma cor';
@@ -75,18 +51,22 @@ function createStructure() {
   sectionChangeGame.appendChild(buttonReset);
 }
 
-let result = 0;
-function inputScore() {
-  let checkResult = document.getElementById('answer');
-  let checkScore = document.getElementById('score');
-  if(checkResult.innerText === 'Acertou!') {
-    result +=  3;
-    checkScore.innerText = `Placar: ${result}`;
-  }
-  if (checkResult.innerText === 'Errou! Tente novamente!') {
-    result -=  1;
-    checkScore.innerText = `Placar: ${result}`;
-  }
+let base = 6
+function createCircle() {
+for(let index = 0; index < base; index += 1) {
+  const div = document.createElement('div');
+  div.className = 'ball'  
+  document.getElementById('colorsSection').appendChild(div);
+}
+}
+
+function addColorAndEventsToCircles() {
+const allBalls = document.getElementsByClassName('ball')
+for(let index = 0; index < allBalls.length; index += 1) {  
+  allBalls[index].style.backgroundColor = `rgb${generateRandomRGB()}`
+  allBalls[index].addEventListener('click', checkAnswer);   
+  allBalls[index].addEventListener('click', inputScore); 
+}
 }
 
 function generateRandomRGB() {
@@ -96,16 +76,20 @@ function generateRandomRGB() {
   return `(${r}, ${g}, ${b})`;  
 }
 
-function resetGame() {
-  let resetColors = document.getElementsByClassName('ball')
-  for(let index = 0; index < resetColors.length; index += 1 ) {
-    resetColors[index].style.backgroundColor = `rgb${generateRandomRGB()}`;
+let result = 0;
+function inputScore() {
+  let checkResult = document.getElementById('answer');
+  let checkScore = document.getElementById('score');
+  if(checkResult.innerText === 'Acertou!') {
+    result +=  3;
+    checkScore.innerText = `Placar: ${result}`;
+  } else if (checkResult.innerText === 'Errou! Tente novamente!') {
+    result -=  1;
+    checkScore.innerText = `Placar: ${result}`;
   }
-  setRgbTextToGuess();
-  document.getElementById('answer').innerHTML = 'Escolha uma cor';
 }
 
-// gera um numero aleatorio entre 0 e 5 e aplica no como indice do botão para retornar um rgb de seleção aleatoria
+// gera um numero aleatorio entre 0 e 5 e aplica como indice do circulo para retornar um rgb de seleção aleatoria
 function random (min, max) {
   let teste = document.getElementsByClassName('ball');
   min = Math.ceil(0);
@@ -131,28 +115,26 @@ function checkAnswer(event) {
   }
 }
 
+function resetGame() {
+  let resetColors = document.getElementsByClassName('ball')
+  for(let index = 0; index < resetColors.length; index += 1 ) {
+    resetColors[index].style.backgroundColor = `rgb${generateRandomRGB()}`;
+  }
+  setRgbTextToGuess();
+  document.getElementById('answer').innerHTML = 'Escolha uma cor';
+}
+
 function listeners() {
-  const rgbButtons = document.getElementsByClassName('ball')
-  rgbButtons[0].addEventListener('click', inputScore);
-  rgbButtons[0].addEventListener('click', checkAnswer);  
-  rgbButtons[1].addEventListener('click', checkAnswer);
-  rgbButtons[1].addEventListener('click', inputScore);
-  rgbButtons[2].addEventListener('click', checkAnswer);
-  rgbButtons[2].addEventListener('click', inputScore);
-  rgbButtons[3].addEventListener('click', checkAnswer);
-  rgbButtons[3].addEventListener('click', inputScore);
-  rgbButtons[4].addEventListener('click', checkAnswer);
-  rgbButtons[4].addEventListener('click', inputScore);
-  rgbButtons[5].addEventListener('click', checkAnswer);
-  rgbButtons[5].addEventListener('click', inputScore);
   const buttonReset = document.getElementById('reset-game');
   buttonReset.addEventListener('click', resetGame)
 }
 
 window.onload = function() {
-  createStructure();
+  createStructure();  
+  createCircle();
+  inputScore();
+  addColorAndEventsToCircles();
   generateRandomRGB();
   setRgbTextToGuess();  
-  listeners();  
-  inputScore();
+  listeners();
 }
