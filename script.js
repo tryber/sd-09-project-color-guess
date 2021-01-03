@@ -1,4 +1,5 @@
 let colors = [];
+let score = 0;
 
 const randomColor = function () {
   const red = Math.floor(Math.random() * 256);
@@ -11,9 +12,12 @@ const randomColor = function () {
 function handleClickColor(event) {
   const colorSelected = event.target.style.backgroundColor;
   const colorGuess = `rgb${document.getElementById('rgb-color').innerText}`;
+  const scoreElement = document.getElementById('score');
   const resultText = document.getElementById('answer');
   if (colorGuess === colorSelected) {
     resultText.innerText = 'Acertou!';
+    score += 3;
+    scoreElement.innerText = score;
   } else {
     resultText.innerText = 'Errou! Tente novamente!';
   }
@@ -50,7 +54,7 @@ const resetColors = function () {
   for (let index = 0; index < colorsElement.length; index += 1) {
     colorsContainer.removeChild(colorsElement[index]);
   }
-}
+};
 
 function handleClickRestartButton() {
   resetColors();
@@ -63,7 +67,7 @@ function handleClickRestartButton() {
 const restartGame = function () {
   const restartButton = document.getElementById('reset-game');
   restartButton.addEventListener('click', handleClickRestartButton);
-}
+};
 
 window.onload = function () {
   displayColors();

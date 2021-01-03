@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(233 , 196 , 106);
+  background-color: rgb(233, 196, 106);
   color: rgb(42 , 157 , 143);
   font-family: Signika, sans-serif;
   font-size: 18px;
@@ -14,7 +14,7 @@ body {
 }
 
 h1 {
-  color: rgb(38 , 70 , 83);
+  color: rgb(38, 70, 83);
   font-family: Lobster, cursive;
 }
 
@@ -37,7 +37,7 @@ h1 {
 }
 
 .btn {
-  background-color: rgb(231 , 111 , 81);
+  background-color: rgb(231, 111, 81);
   border: none;
   border-radius: 4px;
   color: white;
