@@ -13,8 +13,9 @@ function createStructure() {
   rgbText.id = 'rgb-color';
   mainSection.appendChild(rgbText);
 
-  const placar = document.createElement('p');
-  placar.innerHTML = 'Placar: 0';
+  
+  const placar = document.createElement('p');  
+  placar.innerHTML = 'Placar: 0';  
   placar.id = 'score';
   mainSection.appendChild(placar);
 
@@ -74,6 +75,20 @@ function createStructure() {
   sectionChangeGame.appendChild(buttonReset);
 }
 
+let result = 0;
+function inputScore() {
+  let checkResult = document.getElementById('answer');
+  let checkScore = document.getElementById('score');
+  if(checkResult.innerText === 'Acertou!') {
+    result +=  3;
+    checkScore.innerText = `Placar: ${result}`;
+  }
+  if (checkResult.innerText === 'Errou! Tente novamente!') {
+    result -=  1;
+    checkScore.innerText = `Placar: ${result}`;
+  }
+}
+
 function generateRandomRGB() {
   const r = Math.floor(Math.random()*256);
   const g = Math.floor(Math.random()*256);
@@ -116,23 +131,6 @@ function checkAnswer(event) {
   }
 }
 
-function score() {
-  let result = 0
-  let checkResult = document.getElementById('answer');
-  if(checkResult.innerText === 'Acertou!') {
-    result += + 3; }
-  if (checkResult.innerText === 'Errou! Tente novamente!') {
-    result += - 1
-  }
-  return result
-}
-
-function inputScore() {
-  let scoreText = document.getElementById('score')  
-  scoreText.innerHTML = `Placar: ${0 + score()}`
-
-}
-
 function listeners() {
   const rgbButtons = document.getElementsByClassName('ball')
   rgbButtons[0].addEventListener('click', inputScore);
@@ -156,5 +154,5 @@ window.onload = function() {
   generateRandomRGB();
   setRgbTextToGuess();  
   listeners();  
-  score();
+  inputScore();
 }
