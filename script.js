@@ -11,10 +11,11 @@ const randomColor = function () {
 function handleClickColor(event) {
   const colorSelected = event.target.style.backgroundColor;
   const colorGuess = `rgb${document.getElementById('rgb-color').innerText}`;
+  const resultText = document.getElementById('answer');
   if (colorGuess === colorSelected) {
-    console.log(`acertou, ${colorGuess}, ${colorSelected}`);
+    resultText.innerText = 'Acertou!';
   } else {
-    console.log(`errou, ${colorGuess}, ${colorSelected}`);
+    resultText.innerText = 'Errou! Tente novamente!';
   }
 }
 
@@ -34,15 +35,15 @@ const displayColors = function () {
 const ramdomSelectColor = function () {
   const index = Math.floor(Math.random() * 6);
   return index;
-}
+};
 
 const displayColorRGB = function () {
   const colorRGB = document.getElementById('rgb-color');
   const index = ramdomSelectColor();
   colorRGB.innerText = colors[index];
-}
+};
 
 window.onload = function () {
   displayColors();
   displayColorRGB();
-}
+};

@@ -1,3 +1,8 @@
+body {
+  font-family: 'Signika', sans-serif;
+  font-size: 18px;
+}
+
 .container {
   align-items: center;
   display: flex;
@@ -6,14 +11,24 @@
   max-width: 720;
 }
 
+h1 {
+  font-family: Lobster, cursive;
+}
+
 .colors-container {
   display: flex;
 }
 
 .ball {
-  width: 50px;
-  height: 50px;
   border-radius: 50%;
   border: 1px solid black;
+  height: 50px;
   margin: 10px;
+  width: 50px;
+}
+
+.result-container {
+  display: flex;
+  font-size: 28px;
+  font-weight: bold;
 }
