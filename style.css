@@ -75,7 +75,8 @@ footer {
   justify-content: center;
   left: 1em;
   margin: 0 auto;
-  padding: 10px 10px 0 10px;
+  padding: 10px;
+  padding-bottom: 0;
   position: fixed;
   right: 1em;
   text-align: center;
