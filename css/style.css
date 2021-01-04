@@ -1,11 +1,11 @@
-.ball{
+.ball {
 	border-radius: 50%;
 	display: inline-block;
 	height: 50px;
 	width: 50px;
 }
 
-body{
+body {
 	background-color: rgb(19 17 17 / 95%);
 	justify-content: center;
 	flex-direction: column;
@@ -13,13 +13,7 @@ body{
     display: flex;
 }
 
-h1{
-	border-radius: 20px;
-	margin-right: 20%;
-	margin-left: 20%;
-}
-
-button{
+button {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 	background-color: #faebd74d;
 	border-radius: 10px;
@@ -35,14 +29,20 @@ button{
 }
 
 .button:hover {
-	background-color: #4CAF50; /* Green */
+	background-color: #4CAF50;
 	color: white;
 }
 
-.div-still{
-    background-color: ghostwhite;
+.div-still {
+	background-color: ghostwhite;
 	border: 10px solid #009ffc;
 	border-radius: 18px;
-	text-align: center; 
+	text-align: center;
 	width: 420px;
+}
+
+h1 {
+	border-radius: 20px;
+	margin-right: 20%;
+	margin-left: 20%;
 }

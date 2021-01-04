@@ -23,7 +23,7 @@ function cliqueNaBola(event) {
   const corSelecionada = event.target.style.backgroundColor;
   if (corSelecionada === textoCor.textContent) {
     textoResposta.textContent = "Acertou!";
-    placar.textContent = numero = numero + 3;
+    placar.textContent = numero = numero + 4;
     // aqui soma mais 3 para o placar...
   } else {
     textoResposta.textContent = "Errou! Tente novamente!";
@@ -51,5 +51,4 @@ adicionarCorAleatoria();
 function reiniciaJogo() {
   window.location.reload();
 }
-
 botaoReiniciar.addEventListener('click', reiniciaJogo);
