@@ -75,15 +75,12 @@ h1 {
 
 button {
   background-color: aliceblue;
-  border-radius: 50%;
+  border: 1px solid black;
+  border-radius: 7px;
   box-shadow: 2px 2px black;
   color: silver;
   font-family: Rock Salt, cursive;
   height: 40px;
   text-shadow: 1px 1px black;
-  width: 200px;
-}
-
-button:focus {
-  outline: none;
+  width: 160px;
 }
