@@ -60,13 +60,15 @@ h1 {
   border: 1px solid black;
   border-radius: 100%;
   display: inline-block;
-  height: 4em;
+  height: 6em;
   margin: 20px;
-  width: 4em;
+  width: 6em;
 }
 
-h2 {
+.salt {
   color: rgb(93, 175, 94);
   font-family: Rock Salt, cursive;
+  font-size: 30px;
+  font-weight: 600;
   text-shadow: 2px 2px black;
 }
