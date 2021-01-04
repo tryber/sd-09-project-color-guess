@@ -18,7 +18,17 @@ function buildColorToGuess() {
   document.body.appendChild(colorToGuess);
 }
 
+function buildColorCircles() {
+  const circleAmount = 6;
+  for (let index = 0; index < circleAmount; index += 1) {
+    const circle = document.createElement('div');
+    circle.className = 'ball';
+    document.body.appendChild(circle);
+  }
+}
+
 window.onload = function () {
   buildTitle();
   buildColorToGuess();
+  buildColorCircles();
 }
