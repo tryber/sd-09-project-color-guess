@@ -1,6 +1,7 @@
 const ball = document.querySelectorAll('.ball');
 const text = document.querySelector('#answer');
 const rgbText = document.querySelector('#rgb-color');
+const button = document.querySelector('#reset-game');
 
 function coloringCircles() {
     for (let index = 0; index < ball.length; index += 1) {
@@ -12,18 +13,18 @@ function coloringCircles() {
 }
 coloringCircles();
 
-function randomRGBText() {
+function resetButton() {
     let rNum = Math.floor(Math.random() * 256);
     let gNum = Math.floor(Math.random() * 256);
     let bNum = Math.floor(Math.random() * 256);
     rgbText.innerText = `(${rNum}, ${gNum}, ${bNum})`;
 }
-randomRGBText();
+button.addEventListener('click', resetButton);
 
 function initialMessage() {
     text.innerText = 'Escolha uma cor';
 }
-initialMessage();
+button.addEventListener('click', initialMessage);
 
 function messageAboutEachColor(event) {
         if (event.target.style.backgroundColor !== rgbText.innerText) {
