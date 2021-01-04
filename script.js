@@ -4,16 +4,6 @@ const rgbText = document.querySelector('#rgb-color');
 const button = document.querySelector('#reset-game');
 let points = 0;
 
-function resetButton() {
-  const rNum = Math.floor(Math.random() * 256);
-  const gNum = Math.floor(Math.random() * 256);
-  const bNum = Math.floor(Math.random() * 256);
-  rgbText.innerText = `(${rNum}, ${gNum}, ${bNum})`;
-  coloringCircles();
-}
-resetButton();
-button.addEventListener('click', resetButton);
-
 function coloringCircles() {
   for (let index = 0; index < ball.length; index += 1) {
     const rNumber = Math.floor(Math.random() * 256);
@@ -25,6 +15,16 @@ function coloringCircles() {
   ball[newIndex].style.backgroundColor = `rgb${rgbText.innerText}`;
 }
 coloringCircles();
+
+function resetButton() {
+    const rNum = Math.floor(Math.random() * 256);
+    const gNum = Math.floor(Math.random() * 256);
+    const bNum = Math.floor(Math.random() * 256);
+    rgbText.innerText = `(${rNum}, ${gNum}, ${bNum})`;
+    coloringCircles();
+  }
+  resetButton();
+  button.addEventListener('click', resetButton);
 
 function scoreSum() {
   const score = document.querySelector('#score');
