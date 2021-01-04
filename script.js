@@ -8,15 +8,18 @@ function createStructure() {
   const mainTitle = document.createElement('h1');
   mainTitle.innerHTML = '🎨 Can you guess the color? 🎨';
   mainTitle.id = 'title';
+  mainTitle.className = 'title';
   mainSection.appendChild(mainTitle);
 
   const rgbText = document.createElement('h3');
   rgbText.id = 'rgb-color';
+  rgbText.className = 'rgb-color'
   mainSection.appendChild(rgbText);
   
   const placar = document.createElement('p');
   placar.innerHTML = 'Placar: 0';
   placar.id = 'score';
+  placar.className = 'score'
   mainSection.appendChild(placar);
 
   const colorButtons = document.createElement('section');
@@ -31,6 +34,7 @@ function createStructure() {
 
   const sectionChangeGame = document.createElement('section');
   sectionChangeGame.id = 'dificult-reset';
+  sectionChangeGame.className = 'dificult-reset';
   mainSection.appendChild(sectionChangeGame);
 
   const buttonDificult = document.createElement('button');

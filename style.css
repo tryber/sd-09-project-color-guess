@@ -10,7 +10,10 @@
 }
 
 .colorSection {
-  width: 400px;
+  width: 360px;
+  background-color: rgba(10, 9, 9, 0.85) ;
+  border-radius: 10px;
+  padding-top: 5px;
 }
 
 .changeGameButtons {
@@ -22,8 +25,43 @@
   height: 25px;
 }
 
-.mainSection {  
-  position: relative;
-  float: left;
-  transform: 50% 50%;
+.mainSection { 
+  width: 375px;
+  text-align: -webkit-center;
+  transform: translate(130%, 5%);
+  display: block;
+  position: absolute;
+  background: linear-gradient(55deg, rgb(216, 48, 216), purple, rgb(1, 248, 1), green, lightblue, rgb(91, 91, 252), rgb(255, 147, 147), red, gold, yellow);
+  background-size: 1600% 200%;
+  animation: gradient 6s linear infinite;
+  animation-direction: alternate;
+  border-radius: 5%;
+}
+
+@keyframes gradient {
+  0% {background-position: 0%;}
+  100% {background-position: 100%;}
+}
+/* animated background href: https://redstapler.co/css-animated-gradient-background/ */
+
+body {
+  overflow: hidden;
+  background-color: black;
+}
+
+.score  {
+  margin: 2%;
+  
+}
+.rgb-color {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.dificult-reset {
+  margin-bottom: 20px;
+  margin-top: -14px;
+}
+.title {
+  margin-bottom: 10px;
 }
