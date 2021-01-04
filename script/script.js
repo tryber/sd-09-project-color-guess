@@ -22,11 +22,11 @@ numero = parseInt(placar.textContent);
 function cliqueNaBola(event) {
     const corSelecionada = event.target.style.backgroundColor;
     if (corSelecionada === textoCor.textContent) {
-        textoResposta.textContent = "Acertou! Parabéns, você é fera!";
-        placar.textContent = numero = numero + 4;
+        textoResposta.textContent = "Acertou!";
+        placar.textContent = numero = numero + 3;
         // aqui soma mais 3 para o placar...
     } else {
-        textoResposta.textContent = "Erroooooou... Vai de novo vai!";
+        textoResposta.textContent = "Errou! Tente novamente!";
         if (numero === 0) {
             numero = 1;
         }
