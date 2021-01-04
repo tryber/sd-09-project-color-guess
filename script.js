@@ -19,6 +19,7 @@ function resetButton() {
     let bNum = Math.floor(Math.random() * 256);
     rgbText.innerText = `(${rNum}, ${gNum}, ${bNum})`;
 }
+resetButton();
 button.addEventListener('click', resetButton);
 
 function initialMessage() {
