@@ -5,24 +5,24 @@ const button = document.querySelector('#reset-game');
 let points = 0;
 
 function resetButton() {
-    let rNum = Math.floor(Math.random() * 256);
-    let gNum = Math.floor(Math.random() * 256);
-    let bNum = Math.floor(Math.random() * 256);
-    rgbText.innerText = `(${rNum}, ${gNum}, ${bNum})`;
-    coloringCircles();
+  const rNum = Math.floor(Math.random() * 256);
+  const gNum = Math.floor(Math.random() * 256);
+  const bNum = Math.floor(Math.random() * 256);
+  rgbText.innerText = `(${rNum}, ${gNum}, ${bNum})`;
+  coloringCircles();
 }
 resetButton();
 button.addEventListener('click', resetButton);
 
 function coloringCircles() {
   for (let index = 0; index < ball.length; index += 1) {
-    let rNumber = Math.floor(Math.random() * 256);
-    let gNumber = Math.floor(Math.random() * 256);
-    let bNumber = Math.floor(Math.random() * 256);
+    const rNumber = Math.floor(Math.random() * 256);
+    const gNumber = Math.floor(Math.random() * 256);
+    const bNumber = Math.floor(Math.random() * 256);
     ball[index].style.backgroundColor = `rgb(${rNumber}, ${gNumber}, ${bNumber})`;
   }
-  let blabla = Math.floor(Math.random() * 6);
-  ball[blabla].style.backgroundColor = `rgb${rgbText.innerText}`;
+  const newIndex = Math.floor(Math.random() * 6);
+  ball[newIndex].style.backgroundColor = `rgb${rgbText.innerText}`;
 }
 coloringCircles();
 
