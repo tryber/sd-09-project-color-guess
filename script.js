@@ -17,14 +17,14 @@ function coloringCircles() {
 coloringCircles();
 
 function resetButton() {
-    const rNum = Math.floor(Math.random() * 256);
-    const gNum = Math.floor(Math.random() * 256);
-    const bNum = Math.floor(Math.random() * 256);
-    rgbText.innerText = `(${rNum}, ${gNum}, ${bNum})`;
-    coloringCircles();
-  }
-  resetButton();
-  button.addEventListener('click', resetButton);
+  const rNum = Math.floor(Math.random() * 256);
+  const gNum = Math.floor(Math.random() * 256);
+  const bNum = Math.floor(Math.random() * 256);
+  rgbText.innerText = `(${rNum}, ${gNum}, ${bNum})`;
+  coloringCircles();
+}
+resetButton();
+button.addEventListener('click', resetButton);
 
 function scoreSum() {
   const score = document.querySelector('#score');
