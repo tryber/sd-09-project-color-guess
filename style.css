@@ -15,7 +15,7 @@ body {
   text-align: center;
 }
 
-.circles:hover div{ 
+.circles:hover div{
   opacity: 0.4;
 }
 
@@ -37,9 +37,8 @@ button:active {
   outline: none;
   transform: translateY(4px);
   box-shadow: 0 0px #666;
-
 }
 
 button:focus {
   outline: transparent;
-}  */
+} */
