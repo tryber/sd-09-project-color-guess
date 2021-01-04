@@ -80,7 +80,10 @@ button {
   color: silver;
   font-family: Rock Salt, cursive;
   height: 40px;
-  outline: none;
   text-shadow: 1px 1px black;
   width: 200px;
+}
+
+button:focus {
+  outline: none;
 }
