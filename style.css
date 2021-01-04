@@ -75,7 +75,7 @@ footer {
   justify-content: center;
   left: 1em;
   margin: 0 auto;
-  padding: 10px;
+  padding: 10px 10px 0 10px;
   position: fixed;
   right: 1em;
   text-align: center;
@@ -83,6 +83,7 @@ footer {
 
 .footer-description {
   font-size: 10px;
+  line-height: 18px;
   padding-top: 3px;
 }
 
@@ -90,9 +91,8 @@ h1 {
   font-family: Shadows Into Light, cursive;
   font-size: 70px;
   margin: auto;
-  margin-top: 18px;
+  margin-top: 20px;
   padding-bottom: 0;
-  padding-top: 20px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -109,9 +109,8 @@ html {
   color: white;
 }
 
-.links {
+nav {
   font-weight: 700;
-  padding-top: 5px;
 }
 
 .rgb-color {
