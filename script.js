@@ -6,7 +6,7 @@ function buildTitle() {
 }
 
 function buildRandomColorNumbers() {
-  let color = `(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+  const color = `(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
   return color;
 }
 
@@ -30,16 +30,8 @@ function buildRandomCircleColors(index, colorToGuessPosition) {
   if (index === colorToGuessPosition) {
     rgbText = `rgb${colorToGuess.innerText}`;
     return rgbText;
-  } else {
-    rgbText = `rgb${buildRandomColorNumbers()}`;
   }
-}
-
-function buildCircleArea() {
-  const circleArea = document.createElement('div');
-  circleArea.id = 'circle-area';
-  document.body.appendChild(circleArea);
-  buildCircles(circleArea);
+  return rgbText = `rgb${buildRandomColorNumbers()}`;
 }
 
 function buildAnswer() {
@@ -71,6 +63,13 @@ function buildCircles(circleArea) {
     circleArea.appendChild(circle);
     circle.addEventListener('click', findResult);
   }
+}
+
+function buildCircleArea() {
+  const circleArea = document.createElement('div');
+  circleArea.id = 'circle-area';
+  document.body.appendChild(circleArea);
+  buildCircles(circleArea);
 }
 
 function resetGame() {
