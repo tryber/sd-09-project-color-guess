@@ -6,9 +6,8 @@ function buildTitle() {
 }
 
 function buildRandomColorNumbers() {
-const min = 0;
-const max = 255;
-return color = `(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+  let color = `(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+  return color;
 }
 
 function buildColorToGuessArea() {
@@ -29,21 +28,10 @@ function buildRandomCircleColors(index, colorToGuessPosition) {
   const colorToGuess = document.querySelector('#rgb-color');
   let rgbText = '';
   if (index === colorToGuessPosition) {
-    return rgbText = `rgb${colorToGuess.innerText}`;
+    rgbText = `rgb${colorToGuess.innerText}`;
+    return rgbText;
   } else {
-    return rgbText = `rgb${buildRandomColorNumbers()}`;
-  }
-}
-
-function buildCircles(circleArea) {
-  const circleAmount = 6;
-  const colorToGuessPosition = Math.floor(Math.random() * circleAmount);
-  for (let index = 0; index < circleAmount; index += 1) {
-    const circle = document.createElement('div');
-    circle.className = 'ball';
-    circle.style.backgroundColor = `${buildRandomCircleColors(index, colorToGuessPosition)}`;
-    circleArea.appendChild(circle);
-    circle.addEventListener('click', findResult);
+    rgbText = `rgb${buildRandomColorNumbers()}`;
   }
 }
 
@@ -70,6 +58,18 @@ function findResult(evt) {
     answer.innerText = 'Acertou!';
   } else {
     answer.innerText = 'Errou! Tente novamente!';
+  }
+}
+
+function buildCircles(circleArea) {
+  const circleAmount = 6;
+  const colorToGuessPosition = Math.floor(Math.random() * circleAmount);
+  for (let index = 0; index < circleAmount; index += 1) {
+    const circle = document.createElement('div');
+    circle.className = 'ball';
+    circle.style.backgroundColor = `${buildRandomCircleColors(index, colorToGuessPosition)}`;
+    circleArea.appendChild(circle);
+    circle.addEventListener('click', findResult);
   }
 }
 
@@ -102,4 +102,4 @@ window.onload = function () {
   buildRandomCircleColors();
   buildAnswer();
   buildResetButton();
-}
+};
