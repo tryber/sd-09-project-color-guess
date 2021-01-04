@@ -1,3 +1,6 @@
+let score = 0;
+// Observei PR de Henrique Brito Elias para fazer o task bonus
+
 function buildTitle() {
   const title = document.createElement('h1');
   title.id = 'title';
@@ -47,10 +50,19 @@ function findResult(evt) {
   const colorToGuess = document.querySelector('#rgb-color');
   const prizeColor = `rgb${colorToGuess.innerText}`;
   const clickedColor = evt.target.style.backgroundColor;
+  const circles = document.querySelectorAll('.ball');
+  let scoreNumber = document.querySelector('#score');
   if (prizeColor === clickedColor) {
     answer.innerText = 'Acertou!';
+    score += 3;
+    scoreNumber.innerHTML = score;
   } else {
     answer.innerText = 'Errou! Tente novamente!';
+    score -= 1;
+    scoreNumber.innerHTML = score;
+  }
+  for (let index = 0; index < circles.length; index += 1) {
+    circles[index].removeEventListener('click', findResult);
   }
 }
 
@@ -95,11 +107,14 @@ function buildResetButton() {
 }
 
 function buildScore() {
- let scoreText = document.createElement('p');
- let score = 0;
- score.id = 'score';
- scoreText.innerText = `Placar: ${score}`;
- // if 
+  const circleArea = document.querySelector('#circle-area');
+  let scoreText = document.createElement('p');
+  scoreText.innerText = "Placar: ";
+  let scoreNumber = document.createElement('h3');
+  scoreNumber.id = 'score';
+  scoreNumber.innerHTML = score;
+  document.body.insertBefore(scoreText, circleArea);
+  document.body.insertBefore(scoreNumber, circleArea);
 }
 
 window.onload = function () {
