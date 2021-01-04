@@ -31,7 +31,8 @@ function buildRandomCircleColors(index, colorToGuessPosition) {
     rgbText = `rgb${colorToGuess.innerText}`;
     return rgbText;
   }
-  return rgbText = `rgb${buildRandomColorNumbers()}`;
+  rgbText = `rgb${buildRandomColorNumbers()}`;
+  return rgbText;
 }
 
 function buildAnswer() {
@@ -93,6 +94,14 @@ function buildResetButton() {
   resetButton.addEventListener('click', resetGame);
 }
 
+function buildScore() {
+ let scoreText = document.createElement('p');
+ let score = 0;
+ score.id = 'score';
+ scoreText.innerText = `Placar: ${score}`;
+ // if 
+}
+
 window.onload = function () {
   buildTitle();
   buildColorToGuessArea();
@@ -101,4 +110,5 @@ window.onload = function () {
   buildRandomCircleColors();
   buildAnswer();
   buildResetButton();
+  buildScore();
 };
