@@ -13,11 +13,20 @@ function coloringCircles() {
 }
 coloringCircles();
 
+function scoreSum() {
+    const score = document.querySelector('#score');
+    let points = 0;
+    points += 3;
+    score.innerText = `Placar: ${points}`;
+    localStorage.setItem('score', points);
+}
+
 function resetButton() {
     let rNum = Math.floor(Math.random() * 256);
     let gNum = Math.floor(Math.random() * 256);
     let bNum = Math.floor(Math.random() * 256);
     rgbText.innerText = `(${rNum}, ${gNum}, ${bNum})`;
+    localStorage.getItem('score');
 }
 resetButton();
 button.addEventListener('click', resetButton);
@@ -25,6 +34,7 @@ button.addEventListener('click', resetButton);
 function initialMessage() {
     text.innerText = 'Escolha uma cor';
 }
+initialMessage();
 button.addEventListener('click', initialMessage);
 
 function messageAboutEachColor(event) {
@@ -32,6 +42,7 @@ function messageAboutEachColor(event) {
             text.innerText = 'Errou! Tente novamente!';
         } else {
             text.innerText = 'Acertou!';
+            scoreSum();
         }
 }
 for (let index = 0; index < ball.length; index += 1) {
