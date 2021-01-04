@@ -18,11 +18,23 @@ function buildColorToGuess() {
   document.body.appendChild(colorToGuess);
 }
 
-function buildColorCircles() {
+function buildRandomCircleColors(index, colorToGuessPosition) {
+  const colorToGuess = document.querySelector('#rgb-color');
+  let rgbText = '';
+  if (index === colorToGuessPosition) {
+    return rgbText = `rgb${colorToGuess.innerText}`;
+  } else {
+    return rgbText = `rgb${buildRandomColorNumbers()}`;
+  }
+}
+
+function buildCircles() {
   const circleAmount = 6;
+  const colorToGuessPosition = Math.floor(Math.random() * 6);
   for (let index = 0; index < circleAmount; index += 1) {
     const circle = document.createElement('div');
     circle.className = 'ball';
+    circle.style.backgroundColor = `${buildRandomCircleColors(index, colorToGuessPosition)}`;
     document.body.appendChild(circle);
   }
 }
@@ -30,5 +42,6 @@ function buildColorCircles() {
 window.onload = function () {
   buildTitle();
   buildColorToGuess();
-  buildColorCircles();
+  buildCircles();
+  buildRandomCircleColors();
 }
