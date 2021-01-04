@@ -11,11 +11,18 @@ const max = 255;
 return color = `(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
 }
 
+function buildColorToGuessArea() {
+  const colorToGuessArea = document.createElement('div');
+  colorToGuessArea.id = 'color-to-guess-area';
+  document.body.appendChild(colorToGuessArea);
+}
+
 function buildColorToGuess() {
+  const colorToGuessArea = document.querySelector('#color-to-guess-area');
   const colorToGuess = document.createElement('p');
   colorToGuess.id = 'rgb-color';
   colorToGuess.innerText = `${buildRandomColorNumbers()}`;
-  document.body.appendChild(colorToGuess);
+  colorToGuessArea.appendChild(colorToGuess);
 }
 
 function buildRandomCircleColors(index, colorToGuessPosition) {
@@ -28,16 +35,23 @@ function buildRandomCircleColors(index, colorToGuessPosition) {
   }
 }
 
-function buildCircles() {
+function buildCircles(circleArea) {
   const circleAmount = 6;
   const colorToGuessPosition = Math.floor(Math.random() * circleAmount);
   for (let index = 0; index < circleAmount; index += 1) {
     const circle = document.createElement('div');
     circle.className = 'ball';
     circle.style.backgroundColor = `${buildRandomCircleColors(index, colorToGuessPosition)}`;
-    document.body.appendChild(circle);
+    circleArea.appendChild(circle);
     circle.addEventListener('click', findResult);
   }
+}
+
+function buildCircleArea() {
+  const circleArea = document.createElement('div');
+  circleArea.id = 'circle-area';
+  document.body.appendChild(circleArea);
+  buildCircles(circleArea);
 }
 
 function buildAnswer() {
@@ -59,10 +73,33 @@ function findResult(evt) {
   }
 }
 
+function resetGame() {
+  const colorToGuessArea = document.querySelector('#color-to-guess-area');
+  const answer = document.querySelector('#answer');
+  const circleArea = document.querySelector('#circle-area');
+  answer.innerText = 'Escolha uma cor';
+  colorToGuessArea.removeChild(colorToGuessArea.firstChild);
+  buildColorToGuess();
+  while (circleArea.firstChild) {
+    circleArea.removeChild(circleArea.firstChild);
+  }
+  buildCircles(circleArea);
+}
+
+function buildResetButton() {
+  const resetButton = document.createElement('button');
+  resetButton.id = 'reset-game';
+  resetButton.innerText = 'Resetar jogo';
+  document.body.appendChild(resetButton);
+  resetButton.addEventListener('click', resetGame);
+}
+
 window.onload = function () {
   buildTitle();
+  buildColorToGuessArea();
   buildColorToGuess();
-  buildCircles();
+  buildCircleArea();
   buildRandomCircleColors();
   buildAnswer();
+  buildResetButton();
 }
