@@ -11,7 +11,7 @@ body {
   width: 80px;
 }
 
-/* .circles {
+.circles {
   text-align: center;
 }
 
@@ -26,6 +26,8 @@ body {
 .circles div {
   transition: all 0.8s ease;
 }
+
+/*
 
 button {
   background-color: #fdfdfd;
