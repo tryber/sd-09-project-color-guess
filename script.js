@@ -51,7 +51,7 @@ function findResult(evt) {
   const prizeColor = `rgb${colorToGuess.innerText}`;
   const clickedColor = evt.target.style.backgroundColor;
   const circles = document.querySelectorAll('.ball');
-  let scoreNumber = document.querySelector('#score');
+  const scoreNumber = document.querySelector('#score');
   if (prizeColor === clickedColor) {
     answer.innerText = 'Acertou!';
     score += 3;
@@ -108,9 +108,9 @@ function buildResetButton() {
 
 function buildScore() {
   const circleArea = document.querySelector('#circle-area');
-  let scoreText = document.createElement('p');
-  scoreText.innerText = "Placar: ";
-  let scoreNumber = document.createElement('h3');
+  const scoreText = document.createElement('p');
+  scoreText.innerText = 'Placar: ';
+  const scoreNumber = document.createElement('h3');
   scoreNumber.id = 'score';
   scoreNumber.innerHTML = score;
   document.body.insertBefore(scoreText, circleArea);
