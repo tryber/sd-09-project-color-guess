@@ -1,0 +1,46 @@
+body {
+  font-family: Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
+  text-align: center;
+}
+
+.ball {
+  border-radius: 50%;
+  display: inline-block;
+  height: 80px;
+  margin-right: 5px;
+  width: 80px;
+}
+
+.circles {
+  text-align: center;
+}
+
+.circles div {
+  transition: all 0.8s ease;
+}
+
+.circles:hover div {
+  opacity: 0.4;
+}
+
+.circles div:hover {
+  opacity: 1;
+}
+
+/*
+
+button {
+  background-color: #fdfdfd;
+  border-radius: 20px;
+  box-shadow: 0 5px #666;
+}
+
+button:active {
+  outline: none;
+  transform: translateY(4px);
+  box-shadow: 0 0px #666;
+}
+
+button:focus {
+  outline: transparent;
+} */
