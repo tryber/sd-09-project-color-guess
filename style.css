@@ -53,7 +53,7 @@ body {
   text-align: center;
 }
 
-.colors div {
+/* .colors div {
   transition: all 0.4s ease;
 }
 
@@ -63,7 +63,7 @@ body {
 
 .colors:hover div:hover {
   opacity: 1;
-}
+} */
 
 footer {
   align-items: center;
