@@ -15,16 +15,16 @@ body {
   text-align: center;
 }
 
-.circles:hover div{
+.circles div {
+  transition: all 0.8s ease;
+}
+
+.circles:hover div {
   opacity: 0.4;
 }
 
 .circles div:hover {
   opacity: 1;
-}
-
-.circles div {
-  transition: all 0.8s ease;
 }
 
 /*
