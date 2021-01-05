@@ -47,9 +47,8 @@ function createColorRGB(maxSize) {
 // Selecionando a Cor
 document.querySelector('#colors').addEventListener('click', function (event) {
   if (event.target.style.backgroundColor === colorSelected) {
-    placar += 3;
     document.getElementById('answer').innerText = 'Acertou!';
-    createColorRGB(6);
+    placar += 3;
   } else {
     if (placar > 0) {
       placar -= 1;
