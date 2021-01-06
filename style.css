@@ -1,0 +1,143 @@
+/* --purple-light:#d8bfd8;
+--pink-light: lightpink;
+--pink-dark: #ffafcc;
+--blue-light: #bde0fe;
+--blue-dark: #a2d2ff;
+--grey-light: #dadada1a;
+--grey-dark: #dadada; */
+
+body {
+  background: linear-gradient(135deg, #dadada1a 25%, transparent 25%) -31px 0,
+    linear-gradient(225deg, #dadada1a 25%, transparent 25%) -31px 0,
+    linear-gradient(315deg, #dadada1a 25%, transparent 25%),
+    linear-gradient(45deg, #dadada1a 25%, transparent 25%);
+  background-color: #bde0fe3e;
+  background-size: 4em 4em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+/* Topo */
+h1 {
+  color: #a2d2ff;
+  font-family: Pacifico, cursive;
+  font-size: 5em;
+  font-weight: 400;
+  margin: 0;
+  text-shadow: 6px 6px 0 #64b4ff,
+    -1px -1px 0 #64b4ff,
+    1px -1px 0 #64b4ff,
+    -1px 1px 0 #64b4ff,
+    1px 1px 0 #64b4ff;
+}
+
+/* Parágrafos */
+.score {
+  border: 2px solid #64b4ff;
+  color: #64b4ff;
+  display: inline-block;
+  font-weight: 700;
+  margin: 0;
+  padding: 0.5em;
+  padding-right: 0;
+}
+
+.score-number {
+  background-color: #64b4ff;
+  color: white;
+  margin: 0;
+  margin-left: 0.5em;
+  padding: 0.6em 1em;
+}
+
+.rgb-color {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 24px;
+  text-transform: uppercase;
+}
+
+.rgb-answer {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 24px;
+  text-transform: uppercase;
+}
+
+.correct {
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-name: fadeInOpacity;
+  animation-timing-function: ease-in;
+  color: #90be6d;
+  font-size: 2rem;
+  opacity: 1;
+}
+
+@keyframes fadeInOpacity {
+
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Paleta de Cores */
+.colors {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.ball {
+  border-radius: 16px;
+  box-shadow: 6px 6px 0 #ccc,
+    -1px -1px 0 #ccc,
+    1px -1px 0 #ccc,
+    -1px 1px 0 #ccc,
+    1px 1px 0 #ccc;
+  height: 100px;
+  margin: 8px;
+  width: 100px;
+}
+
+/* Botão */
+button {
+  background-color: lightpink;
+  border: 2px solid #ff68a0;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #ff68a0,
+    -1px -1px 0 #ff68a0,
+    1px -1px 0 #ff68a0,
+    -1px 1px 0 #ff68a0,
+    1px 1px 0 #ff68a0;
+  color: #ff68a0;
+  font-weight: 700;
+  padding: 1em 2em;
+}
+
+button:hover {
+  background-color: lightpink;
+}
+
+footer {
+  background: white;
+  border-top: 1px solid #64b4ff;
+  bottom: 0;
+  font-size: 14px;
+  margin: 0;
+  padding: 8;
+  position: fixed;
+  width: 100%;
+}
