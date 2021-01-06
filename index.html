@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project Color Guess</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,15 +16,19 @@
   </header>
 
   <main>
-    <p id="rgb-color"></p>
+    <p class="score">Placar: <span id="score" class="score-number"></span></p>
+    <p id="rgb-color" class="rgb-color"></p>
+    <p id="answer" class="rgb-answer"></p>
     <section id="colors" class="colors"></section>
-    <p id="answer"></p>
-    <p>Placar: <span id="score"></span></p>
     <div id="buttons">
       <button id="reset-game">Iniciar/Reiniciar Jogo</button>
     </div>
   </main>
-  <footer></footer>
+
+  <footer>
+    <p>Feito com 💙 & ☕ por Nathália Veneziano © 12/2020</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 

@@ -27,6 +27,7 @@ function removeAllColors() {
 function createColorRGB(maxSize) {
   removeAllColors();
   randomColor(maxSize);
+  document.getElementById('answer').classList.remove('correct');
 
   const ramdomNumber = (Math.floor(Math.random() * colors.length));
   colorSelected = colors[ramdomNumber];
@@ -48,6 +49,7 @@ function createColorRGB(maxSize) {
 document.querySelector('#colors').addEventListener('click', function (event) {
   if (event.target.style.backgroundColor === colorSelected) {
     document.getElementById('answer').innerText = 'Acertou!';
+    document.getElementById('answer').classList.add('correct');
     placar += 3;
   } else {
     if (placar > 0) {
