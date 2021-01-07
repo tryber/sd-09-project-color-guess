@@ -1,3 +1,9 @@
 body {
+  color: rgba(0, 0, 0, 0.5);
   font-family: sans-serif;
+  font-size: 18px;
+}
+
+.rgb-color {
+  font-weight: bold;
 }
