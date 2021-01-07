@@ -1,9 +1,32 @@
+.ball {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
 body {
   color: rgba(0, 0, 0, 0.5);
   font-family: sans-serif;
   font-size: 18px;
 }
 
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 350px;
+}
+
 .rgb-color {
-  font-weight: bold;
+  font-weight: 600;
+}
+
+.section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
 }
