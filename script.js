@@ -1,3 +1,5 @@
+let points = 0;
+
 // Gerar número aleatório
 function randomNumber(num) {
   const number = Math.floor(Math.random() * num);
@@ -21,16 +23,21 @@ function colorBall() {
 
 // Comparar a cor escolhida
 function compareColor() {
-  const circulos = document.getElementById('section');
+  const circulos = document.getElementById('container');
   const color1 = document.getElementById('rgb-color').innerText;
   const text = document.getElementById('answer');
   circulos.addEventListener('click', function (event) {
     const color2 = event.target.style.backgroundColor;
-    if (color2 === color1) {
-      console.log(color2 === color2);
-      text.innerText = 'Acertou!';
-    } else {
-      text.innerText = 'Errou! Tente novamente!';
+    const score = document.getElementById('score');
+    let classTest = event.target.className;
+    if (classTest !== 'container') {
+      if (color2 === color1) {
+        text.innerText = 'Acertou!';
+        points += 3;
+        score.innerHTML = points;
+      } else {
+        text.innerText = 'Errou! Tente novamente!';
+      }
     }
   });
 }
@@ -38,9 +45,12 @@ function compareColor() {
 // Reiniciar o jogo
 function restartGame() {
   const btn = document.getElementById('reset-game');
-  const text = document.getElementById('answer');
   btn.addEventListener('click', function () {
-    window.location.reload();
+    // window.location.reload();
+    document.getElementById('answer').innerText = 'Escolha uma cor';
+    colorBall();
+    mainColor();
+    compareColor();
   });
 }
 
@@ -52,10 +62,28 @@ function mainColor() {
   mainColor.innerText = color;
 }
 
+// Armazenar as pontuações
+if (typeof(Storage) !== "undefined") {
+  // Code for localStorage/sessionStorage.
+} else {
+  alertt('Desculpa! Sem suporte de armazenamento na web');
+}
+
+// Adiciona rodapé à página
+function createFooter() {
+  const container = document.querySelector('body');
+  const footer = document.createElement('footer');
+  footer.id = 'footer';
+  footer.classList.add('footer');
+  footer.innerText = 'Project Color Guess - Projeto Bônus - Bloco 5 - Trybe 🚀 - Criado por: Cleber Lopes Teixeira - Turma 09 - 2021 ©️';
+  container.appendChild(footer);
+}
+
 // Iniciar função após o carregamento da página
 window.onload = function () {
   colorBall();
   mainColor();
   compareColor();
   restartGame();
+  createFooter();
 };

@@ -18,6 +18,22 @@ body {
   width: 400px;
 }
 
+.footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  color: white;
+  display: block;
+  font-size: 2vh;
+  height: 2.5%;
+  left: 0;
+  letter-spacing: 0.5px;
+  margin-left: 0;
+  padding: 5px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}
+
 .reset-game {
   margin-top: 20px;
 }
@@ -30,6 +46,30 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+.score {
+  align-items: center;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgb(157, 77, 77);
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  width: 50px;
+}
+
+.scoreboard {
+ align-items: center;
+ background-color: rgb(176, 138, 138);
+ border: 5px ridge rgb(157, 77, 77);
+ box-shadow: 2px 2px 2px gray;
+ color: rgba(215, 209, 209, 1);
+ display: flex;
+ font-weight: bold;
+ height: 50px;
+ justify-content: space-around;
+ width: 200px;
 }
 
 .title {
