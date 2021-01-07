@@ -51,25 +51,25 @@ body {
 .score {
   align-items: center;
   background-color: white;
-  color: rgba(0, 0, 0, 0.7);
   border: 1px solid rgb(157, 77, 77);
+  color: rgba(0, 0, 0, 0.7);
   display: flex;
-  justify-content: center;
   height: 30px;
+  justify-content: center;
   width: 50px;
 }
 
 .scoreboard {
- align-items: center;
- background-color: rgb(176, 138, 138);
- border: 5px ridge rgb(157, 77, 77);
- box-shadow: 2px 2px 2px gray;
- color: rgba(215, 209, 209, 1);
- display: flex;
- font-weight: bold;
- height: 50px;
- justify-content: space-around;
- width: 200px;
+  align-items: center;
+  background-color: rgb(176, 138, 138);
+  border: 5px ridge rgb(157, 77, 77);
+  box-shadow: 2px 2px 2px gray;
+  color: rgba(215, 209, 209, 1);
+  display: flex;
+  font-weight: 600;
+  height: 50px;
+  justify-content: space-around;
+  width: 200px;
 }
 
 .title {

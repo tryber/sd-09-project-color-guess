@@ -29,7 +29,7 @@ function compareColor() {
   circulos.addEventListener('click', function (event) {
     const color2 = event.target.style.backgroundColor;
     const score = document.getElementById('score');
-    let classTest = event.target.className;
+    const classTest = event.target.className;
     if (classTest !== 'container') {
       if (color2 === color1) {
         text.innerText = 'Acertou!';
@@ -42,18 +42,6 @@ function compareColor() {
   });
 }
 
-// Reiniciar o jogo
-function restartGame() {
-  const btn = document.getElementById('reset-game');
-  btn.addEventListener('click', function () {
-    // window.location.reload();
-    document.getElementById('answer').innerText = 'Escolha uma cor';
-    colorBall();
-    mainColor();
-    compareColor();
-  });
-}
-
 // Definir a cor a ser comparada
 function mainColor() {
   const mainColor = document.getElementById('rgb-color');
@@ -62,11 +50,15 @@ function mainColor() {
   mainColor.innerText = color;
 }
 
-// Armazenar as pontuações
-if (typeof(Storage) !== "undefined") {
-  // Code for localStorage/sessionStorage.
-} else {
-  alertt('Desculpa! Sem suporte de armazenamento na web');
+// Reiniciar o jogo
+function restartGame() {
+  const btn = document.getElementById('reset-game');
+  btn.addEventListener('click', function () {
+    document.getElementById('answer').innerText = 'Escolha uma cor';
+    colorBall();
+    mainColor();
+    compareColor();
+  });
 }
 
 // Adiciona rodapé à página
