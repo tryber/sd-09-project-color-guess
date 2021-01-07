@@ -18,6 +18,10 @@ body {
   width: 400px;
 }
 
+.reset-game {
+  margin-top: 20px;
+}
+
 .rgb-color {
   font-weight: 600;
 }

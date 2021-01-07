@@ -27,6 +27,7 @@ function compareColor() {
   circulos.addEventListener('click', function (event) {
     const color2 = event.target.style.backgroundColor;
     if (color2 === color1) {
+      console.log(color2 === color2);
       text.innerText = 'Acertou!';
     } else {
       text.innerText = 'Errou! Tente novamente!';
@@ -34,8 +35,27 @@ function compareColor() {
   });
 }
 
+// Reiniciar o jogo
+function restartGame() {
+  const btn = document.getElementById('reset-game');
+  const text = document.getElementById('answer');
+  btn.addEventListener('click', function () {
+    window.location.reload();
+  });
+}
+
+// Definir a cor a ser comparada
+function mainColor() {
+  const mainColor = document.getElementById('rgb-color');
+  const num = randomNumber(6);
+  const color = document.getElementsByClassName('ball')[num].style.backgroundColor;
+  mainColor.innerText = color;
+}
+
 // Iniciar função após o carregamento da página
 window.onload = function () {
   colorBall();
+  mainColor();
   compareColor();
+  restartGame();
 };
