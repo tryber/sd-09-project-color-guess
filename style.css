@@ -20,10 +20,7 @@
 }
 
 body {
-  background-attachment: fixed;
-  background-image: url(bg_color.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: cadetblue;
   color: rgb(206, 241, 247);
   display: flex;
   flex-direction: column;
@@ -101,9 +98,7 @@ body {
 
 .scoreboard {
   align-items: center;
-  background-image: url(score.png);
-  background-repeat: repeat-x;
-  background-size: 5rem 5rem;
+  background-color: rgba(157, 77, 77, 0.5);;
   border: 5px ridge rgba(157, 77, 77, 0.7);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
   color: rgb(9, 68, 70);
@@ -116,8 +111,10 @@ body {
 
 .scoreboard p {
   font-size: 2.3rem;
+  text-shadow: 0 0 2px white;
 }
 
 .title {
   text-align: center;
+  text-shadow: -5px 5px 5px rgba(0, 0, 0, 0.7);
 }
