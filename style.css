@@ -20,14 +20,15 @@
 }
 
 body {
-  background-attachment:fixed;
-  background-image: url(img/bg-color.jpg);
+  background-attachment: fixed;
+  background-image: url(bg_color.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
   color: rgb(206, 241, 247);
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
-  font-size: 20px;
+  font-size: 1.5rem;
   letter-spacing: 1.5px;
 }
 
@@ -62,7 +63,7 @@ body {
 .reset-game {
   border-radius: 5px;
   color: rgb(19, 63, 65);
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 600;
   margin-top: 20px;
   padding: 10px 15px;
@@ -93,24 +94,28 @@ body {
   color: rgb(19, 63, 65);
   display: flex;
   font-weight: 600;
-  height: 30px;
+  height: 3rem;
   justify-content: center;
-  width: 50px;
+  width: 6rem;
 }
 
 .scoreboard {
   align-items: center;
-  background-image: url(img/bg.png);
+  background-image: url(score.png);
   background-repeat: repeat-x;
-  background-size: 50px 50px;
+  background-size: 5rem 5rem;
   border: 5px ridge rgba(157, 77, 77, 0.7);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
   color: rgb(9, 68, 70);
   display: flex;
   font-weight: 600;
-  height: 50px;
+  height: 5rem;
   justify-content: space-around;
-  width: 200px;
+  width: 20rem;
+}
+
+.scoreboard p {
+  font-size: 2.3rem;
 }
 
 .title {
