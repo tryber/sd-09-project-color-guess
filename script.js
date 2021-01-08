@@ -23,10 +23,10 @@ function colorBall() {
 
 // Comparar a cor escolhida
 function compareColor() {
-  const circulos = document.getElementById('container');
+  const circles = document.getElementById('container');
   const color1 = document.getElementById('rgb-color').innerText;
   const text = document.getElementById('answer');
-  circulos.addEventListener('click', function (event) {
+  circles.addEventListener('click', function (event) {
     const color2 = event.target.style.backgroundColor;
     const score = document.getElementById('score');
     const classTest = event.target.className;
@@ -44,10 +44,10 @@ function compareColor() {
 
 // Definir a cor a ser comparada
 function mainColor() {
-  const mainColor = document.getElementById('rgb-color');
+  const colorMain = document.getElementById('rgb-color');
   const num = randomNumber(6);
   const color = document.getElementsByClassName('ball')[num].style.backgroundColor;
-  mainColor.innerText = color;
+  colorMain.innerText = color;
 }
 
 // Reiniciar o jogo
