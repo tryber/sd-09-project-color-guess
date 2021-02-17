@@ -5,7 +5,7 @@ function generateRandomValue() {
 }
 
 function paintTheBalls() {
-  const ballsNodeList = document.querySelectorAll(".ball");
+  const ballsNodeList = document.querySelectorAll('.ball');
 
   ballsNodeList.forEach((ball) => {
     ball.style.backgroundColor = `rgb(${generateRandomValue()}, ${generateRandomValue()}, ${generateRandomValue()})`;
@@ -13,38 +13,38 @@ function paintTheBalls() {
 }
 
 function setTheCurrentColor() {
-  const ballsNodeList = document.querySelectorAll(".ball");
+  const ballsNodeList = document.querySelectorAll('.ball');
   const randomBallIndex = Math.floor(Math.random() * ballsNodeList.length);
-  const currentColorTextElement = document.querySelector("#rgb-color");
+  const currentColorTextElement = document.querySelector('#rgb-color');
 
   currentColorTextElement.innerText =
     ballsNodeList[randomBallIndex].style.backgroundColor;
 }
 
 function listenToResetGameButton() {
-  const resetGameButton = document.querySelector("#reset-game");
-  const answerText = document.querySelector("#answer");
+  const resetGameButton = document.querySelector('#reset-game');
+  const answerText = document.querySelector('#answer');
 
-  resetGameButton.addEventListener("click", () => {
+  resetGameButton.addEventListener('click', () => {
     paintTheBalls();
     setTheCurrentColor();
-    answerText.innerText = "Escolha uma cor";
+    answerText.innerText = 'Escolha uma cor';
   });
 }
 
 function listenToBallsSection() {
-  const ballsSection = document.querySelector(".balls");
-  const currentColorTextElement = document.querySelector("#rgb-color");
-  const scoreSpan = document.querySelector("#score");
-  const answerText = document.querySelector("#answer");
+  const ballsSection = document.querySelector('.balls');
+  const currentColorTextElement = document.querySelector('#rgb-color');
+  const scoreSpan = document.querySelector('#score');
+  const answerText = document.querySelector('#answer');
 
-  ballsSection.addEventListener("click", (event) => {
-    if (event.target.className === "ball") {
+  ballsSection.addEventListener('click', (event) => {
+    if (event.target.className === 'ball') {
       if (
         event.target.style.backgroundColor === currentColorTextElement.innerText
       ) {
         scoreSpan.innerText = parseInt(scoreSpan.innerText) + 1;
-        answerText.innerText = "Acertou!";
+        answerText.innerText = 'Acertou!';
 
         paintTheBalls();
         setTheCurrentColor();
@@ -53,7 +53,7 @@ function listenToBallsSection() {
           scoreSpan.innerText = parseInt(scoreSpan.innerText) - 1;
         }
 
-        answerText.innerText = "Errou! Tente novamente!";
+        answerText.innerText = 'Errou! Tente novamente!';
 
         paintTheBalls();
         setTheCurrentColor();
