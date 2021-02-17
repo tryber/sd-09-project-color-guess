@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
 
-  <link rel="stylesheet" href="src/style.css">
-</head>
-<body>
-  
-  
-  <script src="src/script.js"></script>
-</body>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <h1 id="title">Adivinhe a cor!</h1>
+      </header>
+
+      <main>
+        <section>
+          <p id="rgb-color">(255, 255, 255)</p>
+          <p>Placar: <span id="score">0</span></p>
+        </section>
+
+        <section class="balls">
+          <div class="line">
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="answer">Escolha uma cor</h2>
+        </section>
+
+        <section>
+          <button>Mudar dificuldade</button>
+          <button id="reset-game">Resetar o jogo/cores</button>
+        </section>
+      </main>
+    </div>
+
+    <script src="src/script.js"></script>
+  </body>
 </html>
