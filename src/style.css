@@ -1,0 +1,38 @@
+body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 75vh;
+  text-align: center;
+}
+
+.page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.balls {
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  display: flex;
+}
+
+.ball {
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 50px;
+  margin: 0 10px;
+  transform: rotate(-45deg);
+  width: 50px;
+}
+
+.ball:hover {
+  border-radius: 50% 50% 50% 0;
+  transition: 0.5s;
+}
