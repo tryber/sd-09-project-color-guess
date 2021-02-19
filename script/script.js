@@ -31,6 +31,9 @@ function cliqueNaBola(event) {
     textoResposta.textContent = "Acertou!";
     caixa.style.border = `10px solid rgb(33 193 53)`;
     placar.textContent = numero += 3;
+    setTimeout(() => {
+      reiniciaJogo();
+    }, 1000)
     // aqui soma mais 3 para o placar...
   } else {
     textoResposta.textContent = "Errou! Tente novamente!";
@@ -43,13 +46,13 @@ function cliqueNaBola(event) {
   window.sessionStorage.setItem('score', numero);
 }
 
-for (let bola = 0; bola < bolas.length; bola += 1) {
+  for (let bola = 0; bola < bolas.length; bola += 1) {
   const cor = corAleatoria();
   bolas[bola].style.backgroundColor = cor;
   cores[bola] = cor;
-  // botaoReiniciar.style.backgroundColor = corAleatoria();
-  bolas[bola].addEventListener('click', cliqueNaBola);
-}
+    // botaoReiniciar.style.backgroundColor = corAleatoria();
+    bolas[bola].addEventListener('click', cliqueNaBola);
+  }
 
 function adicionarCorAleatoria(){
   textoCor.textContent = cores[numeroAleatorio(6)];
