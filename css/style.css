@@ -7,10 +7,11 @@
 
 body {
 	background-color: rgb(19 17 17 / 95%);
+   background-image: url(https://i1.wallbox.ru/wallpapers/main/201242/tekstury-4daefc2d5498.jpg);
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-    display: flex;
+   display: flex;
 }
 
 button {
@@ -18,27 +19,26 @@ button {
 	background-color: #faebd74d;
 	border-radius: 10px;
 	margin-bottom: 20px;
-	border: 1px solid;
+	border: 2px solid transparent;
 	padding: 7px 20px;
 	font-size: 16px;
 	color: floralwhite;
 }
 
 .button {
+	background-color: cornflowerblue;
 	transition-duration: 0.4s;
-}
-
-.button:hover {
-	background-color: #4CAF50;
-	color: white;
 }
 
 .div-still {
 	background-color: ghostwhite;
-	border: 10px solid #009ffc;
-	border-radius: 18px;
+	/* border: 10px solid #009ffc; */
+	border-radius: 9%;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-size: 18px;
+   margin-top: 9%;
 	text-align: center;
-	width: 420px;
+	width: 27%;
 }
 
 h1 {
