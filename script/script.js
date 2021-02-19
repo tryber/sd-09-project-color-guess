@@ -30,8 +30,8 @@ function cliqueNaBola(event) {
   if (corSelecionada === textoCor.textContent) {
     textoResposta.textContent = "Acertou!";
     caixa.style.border = `10px solid rgb(33 193 53)`;
-    numero += 3;
-    placar.textContent = numero;
+
+    placar.textContent = numero += 3;;
     // aqui soma mais 3 para o placar...
   } else {
     textoResposta.textContent = "Errou! Tente novamente!";
