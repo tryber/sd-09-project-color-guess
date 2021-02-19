@@ -36,10 +36,10 @@ function cliqueNaBola(event) {
   } else {
     textoResposta.textContent = "Errou! Tente novamente!";
     caixa.style.border = `10px solid rgb(193 33 33)`;
-    if (numero === 0) {
-      numero = 1;
-    }
-    placar.textContent = numero = numero - 1;
+    // if (numero === 0) {
+    //   numero = 1;
+    // }
+    placar.textContent = numero -= 1;
   }
   window.sessionStorage.setItem('score', numero);
 }
